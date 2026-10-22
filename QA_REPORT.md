@@ -16,3 +16,5 @@ Verified locally on 22 October 2026.
 Limits: automated accessibility checks do not establish complete WCAG conformance. Print PDFs are RGB proofs, not printer-certified CMYK production files. Ahmad has purchased digitsstudio.online. Trademark clearance and social-handle registration remain separate from domain ownership. No live analytics, backend form delivery, social publishing or advertising service is configured. Contact works by a visitor opening WhatsApp or email and sending the message themselves.
 
 Browser outputs and machine reports are stored in qa/ and excluded from the hosted source and ZIP.
+
+Production launch: Vercel Ready; apex and www Valid Configuration. Production HTML/CSS/JS, sitemap, robots and PDF guide matched source. Brand ZIP returned HTTP 200 and the expected length. Old domains redirect permanently to digitsstudio.online. See DEPLOYMENT.md.

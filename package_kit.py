@@ -5,7 +5,7 @@ R=Path(__file__).resolve().parent;B=R/'dist'/'brand'
 with zipfile.ZipFile(B/'digits-studio-brand-kit.zip','w',zipfile.ZIP_DEFLATED) as z:
     for p in sorted((R/'dist').rglob('*')):
         if p.is_file() and p.suffix!='.zip': z.write(p,'Digits Studio/dist/'+p.relative_to(R/'dist').as_posix())
-    for name in ['build_assets.py','export_assets.mjs','build_site.py','build_guide.py','build_showcase.py','package_kit.py','check_site.mjs','check_extras.mjs','package.json','package-lock.json','vercel.json','validate-production.mjs','design-plan.md','QA_REPORT.md']:
+    for name in ['build_assets.py','export_assets.mjs','build_site.py','build_guide.py','build_showcase.py','package_kit.py','check_site.mjs','check_extras.mjs','package.json','package-lock.json','vercel.json','validate-production.mjs','design-plan.md','QA_REPORT.md','DEPLOYMENT.md','.gitattributes']:
         z.write(R/name,'Digits Studio/'+name)
     z.write(R/'README.md','Digits Studio/README.md')
     z.write(R/'strategy.md','Digits Studio/strategy.md')

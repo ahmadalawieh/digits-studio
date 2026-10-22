@@ -12,7 +12,7 @@ Complete identity and English/Arabic agency website prepared for Ahmad Alawieh, 
 - `dist/brand/digits-studio-brand-kit.zip`: downloadable identity package.
 - `strategy.md`: positioning, offer and name-clearance status.
 
-For local preview, run `python -m http.server 4173 --bind 127.0.0.1 --directory dist` in this folder and open `http://127.0.0.1:4173/brand-kit.html`. Use HTTP for reliable canvas/font loading in the editor. The website is buildless static HTML/CSS/JS; upload dist to a static host, The production target is Vercel, with https://digitsstudio.online as the canonical origin.
+For local preview, run `python -m http.server 4173 --bind 127.0.0.1 --directory dist` in this folder and open `http://127.0.0.1:4173/brand-kit.html`. Use HTTP for reliable canvas/font loading in the editor. The website is buildless static HTML/CSS/JS; production is live on Vercel at https://digitsstudio.online. See DEPLOYMENT.md for hosting, DNS and the archived earlier work.
 
 ## Contents
 

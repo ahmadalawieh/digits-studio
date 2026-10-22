@@ -6,18 +6,55 @@
   "outputDirectory": "dist",
   "cleanUrls": true,
   "redirects": [
-    {"source": "/:path*", "has": [{"type": "host", "value": "www.digitsstudio.online"}], "destination": "https://digitsstudio.online/:path*", "permanent": true},
-    {"source": "/:path*", "has": [{"type": "host", "value": "atocode.online"}], "destination": "https://digitsstudio.online/:path*", "permanent": true},
-    {"source": "/:path*", "has": [{"type": "host", "value": "www.atocode.online"}], "destination": "https://digitsstudio.online/:path*", "permanent": true},
-    {"source": "/work/:path*", "destination": "/#work", "permanent": true},
-    {"source": "/services", "destination": "/#services", "permanent": true},
-    {"source": "/about", "destination": "/#studio", "permanent": true},
-    {"source": "/contact", "destination": "/#contact", "permanent": true},
-    {"source": "/hire", "destination": "/#contact", "permanent": true},
-    {"source": "/audit", "destination": "/#contact", "permanent": true},
-    {"source": "/ar/work/:path*", "destination": "/ar/#work", "permanent": true},
-    {"source": "/ar/services", "destination": "/ar/#services", "permanent": true},
-    {"source": "/ar/about", "destination": "/ar/#studio", "permanent": true},
-    {"source": "/ar/contact", "destination": "/ar/#contact", "permanent": true}
+    {
+      "source": "/work/:path*",
+      "destination": "/#work",
+      "permanent": true
+    },
+    {
+      "source": "/services",
+      "destination": "/#services",
+      "permanent": true
+    },
+    {
+      "source": "/about",
+      "destination": "/#studio",
+      "permanent": true
+    },
+    {
+      "source": "/contact",
+      "destination": "/#contact",
+      "permanent": true
+    },
+    {
+      "source": "/hire",
+      "destination": "/#contact",
+      "permanent": true
+    },
+    {
+      "source": "/audit",
+      "destination": "/#contact",
+      "permanent": true
+    },
+    {
+      "source": "/ar/work/:path*",
+      "destination": "/ar/#work",
+      "permanent": true
+    },
+    {
+      "source": "/ar/services",
+      "destination": "/ar/#services",
+      "permanent": true
+    },
+    {
+      "source": "/ar/about",
+      "destination": "/ar/#studio",
+      "permanent": true
+    },
+    {
+      "source": "/ar/contact",
+      "destination": "/ar/#contact",
+      "permanent": true
+    }
   ]
 }

@@ -1,31 +1,8 @@
 {
-  "name": "atocode-personal-site",
-  "version": "4.0.0",
+  "name": "digits-studio",
+  "version": "1.0.0",
   "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "node scripts/generate-og.mjs && next build",
-    "start": "next start",
-    "lint": "eslint .",
-    "typecheck": "tsc --noEmit",
-    "qa": "node scripts/qa.mjs"
-  },
-  "dependencies": {
-    "next": "^16.4.0",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0"
-  },
-  "devDependencies": {
-    "@types/node": "^22.0.0",
-    "@types/react": "^19.0.0",
-    "@types/react-dom": "^19.0.0",
-    "@tailwindcss/postcss": "^4.0.0",
-    "@axe-core/playwright": "^4.11.0",
-    "eslint": "^9.0.0",
-    "eslint-config-next": "^16.4.0",
-    "playwright": "^1.63.0",
-    "sharp": "^0.35.5",
-    "tailwindcss": "^4.0.0",
-    "typescript": "^5.9.0"
-  }
+  "description": "Digits Studio brand identity and bilingual agency website",
+  "scripts": {"dev": "python -m http.server 4173 --bind 127.0.0.1 --directory dist", "qa": "node check_site.mjs"},
+  "devDependencies": {"sharp": "^0.35.5", "playwright": "^1.63.0", "@axe-core/playwright": "^4.11.0"}
 }

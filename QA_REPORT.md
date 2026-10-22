@@ -1,28 +1,18 @@
-# QA report - 2026-10-07
+# Digits Studio verification
 
-Measured against a local production build at `http://localhost:3001` with Lighthouse 12.8.2 and Playwright/axe-core. Scores are lab measurements, not a guarantee for the Vercel deployment.
+Verified locally on 22 October 2026.
 
-| Page and profile | Performance | Accessibility | Best Practices | SEO | LCP | TBT | CLS |
-| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| English home, mobile | 89 | 100 | 100 | 100 | 3.4 s | 120 ms | 0 |
-| Arabic home, mobile | 92 | 100 | 100 | 100 | 3.4 s | 90 ms | 0 |
-| English home, desktop | 100 | 100 | 100 | 100 | 0.7 s | 0 ms | 0 |
+- English and Arabic homepages tested at 360, 768 and 1440 px. No horizontal overflow or browser exceptions observed.
+- Axe WCAG 2 A/AA and 2.1 AA checks returned zero violations on these six homepage combinations.
+- Mobile menu open/close, project-dialog open/Escape close and inquiry composition passed in both languages at all three sizes.
+- Inquiry tests verified literal text rendering, URL encoding, the intended WhatsApp number and the email destination. No inquiry was actually sent.
+- Brand-kit, social-editor and privacy pages tested at 360 and 1440 px. No overflow, browser exceptions or axe violations observed.
+- Social editor generated a PNG download at 1080 x 1350. English and shaped right-to-left Arabic previews were visually reviewed.
+- All local HTML links and anchor targets resolved. The brand directory contained 77 assets at the time of the final check.
+- Four PDFs validated: 12-page brand guide; two-page cards at 91 x 61 mm including bleed; A4 letterhead; A4 proposal cover. Rendered pages reviewed. The final guide logo and pattern pages were re-rendered after refinement.
+- QR decoded successfully from the standalone PNG, the exported card PNG and the rendered card PDF. All three decoded to https://wa.me/96170332361.
+- True black/white logo masters and transparent PNG exports are supplied. Font licenses are bundled.
 
-The requested 95+ mobile Performance target is **not met**. The hero image is prioritized and optimized, but its render time is still the LCP bottleneck in the simulated mobile run. The image remains static while text and project reveals animate; one variable Cairo font serves the Arabic interface. Recheck on the Vercel preview with real hosting and repeat runs before making larger visual tradeoffs.
+Limits: automated accessibility checks do not establish complete WCAG conformance. Print PDFs are RGB proofs, not printer-certified CMYK production files. Ahmad has purchased digitsstudio.online. Trademark clearance and social-handle registration remain separate from domain ownership. No live analytics, backend form delivery, social publishing or advertising service is configured. Contact works by a visitor opening WhatsApp or email and sending the message themselves.
 
-## Passed
-
-- `npm run build`, `npm run lint`, and `npm run typecheck`.
-- `npm run qa`: no horizontal overflow or axe violations on English and Arabic home pages at 360, 768, 1280, and 1920 px; hero image loaded at each size.
-- Key pages and Arabic routes return 200 with one H1 each; historical blog, checklist, privacy, and article paths return 301.
-- Supplied CV returns a valid PDF from `/hire`; Arabic headings use Cairo; reduced-motion mode suppresses decorative animation.
-- Invalid inquiry returns 400 and the honeypot is accepted without delivery; mobile navigation and empty work-filter state work.
-- Visual screenshots inspected for English and Arabic mobile layouts.
-- `npm audit --omit=dev`: zero production vulnerabilities.
-
-## Not yet verified
-
-- Live Formspree delivery and receipt of a real inquiry; do this on the Vercel preview with Ahmad's endpoint before launch.
-- Plausible events and booking URL, because neither is configured.
-- Native Arabic copy review, current availability, project claims, screenshots, and prices listed in `TODO.md`. The résumé details on `/hire` come from the supplied CV.
-- Full `npm audit` currently reports five high-severity advisories in the dev-only `eslint-config-next` dependency chain. Do not apply the suggested downgrade to Next 14 without evaluating compatibility; monitor for an upstream fix.
+Browser outputs and machine reports are stored in qa/ and excluded from the hosted source and ZIP.

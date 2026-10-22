@@ -1,1 +1,6 @@
-*.pdf binary
+* text=auto eol=lf
+*.pdf -text
+*.png -text
+*.ttf -text
+*.zip -text
+*.webp -text

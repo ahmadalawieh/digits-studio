@@ -1,8 +1,0 @@
-# Vercel redirects — clean URLs and redirects for ATOCODE
-
-# Clean URLs (strip .html)
-/blog          /blog.html          200
-/privacy       /privacy.html       200
-
-# 404 fallback
-/*             /404.html           404

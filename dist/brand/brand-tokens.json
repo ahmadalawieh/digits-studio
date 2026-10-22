@@ -1,0 +1,29 @@
+{
+  "brand": "Digits Studio",
+  "tagline": "Make your mark.",
+  "website": "https://digitsstudio.online",
+  "colors": {
+    "yellow": "#FFDA46",
+    "graphite": "#292A32",
+    "white": "#FFFFFF",
+    "mist": "#EEEDF2",
+    "lilac": "#B4A6ED"
+  },
+  "fonts": {
+    "display": "Archivo",
+    "body": "Instrument Sans",
+    "arabic": "Noto Sans Arabic"
+  },
+  "contact": {
+    "name": "Ahmad Alawieh",
+    "phone": "+96170332361",
+    "email": "ahmad.alawieh77@gmail.com",
+    "whatsapp": "https://wa.me/96170332361"
+  },
+  "logo": {
+    "minimumWidthPx": 150,
+    "minimumSymbolPx": 24,
+    "clearSpace": "one quarter of the symbol width",
+    "displayOutlineMinimumWidthPx": 400
+  }
+}

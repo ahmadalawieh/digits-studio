@@ -32,3 +32,7 @@ The first outline-only idea was too fragile for mobile, so add solid wordmarks a
 ## Delivery
 
 SVG/transparent PNG logo family, black/white masters, favicon/avatar, six portrait social posts, three stories, LinkedIn cover, editable templates, QR, business-card front/back and print proof with bleed, A4 stationery/proposal cover, brand guide, brand board and complete ZIP. Website responsive and bilingual; public production website with real WhatsApp/email contact paths. Earlier brand explorations and website sources are preserved in the workspace archive. Production uses digitsstudio.online on Vercel. Existing projects are labelled as previous work by Ahmad, before the Digits Studio launch. Name/domain/handle clearance status recorded in strategy.md.
+
+## Business card refinement / 22 October 2026
+
+Centred on one optical axis, including the wordmark, founder details and enlarged 18 mm WhatsApp QR. Charcoal #292A32 front, signal yellow #FFDA46 wordmark, white #FFFFFF tagline, mist #EEEDF2 reverse, and a flat #3D3B34 enlargement of the original D. Archivo provides the name and wordmark; Instrument Sans provides the contact details. One large D is the memorable element; the fine frame and aligned yellow edge tabs provide a restrained finish. Keep the 85 x 55 mm trim and 3 mm bleed, with important artwork at least 5 mm inside trim.

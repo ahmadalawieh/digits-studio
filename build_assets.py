@@ -1,6 +1,6 @@
 from pathlib import Path
 from io import BytesIO
-import json, shutil, html
+import json, shutil, html, sys
 import qrcode
 from PIL import ImageFont
 from fontTools.ttLib import TTFont
@@ -110,8 +110,39 @@ qrbody=f'<rect width="{n}" height="{n}" fill="white"/>'+''.join(f'<rect x="{x}" 
 write('whatsapp-qr',n,n,qrbody,'WhatsApp Ahmad Alawieh +961 70 332 361')
 
 # Cards: trim 85x55mm; artwork 91x61mm includes 3mm bleed on each side.
-write('business-card-front',910,610,f'<rect width="910" height="610" fill="{Y}"/>'+logo_at(130,155,650)+label('Make your mark.',310,413,35,G,650),'Digits Studio business card front; 3mm bleed')
-write('business-card-back',910,610,f'<rect width="910" height="610" fill="{G}"/>'+label('Ahmad Alawieh',80,82,57,W,750,'Archivo')+label('Founder / Digits Studio',82,158,26,W)+label('Branding. Websites. Marketing.',82,254,28,W)+label('+961 70 332 361',82,348,28,W)+label('ahmad.alawieh77@gmail.com',82,400,28,W)+label('digitsstudio.online',82,449,28,W)+label('Beirut, Lebanon / Working worldwide',82,505,24,W)+f'<svg x="690" y="315" width="140" height="140" viewBox="0 0 {n} {n}">{qrbody}</svg>'+label('WhatsApp',696,475,20,W),'Digits Studio contact card; 3mm bleed')
+def card_center(text,y,size,color=G,weight=500,family='InstrumentSans',tracking=0):
+    body,width,_=outlined(text,size,color,family,weight,tracking)
+    return f'<g transform="translate({455-width/2:.3f} {y})">{body}</g>'
+
+def card_logo(y,width):
+    import xml.etree.ElementTree as ET
+    art=logo(Y);native_width=float(ET.fromstring(art).get('width'))
+    body=art.split('>',1)[1].rsplit('</svg>',1)[0]
+    return f'<g transform="translate({455-width/2} {y}) scale({width/native_width})">{body}</g>'
+
+# Centre by visible letter bounds, so long contact lines and short captions share one axis.
+# The complete mark remains untouched; a low-contrast enlargement supplies the front texture.
+front=f'<rect width="910" height="610" fill="{G}"/>'
+front+=mark('#3D3B34',93.625,-62.5,735)
+front+=f'<rect x="64" y="64" width="782" height="482" rx="2" fill="none" stroke="#55565D" stroke-width="1.5"/>'
+front+=f'<path d="M438 0H472V65H438Z M438 545H472V610H438Z" fill="{Y}"/>'
+front+=card_logo(204,550)
+front+=card_center('Make your mark.',398,30,W,550)
+front+=card_center('Branding. Websites. Marketing.',468,23,Y,550)
+front+=card_center('Beirut, Lebanon / Working worldwide',508,19,M,450)
+write('business-card-front',910,610,front,'Digits Studio centred charcoal business card front; 3mm bleed')
+
+back=f'<rect width="910" height="610" fill="{M}"/>'
+back+=f'<path d="M425 0H485V49H425Z" fill="{Y}"/>'
+back+=card_center('Ahmad Alawieh',95,48,G,750,'Archivo')
+back+=card_center('Founder / Digits Studio',157,24,G,500)
+back+=f'<rect x="410" y="192" width="90" height="3" fill="{Y}"/>'
+back+=card_center('+961 70 332 361',206,30,G,550)
+back+=card_center('ahmad.alawieh77@gmail.com',246,28,G,450)
+back+=card_center('digitsstudio.online',286,32,G,650)
+back+=card_center('Connect on WhatsApp',326,19,G,500)
+back+=f'<g transform="translate(365 348) scale({180/n})">{qrbody}</g>'
+write('business-card-back',910,610,back,'Digits Studio centred contact card with WhatsApp QR; 3mm bleed')
 write('letterhead',794,1123,f'<rect width="794" height="1123" fill="{W}"/>'+logo_at(60,55,215)+f'<rect x="0" y="0" width="794" height="12" fill="{Y}"/>'+label('Digits Studio',60,1012,14,G,650)+label('+961 70 332 361',60,1040,12)+label('ahmad.alawieh77@gmail.com',270,1040,12)+label('Beirut, Lebanon',610,1040,12)+label('digitsstudio.online',60,1066,12),'Digits Studio blank A4 letterhead template')
 write('proposal-cover',794,1123,f'<rect width="794" height="1123" fill="{Y}"/>'+logo_at(60,60,280)+mark(G,405,270,425)+label('The next',60,718,80,G,800,'Archivo')+label('chapter.',60,812,80,G,800,'Archivo')+label('Project proposal',62,953,25,G,600)+label('Prepared by Digits Studio',62,1010,16),'Digits Studio reusable A4 proposal cover')
 
@@ -126,7 +157,17 @@ def pdf_from_svgs(names,path,size):
         sx=size[0]/drawing.width;sy=size[1]/drawing.height
         c.saveState();c.scale(sx,sy);renderPDF.draw(drawing,c,0,0);c.restoreState();c.showPage()
     c.save()
+    if names==['business-card-front','business-card-back']:
+        from pypdf import PdfReader,PdfWriter
+        from pypdf.generic import RectangleObject
+        reader=PdfReader(path);writer=PdfWriter()
+        writer.clone_document_from_reader(reader)
+        for page in writer.pages:
+            page.trimbox=RectangleObject([3*mm,3*mm,88*mm,58*mm])
+            page.bleedbox=RectangleObject([0,0,91*mm,61*mm])
+        buffer=BytesIO();writer.write(buffer);path.write_bytes(buffer.getvalue())
 pdf_from_svgs(['business-card-front','business-card-back'],ROOT/'output'/'pdf'/'business-cards-print-proof.pdf',(91*mm,61*mm))
-pdf_from_svgs(['letterhead'],ROOT/'output'/'pdf'/'letterhead-a4.pdf',(210*mm,297*mm))
-pdf_from_svgs(['proposal-cover'],ROOT/'output'/'pdf'/'proposal-cover-a4.pdf',(210*mm,297*mm))
-print('Vector identity, social artwork and three print PDFs created.')
+if '--cards-only' not in sys.argv:
+    pdf_from_svgs(['letterhead'],ROOT/'output'/'pdf'/'letterhead-a4.pdf',(210*mm,297*mm))
+    pdf_from_svgs(['proposal-cover'],ROOT/'output'/'pdf'/'proposal-cover-a4.pdf',(210*mm,297*mm))
+print('Vector identity, social artwork and '+('card print PDF' if '--cards-only' in sys.argv else 'three print PDFs')+' created.')

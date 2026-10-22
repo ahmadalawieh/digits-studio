@@ -14,7 +14,7 @@ with zipfile.ZipFile(R/'digits-studio-complete.zip','w',zipfile.ZIP_DEFLATED) as
     for p in sorted(R.rglob('*')):
         if not p.is_file():continue
         rel=p.relative_to(R)
-        if any(part in {'.git','qa','__pycache__','node_modules','.sites-runtime','.openai','.vercel','.publish','archive'} for part in rel.parts):continue
+        if any(part in {'.git','qa','__pycache__','node_modules','.sites-runtime','.openai','.vercel','.publish','archive','profile-setup'} for part in rel.parts):continue
         if (p.suffix=='.zip' and p.parent!=B) or p.name.endswith('.tar.gz'):continue
         z.write(p,'Digits Studio/'+rel.as_posix())
 print('Hosted brand kit and complete source handoff ZIPs created.')

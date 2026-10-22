@@ -22,4 +22,10 @@ await board.composite([
  {...await thumb('post-04-marketing.svg',324,420,'#B4A6ED'),left:1444,top:466},
  {...await thumb('linkedin-cover.svg',1736,386,'#FFDA46'),left:32,top:932},
 ]).png().toFile(path.join(root,'brand-board.png'));
+// Both faces at final trim, on a neutral presentation field; print masters retain bleed.
+const cardPreview=async(name)=>sharp(path.join(brand,name+'.png')).extract({left:60,top:60,width:1700,height:1100}).resize({width:1060}).toBuffer();
+await sharp({create:{width:2400,height:900,channels:3,background:'#E4E4EA'}}).composite([
+ {input:await cardPreview('business-card-front'),left:90,top:107},
+ {input:await cardPreview('business-card-back'),left:1250,top:107}
+]).png().toFile(path.join(brand,'business-cards-preview.png'));
 console.log('Transparent PNG exports and brand board ready.');

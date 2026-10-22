@@ -18,3 +18,5 @@ Limits: automated accessibility checks do not establish complete WCAG conformanc
 Browser outputs and machine reports are stored in qa/ and excluded from the hosted source and ZIP.
 
 Production launch: Vercel Ready; apex and www Valid Configuration. Production HTML/CSS/JS, sitemap, robots and PDF guide matched source. Brand ZIP returned HTTP 200 and the expected length. Old domains redirect permanently to digitsstudio.online. See DEPLOYMENT.md.
+
+Business card refinement: centred front and reverse; enlarged 18 mm QR decoded from both PNG and rendered PDF to the intended WhatsApp URL. The two-page vector proof has 85 x 55 mm TrimBox and 3 mm bleed. Both proof pages and the updated guide card spread were visually reviewed.

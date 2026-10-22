@@ -26,7 +26,9 @@ def para(s,x,y,width,size=16,color=G):
     style=ParagraphStyle('p',fontName='Body',fontSize=size,leading=size*1.5,textColor=HexColor(color),spaceAfter=0)
     p=Paragraph(s,style);w,h=p.wrap(width,PH);p.drawOn(c,x,PH-y-h);return h
 def asset(name,x,y,width,maxh=999):
-    d=svg2rlg(str(B/(name+'.svg')));scale=min(width/d.width,maxh/d.height);c.saveState();c.translate(x,PH-y-d.height*scale);c.scale(scale,scale);renderPDF.draw(d,c,0,0);c.restoreState()
+    d=svg2rlg(str(B/(name+'.svg')));scale=min(width/d.width,maxh/d.height);c.saveState();c.translate(x,PH-y-d.height*scale);c.scale(scale,scale)
+    clip=c.beginPath();clip.rect(0,0,d.width,d.height);c.clipPath(clip,stroke=0,fill=0)
+    renderPDF.draw(d,c,0,0);c.restoreState()
 def page(title,sub='',bg=W):
     global page_no
     page_no+=1;box(0,0,PW,PH,bg);text('Digits Studio / Brand guide',48,25,11,'Bold');text(f'{page_no:02d}',885,25,11,'Bold');text(title,48,78,43,'Display')

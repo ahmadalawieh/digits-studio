@@ -12,7 +12,8 @@
   "fonts": {
     "display": "Archivo",
     "body": "Instrument Sans",
-    "arabic": "Noto Sans Arabic"
+    "arabic": "IBM Plex Sans Arabic",
+    "arabicSocial": "Noto Sans Arabic"
   },
   "contact": {
     "name": "Ahmad Alawieh",

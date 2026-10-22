@@ -54,7 +54,7 @@ para('Use graphite text on yellow, lilac, grey or white. Use white or yellow tex
 page('Type that speaks clearly.','Licensed font files and their SIL Open Font License documents are supplied in assets/fonts/.')
 text('Archivo',50,210,56,'Display');para('Headlines and the wordmark. Strong, compact and direct. Use weight 700-850 for the largest statements.',50,290,390,17)
 text('Instrument Sans',510,218,37,'Body');para('Reading, navigation and contact details. Use regular and medium weights, with generous line spacing and short paragraphs.',510,290,390,17)
-box(50,417,860,112,M);para('<b>Arabic:</b> Noto Sans Arabic. Arabic website pages use right-to-left layouts, logical spacing and room for the script to breathe.<br/><br/>Logo SVG masters contain outlined paths. The separate live-text alternative needs the supplied fonts installed.',72,436,810,15);end()
+box(50,417,860,112,M);para('<b>Arabic:</b> IBM Plex Sans Arabic on the website, with clear connected forms, right-to-left layouts and generous leading. Noto Sans Arabic remains available for the social editor.<br/><br/>Logo SVG masters contain outlined paths. The separate live-text alternative needs the supplied fonts installed.',72,436,810,15);end()
 page('A mark that does the work.','The original open D supplies a recognisable frame and shape across the identity.')
 asset('symbol',60,215,250);asset('pattern',390,205,240,260);box(690,205,220,260,G);asset('symbol-yellow',720,250,160)
 para('Keep the opening clear. Crop the symbol boldly in large compositions, but leave the complete logo intact in the signature. Do not stretch it, add gradients, invent 3D effects or place it on low-contrast backgrounds.',50,492,840,16);end()

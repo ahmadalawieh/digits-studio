@@ -9,7 +9,7 @@ Published on Vercel, 22 October 2026.
 - Repository: https://github.com/ahmadalawieh/digits-studio
 - Vercel project: https://vercel.com/ahmadalawiehs-projects/digits-studio
 
-Pushes to `main` deploy automatically. Vercel runs `node validate-production.mjs` and publishes `dist/`. Generated assets are committed; Python and image-generation tools are only needed when rebuilding those assets locally.
+Pushes to `main` deploy automatically. Vercel runs `node build_public_kit.mjs && node validate-production.mjs` and publishes `dist/`. The downloadable brand-kit ZIP is generated from the committed source during each build, so no archive binary needs to be uploaded through Git. Generated assets are committed; Python and image-generation tools are only needed when rebuilding those assets locally.
 
 Namecheap BasicDNS remains authoritative. Website records configured from Vercel's project-specific values:
 

@@ -32,14 +32,16 @@ Portfolio work is previous website work by Ahmad before Digits Studio's launch. 
 
 User approved Digits Studio, singular. The name is not legally cleared; similar Digits businesses exist. Ahmad has purchased digitsstudio.online and authorized public production deployment to Vercel. Social handles remain unreserved. See strategy.md for research sources and launch checks.
 
-Fonts: Archivo, Instrument Sans and Noto Sans Arabic, with included SIL OFL licenses. Wordmark lettering uses licensed Archivo outlines plus an original D; the font is not claimed as a custom-designed typeface. The submitted image supplied visual direction; no AI-generation badge is retained.
+Fonts: Archivo and Instrument Sans, with IBM Plex Sans Arabic for the website and Noto Sans Arabic for the social editor. SIL OFL licenses are included. Wordmark lettering uses licensed Archivo outlines plus an original D; the font is not claimed as a custom-designed typeface. The submitted image supplied visual direction; no AI-generation badge is retained.
 
 ## Editing and rebuilding
 
-Edit website copy/layout in `build_site.py`; edit styling in `dist/assets/site.css` and interactions in `dist/assets/site.js`. Run `python build_site.py` after copy changes. English and Arabic stay separate for clear routing and SEO.
+Edit website copy/layout in `build_site.py`; edit base styling in `dist/assets/site.css`, the motion direction and RTL refinements in `dist/assets/motion.css`, and interactions in `dist/assets/site.js`. Run `python build_site.py` after copy changes. English and Arabic stay separate for clear routing and SEO.
 
 Asset sources: `build_assets.py` creates vectors and three print PDFs; `export_assets.mjs` creates PNGs and brand board; `build_guide.py` creates the identity guide; `build_showcase.py` creates the review page. The source package includes fonts and project captures. All fonts, project captures and rebuild dependencies belong to this project; no previous-brand checkout is required.
 
 For a fresh machine, install Python packages `fonttools pillow qrcode reportlab svglib pypdf brotli`, then `npm install` for Sharp/Playwright/axe. Rebuild in this order: `python build_assets.py`, `node export_assets.mjs`, `python build_guide.py`, `python build_site.py`, `python build_showcase.py`, `python package_kit.py`. Re-run QA when changing the files it exercises.
 
 QA: `node check_site.mjs` against the server checks English and Arabic at 360, 768 and 1440 px, overflow, browser errors, axe WCAG checks, mobile navigation, project dialogs and inquiry encoding. `node check_extras.mjs` checks the brand page, social editor, generated downloads and internal static links. Automated checks do not replace manual keyboard and visual review.
+
+Website motion: one short hero arrival, selectable real project previews, browser-window project interactions, animated native service accordions and dialog transitions. All seven sections retain their original order. Reduced-motion settings remove animation; keyboard and touch interactions remain available. IBM Plex Sans Arabic is served locally as WOFF2, with 400/500/600/700 weights, zero Arabic tracking and a separate reading scale.

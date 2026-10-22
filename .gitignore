@@ -1,7 +1,6 @@
 qa/
 output/
 *.zip
-!dist/brand/digits-studio-brand-kit.zip
 *.tar.gz
 *.tsbuildinfo
 node_modules/

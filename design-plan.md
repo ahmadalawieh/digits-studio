@@ -36,3 +36,18 @@ SVG/transparent PNG logo family, black/white masters, favicon/avatar, six portra
 ## Business card refinement / 22 October 2026
 
 Centred on one optical axis, including the wordmark, founder details and enlarged 18 mm WhatsApp QR. Charcoal #292A32 front, signal yellow #FFDA46 wordmark, white #FFFFFF tagline, mist #EEEDF2 reverse, and a flat #3D3B34 enlargement of the original D. Archivo provides the name and wordmark; Instrument Sans provides the contact details. One large D is the memorable element; the fine frame and aligned yellow edge tabs provide a restrained finish. Keep the 85 x 55 mm trim and 3 mm bleed, with important artwork at least 5 mm inside trim.
+
+## Website motion revamp / 22 October 2026
+
+Palette remains Signal yellow #FFDA46, Graphite #292A32, White #FFFFFF, Mist #EEEDF2 and Lilac #B4A6ED. Archivo remains the English display face and Instrument Sans the reading face. IBM Plex Sans Arabic (400/500/600/700, locally hosted with SIL OFL) becomes the website Arabic family. Arabic uses generous line height, no letter spacing, natural connected words, right alignment and isolated Latin names.
+
+Layout: preserve header, hero, selected work, services, studio, process, FAQ, inquiry and footer in their existing order. Desktop uses an asymmetric headline / D-and-work composition. Mobile stacks the same content without horizontal scrolling; Arabic mirrors logical alignment.
+
+[Headline + inquiry CTA] [D mark + project window]
+[Agency services       | selectable real previews]
+[Featured work spanning two columns, then two projects]
+[Service accordion copy | matching identity/web/campaign visual]
+[Studio identity panel | direct founder introduction]
+[Process] [FAQ] [Large invitation + inquiry form]
+
+Critique and decision: endless marquees, particles and generic section fades do not communicate this studio's work. Use the original D for one arrival sequence and let project selection, preview focus, service opening and dialog opening drive subsequent motion. Preserve native scrolling, keyboard use and reduced-motion behavior. Do not animate individual Arabic letters or invent portrait photography.

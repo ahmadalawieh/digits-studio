@@ -20,3 +20,5 @@ Browser outputs and machine reports are stored in qa/ and excluded from the host
 Production launch: Vercel Ready; apex and www Valid Configuration. Production HTML/CSS/JS, sitemap, robots and PDF guide matched source. Brand ZIP returned HTTP 200 and the expected length. Old domains redirect permanently to digitsstudio.online. See DEPLOYMENT.md.
 
 Business card refinement: centred front and reverse; enlarged 18 mm QR decoded from both PNG and rendered PDF to the intended WhatsApp URL. The two-page vector proof has 85 x 55 mm TrimBox and 3 mm bleed. Both proof pages and the updated guide card spread were visually reviewed.
+
+Website motion revamp: original section order and palette retained. English and Arabic checked at 360/768/1440 px with zero automated accessibility violations, overflow or browser exceptions. Project selectors route all three previews to the correct dialogs; service accordions work with keyboard and reduced motion. Locally hosted IBM Plex Sans Arabic weights load successfully. Motion and font requests return no failed responses. Machine evidence: qa/motion-report.json.

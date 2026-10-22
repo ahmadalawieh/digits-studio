@@ -2,7 +2,7 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
   "installCommand": "npm ci --omit=dev --ignore-scripts",
-  "buildCommand": "node validate-production.mjs",
+  "buildCommand": "node build_public_kit.mjs && node validate-production.mjs",
   "outputDirectory": "dist",
   "cleanUrls": true,
   "redirects": [

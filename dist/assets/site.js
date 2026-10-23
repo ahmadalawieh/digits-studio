@@ -81,6 +81,20 @@
     detailAnimations.clear();
     previewImage?.getAnimations().forEach(animation=>animation.cancel());
   });
+  const projectCards=[...document.querySelectorAll('[data-project-card]')];
+  document.querySelectorAll('[data-project-filter]').forEach(button=>button.addEventListener('click',()=>{
+    const category=button.dataset.projectFilter,ar=document.documentElement.lang==='ar';let count=0;
+    document.querySelectorAll('[data-project-filter]').forEach(other=>other.setAttribute('aria-pressed',String(other===button)));
+    projectCards.forEach(card=>{
+      const visible=category==='all'||card.dataset.services.split(' ').includes(category);card.hidden=!visible;if(!visible)return;count++;
+      const route=card.querySelector('.project-route');if(!route)return;
+      const image=route.querySelector('[data-project-image]'),src=route.getAttribute('data-image-'+category),href=route.getAttribute('data-href-'+category);
+      route.href=href;card.querySelector('.project-detail-route').href=href;
+      image.src=src;image.alt=card.querySelector('h3').textContent+' / '+(ar?{all:'معاينة المشروع',branding:'الهوية',website:'الموقع',marketing:'الحملة'}:{all:'project preview',branding:'brand identity',website:'website',marketing:'campaign'})[category];
+      card.dataset.preview=category;
+    });
+    document.querySelector('#project-filter-status').textContent=ar?`عرض ${count} من المشاريع — ${{all:'كل المشاريع',branding:'الهوية',website:'المواقع',marketing:'التسويق'}[category]}`:`Showing ${count} projects — ${{all:'all projects',branding:'branding',website:'websites',marketing:'marketing'}[category]}.`;
+  }));
   const form=document.getElementById('inquiry-form');
   form?.querySelectorAll('input[required],textarea[required]').forEach(input=>{
     input.addEventListener('input',()=>input.setCustomValidity(''));

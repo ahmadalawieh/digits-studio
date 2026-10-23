@@ -35,7 +35,7 @@ for(const slug of ['fornaya','riwa-grove']){
   await page.close();
  }
 }
-for(const slug of ['fornaya','riwa-grove'])for(const width of [360,768,1440])for(const prefix of ['', '/ar']){
+for(const slug of ['fornaya','riwa-grove','dar-saha','paceform'])for(const width of [360,768,1440])for(const prefix of ['', '/ar']){
  const page=await context.newPage(),route=prefix+'/projects/'+slug+'/',errors=[],missing=[];
  await page.setViewportSize({width,height:900});page.on('pageerror',e=>errors.push(e.message));page.on('response',r=>{if(r.status()>=400)missing.push(r.url());});await page.goto(base+route);await page.evaluate(()=>document.fonts.ready);await page.locator('.case-hero-image').evaluate(img=>img.decode());
  await page.evaluate(async()=>{await Promise.all([...document.images].map(img=>{img.loading='eager';return img.decode().catch(()=>{});}));});
@@ -43,7 +43,7 @@ for(const slug of ['fornaya','riwa-grove'])for(const width of [360,768,1440])for
  const overflow=await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth);report.push({route,width,errors,missing,overflow,violations});if(errors.length||missing.length||overflow||violations.length)failed=true;
  await page.screenshot({path:`qa/concepts/${slug}-case-${width}-${prefix?'ar':'en'}.png`,fullPage:true});await page.close();
 }
-for(const slug of ['fornaya','riwa-grove'])for(const file of ['brand-guide.html','welcome-email.html']){
+for(const slug of ['fornaya','riwa-grove','dar-saha','paceform'])for(const file of ['brand-guide.html','welcome-email.html']){
  const page=await context.newPage();await page.setViewportSize({width:360,height:900});await page.goto(base+'/concepts/'+slug+'/'+file);const violations=(await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa']).analyze()).violations.map(v=>({id:v.id,targets:v.nodes.map(n=>n.target)}));const overflow=await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth);report.push({route:'/concepts/'+slug+'/'+file,width:360,overflow,violations});if(overflow||violations.length)failed=true;await page.close();
 }
 await browser.close();await fs.writeFile('qa/concepts-report.json',JSON.stringify(report,null,2));console.log(JSON.stringify({pages:report.length,failed,issues:report.filter(r=>r.overflow||r.errors?.length||r.missing?.length||r.violations.length)},null,2));if(failed)process.exitCode=1;

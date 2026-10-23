@@ -1,0 +1,146 @@
+{
+  "name": "Dar Saha",
+  "arName": "دار ساحة",
+  "kind": "A boutique Lebanese guesthouse",
+  "arKind": "دار ضيافة لبنانية",
+  "dark": "#174A83",
+  "light": "#F7F4E9",
+  "accent": "#D6BB82",
+  "white": "#FFFFFF",
+  "ink": "#172E45",
+  "display": "Fraunces",
+  "logoWeight": 500,
+  "experience": true,
+  "products": [],
+  "categories": [],
+  "headline": "Make room\nfor a slower day.",
+  "arHeadline": "مساحة\nلتأخذ وقتك.",
+  "intro": "Stone, sunlight and a little space to yourself. A guesthouse concept inspired by the quieter side of Lebanon.",
+  "arIntro": "حجر وشمس ومساحة لك. تصوّر لدار ضيافة مستوحاة من الجانب الهادئ للبنان.",
+  "brief": "Build a small hospitality brand around the feeling of arriving somewhere unhurried. Connect the courtyard-inspired identity, guest stationery, room discovery and a simple stay-planning journey.",
+  "arBrief": "تصميم علامة ضيافة صغيرة حول شعور الوصول إلى مكان هادئ. تربط الهوية المستوحاة من الساحة بين مطبوعات الضيوف، واكتشاف الغرف، وتجربة بسيطة لتخطيط الإقامة.",
+  "audience": "Weekend travellers, couples and Lebanese visitors looking for a thoughtful short escape.",
+  "arAudience": "مسافرو عطلة نهاية الأسبوع، والأزواج، وزوّار لبنان الباحثون عن استراحة قصيرة ومدروسة.",
+  "strategy": "An open courtyard and an arched doorway form the symbol. Cobalt comes from shutters and glazed tiles; chalk and honey stone bring warmth. Spacious serif lettering gives the guesthouse an inviting, quietly established voice.",
+  "arStrategy": "ساحة مفتوحة وباب مقوّس يصنعان الرمز. يستوحي الأزرق لونه من المصاريع والبلاط، ويضيف الأبيض الحجري والرملي دفئاً. تمنح الحروف الرحبة الدار صوتاً هادئاً ومرحباً.",
+  "storyTitle": "A stay with\nspace around it.",
+  "arStoryTitle": "إقامة\nتتّسع للهدوء.",
+  "story": "The idea starts with a shaded courtyard, a long breakfast and a view worth leaving your phone for. Dar Saha turns those moments into a considered guest experience, from first discovery to a stay plan.",
+  "arStory": "تبدأ الفكرة من ساحة مظلّلة، وفطور بلا استعجال، وإطلالة تستحق أن تترك هاتفك لأجلها. تحوّل دار ساحة هذه اللحظات إلى تجربة ضيافة مدروسة، من الاكتشاف إلى تخطيط الإقامة.",
+  "campaignTitle": "Stay for the slower part.",
+  "arCampaignTitle": "ابقَ للوقت الأهدأ.",
+  "campaignIdea": "A hospitality launch that introduces a feeling before a room: the courtyard, the morning light and the small rituals of a weekend away. Room discovery and a welcome email provide the next step.",
+  "arCampaignIdea": "إطلاق يقدّم الشعور قبل الغرفة: الساحة، وضوء الصباح، وتفاصيل عطلة قصيرة. يكمل اكتشاف الغرف ورسالة الترحيب الخطوة التالية.",
+  "measure": "Room-detail views, stay-plan completions and return visits. These are proposed measures; there are no real bookings or campaign results.",
+  "arMeasure": "مشاهدات تفاصيل الغرف، وإكمال خطط الإقامة، والزيارات المتكررة. هذه معايير مقترحة دون حجوزات حقيقية أو نتائج حملات.",
+  "posts": [
+    [
+      "Make room\nfor a slower day.",
+      "Dar Saha / A guesthouse concept."
+    ],
+    [
+      "A softer\nstart to the day.",
+      "Stone, sunlight and space to yourself."
+    ],
+    [
+      "Leave a little\nroom for quiet.",
+      "Explore the rooms. Plan a slower weekend."
+    ]
+  ],
+  "stories": [
+    [
+      "مساحة\nلتأخذ وقتك.",
+      "دار ساحة / تصوّر لضيافة هادئة."
+    ],
+    [
+      "ابقَ للوقت\nالأهدأ.",
+      "غرف مدروسة ولحظات بسيطة."
+    ]
+  ],
+  "emailSubject": "A little room for a slower day.",
+  "emailBody": "Step into the Dar Saha concept: a shaded courtyard, thoughtful rooms and a slower morning. Explore the guesthouse and put together a sample stay plan. This preview creates no booking or subscription.",
+  "plan": [
+    [
+      "Week 1",
+      "Introduce the courtyard feeling",
+      "Terrace post / identity story",
+      "Discovery"
+    ],
+    [
+      "Week 2",
+      "Explore the rooms",
+      "Room creative / room-detail page",
+      "Room-detail views"
+    ],
+    [
+      "Week 3",
+      "Imagine a slower weekend",
+      "Stay-planning creative / welcome email",
+      "Stay-plan completions"
+    ],
+    [
+      "Week 4",
+      "Return to the morning ritual",
+      "Editorial story / reminder creative",
+      "Return visits"
+    ]
+  ],
+  "arPlan": [
+    [
+      "الأسبوع ١",
+      "التعريف بشعور الساحة",
+      "منشور الشرفة / قصة الهوية",
+      "الاكتشاف"
+    ],
+    [
+      "الأسبوع ٢",
+      "اكتشاف الغرف",
+      "تصميم الغرفة / تفاصيل الإقامة",
+      "مشاهدات الغرف"
+    ],
+    [
+      "الأسبوع ٣",
+      "تصوّر عطلة هادئة",
+      "تصميم التخطيط / رسالة ترحيب",
+      "إكمال خطط الإقامة"
+    ],
+    [
+      "الأسبوع ٤",
+      "العودة إلى طقس الصباح",
+      "قصة بصرية / تصميم تذكيري",
+      "الزيارات المتكررة"
+    ]
+  ],
+  "tagline": "Make room for a slower day.",
+  "arTagline": "مساحة لتأخذ وقتك.",
+  "applicationLine": "A considered welcome.",
+  "arApplicationLine": "ترحيب مدروس.",
+  "boardLine": "A courtyard. A welcome. A slower day.",
+  "websiteDescription": "Explore room details, select a sample arrival date and number of nights, and build a stay plan with a calculated estimate. Available in English and Arabic.",
+  "arWebsiteDescription": "استكشف تفاصيل الغرف، واختر موعد وصول وعدد ليالٍ، وجهّز خطة إقامة بتكلفة تقديرية محسوبة. التجربة بالعربية والإنجليزية.",
+  "rooms": [
+    {
+      "id": "courtyard",
+      "name": "The Courtyard Room",
+      "ar": "غرفة الساحة",
+      "description": "Soft linen, honey stone and a quiet place to begin the day.",
+      "arDescription": "كتّان ناعم وحجر دافئ ومساحة هادئة لبداية اليوم.",
+      "price": 145,
+      "size": "28 m²",
+      "guests": 2,
+      "image": "room.webp"
+    },
+    {
+      "id": "terrace",
+      "name": "The Terrace Suite",
+      "ar": "جناح الشرفة",
+      "description": "A little more room, with a private terrace for unhurried mornings.",
+      "arDescription": "مساحة أرحب وشرفة خاصة لصباح بلا استعجال.",
+      "price": 195,
+      "size": "42 m²",
+      "guests": 2,
+      "image": "hero.webp"
+    }
+  ],
+  "slug": "dar-saha"
+}

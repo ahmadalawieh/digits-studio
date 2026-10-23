@@ -1,0 +1,30 @@
+{
+  "mode": "built-in image_gen",
+  "date": "2026-10-23",
+  "images": [
+    {
+      "key": "dar-saha-hero",
+      "prompt": "Use case: photorealistic-natural. Create an original high-end boutique hospitality photograph for DAR SAHA, a fictional Lebanese guesthouse concept. A quiet Lebanese mountain stone house terrace, pale honey limestone arches and carved timber doors, a small rectangular turquoise plunge pool in the foreground, two woven loungers, subtle blue striped textiles, mountain and cedar foothill view at golden late afternoon. Authentic lived-in material detail, refined Mediterranean architecture editorial photography, 35mm lens, no people, no text, logos, signs, awards or watermarks. Wide landscape composition, sophisticated deep cobalt, chalk, honey stone and natural green colour atmosphere. This is a fictional architectural scene, do not portray an identifiable real hotel.",
+      "source": "C:\\Users\\Ahmad\\.codex\\generated_images\\01a1638d-42d7-7483-ab1a-c7a27bd80441\\exec-82e5bd4e-6cd3-4687-9832-3a4bb3d76641.png",
+      "productionPath": "dist/assets/concepts/dar-saha/hero.webp"
+    },
+    {
+      "key": "dar-saha-room",
+      "prompt": "Use case: photorealistic-natural. Original boutique guesthouse bedroom photograph for a fictional Lebanese hospitality portfolio concept DAR SAHA. Tactile linen double bed, cream plaster and exposed limestone wall, honey timber joinery, deep cobalt blue striped cushion and quilt edge, quiet reading chair, soft sunlight through an arched window with mountain view. Intimate and believable room scale, elegant unstaged commercial architecture photography, natural linen textures and thoughtful small details, wide landscape 3:2. No text, branding, people, watermarks, awards or identifiable actual hotel.",
+      "source": "C:\\Users\\Ahmad\\.codex\\generated_images\\01a1638d-42d7-7483-ab1a-c7a27bd80441\\exec-bf902542-705f-465d-a456-213aa7d2df3f.png",
+      "productionPath": "dist/assets/concepts/dar-saha/room.webp"
+    },
+    {
+      "key": "paceform-hero",
+      "prompt": "Use case: photorealistic-natural. Original commercial editorial photograph for PACEFORM, a fictional contemporary movement and strength studio in Beirut. Two adult athletes, a woman and a man in their late twenties with natural Mediterranean appearance, concentrating on a coached strength exercise in a bright cobalt-blue and white industrial fitness studio. One performs a controlled kettlebell goblet squat in foreground, one resting by a white bench behind; believable anatomy, athletic clothing in white and blue, matte silver equipment, clear daylight, dynamic asymmetrical composition, crisp tactile editorial sport photography, wide landscape. No body transformations, no excessive muscles, no slogans, logos, signage, medical claims or watermarks. Friendly, capable, inclusive atmosphere.",
+      "source": "C:\\Users\\Ahmad\\.codex\\generated_images\\01a1638d-42d7-7483-ab1a-c7a27bd80441\\exec-094c9cd7-d57a-453c-a7bf-36d5734e5962.png",
+      "productionPath": "dist/assets/concepts/paceform/hero.webp"
+    },
+    {
+      "key": "paceform-studio",
+      "prompt": "Use case: photorealistic-natural. Create an original landscape architectural/editorial photograph of a fictional boutique movement studio, PACEFORM. Bright white room, bold cobalt blue structural columns and one wall, blue exercise mats neatly arranged with a few silver dumbbells, light grey concrete floor, large sunlit industrial windows, mirror reflecting empty studio accurately, a short row of reformer equipment at far side. Small premium fitness studio with believable scale, clean geometric perspective, natural daylight. No people, no text, no logos, no watermarks. Sporty confident atmosphere, no acid neon or dark gym aesthetic.",
+      "source": "C:\\Users\\Ahmad\\.codex\\generated_images\\01a1638d-42d7-7483-ab1a-c7a27bd80441\\exec-ba635dee-7467-4abb-8544-4406854734c5.png",
+      "productionPath": "dist/assets/concepts/paceform/studio.webp"
+    }
+  ]
+}

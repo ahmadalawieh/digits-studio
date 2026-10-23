@@ -1,0 +1,61 @@
+{
+  "clients": [
+    {
+      "name": "B1 Ventures",
+      "file": "b1-ventures.png",
+      "url": "https://b1-ventures.com/",
+      "en": "A public website. A private investor experience.",
+      "ar": "موقع تعريفي وتجربة خاصة للمستثمرين.",
+      "role": "Full-stack development",
+      "arRole": "تطوير الواجهة والخلفية",
+      "detail": "A branded website and a WordPress investor portal with individual dashboards, documents and account information.",
+      "arDetail": "موقع وهوية رقمية وبوابة للمستثمرين على ووردبريس، تضم لوحات خاصة ومستندات ومعلومات الحساب.",
+      "slug": "b1-ventures",
+      "services": [
+        "website"
+      ],
+      "status": "Previous client work",
+      "arStatus": "عمل سابق لعميل"
+    },
+    {
+      "name": "Kaizen Firm",
+      "file": "kaizen-firm.png",
+      "url": "https://kaizen-firm.com/",
+      "en": "Recruitment, across three languages.",
+      "ar": "التوظيف بثلاث لغات.",
+      "role": "Design and development",
+      "arRole": "التصميم والتطوير",
+      "detail": "A recruitment website with English, Arabic and French content paths for candidates and business clients.",
+      "arDetail": "موقع للتوظيف بمسارات محتوى بالإنجليزية والعربية والفرنسية، للمرشحين والشركات.",
+      "slug": "kaizen-firm",
+      "services": [
+        "website"
+      ],
+      "status": "Previous client work",
+      "arStatus": "عمل سابق لعميل"
+    },
+    {
+      "name": "Umbrella500",
+      "file": "umbrella500.png",
+      "url": "https://www.umbrella500.com/",
+      "en": "A clearer presence for a venture studio.",
+      "ar": "حضور أوضح لاستوديو مشاريع.",
+      "role": "UI and front-end development",
+      "arRole": "تصميم الواجهة وتطويرها",
+      "detail": "Responsive front-end development, considered motion and clearer communication for a venture studio.",
+      "arDetail": "تطوير واجهة متجاوبة وحركة مدروسة وعرض أوضح لخدمات استوديو المشاريع.",
+      "slug": "umbrella500",
+      "services": [
+        "website"
+      ],
+      "status": "Previous client work",
+      "arStatus": "عمل سابق لعميل"
+    }
+  ],
+  "concepts": [
+    "fornaya",
+    "riwa-grove",
+    "dar-saha",
+    "paceform"
+  ]
+}

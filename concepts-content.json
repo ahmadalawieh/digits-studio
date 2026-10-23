@@ -347,5 +347,338 @@
         "العودة ونقرات البريد"
       ]
     ]
+  },
+  "dar-saha": {
+    "name": "Dar Saha",
+    "arName": "دار ساحة",
+    "kind": "A boutique Lebanese guesthouse",
+    "arKind": "دار ضيافة لبنانية",
+    "dark": "#174A83",
+    "light": "#F7F4E9",
+    "accent": "#D6BB82",
+    "white": "#FFFFFF",
+    "ink": "#172E45",
+    "display": "Fraunces",
+    "logoWeight": 500,
+    "experience": true,
+    "products": [],
+    "categories": [],
+    "headline": "Make room\nfor a slower day.",
+    "arHeadline": "مساحة\nلتأخذ وقتك.",
+    "intro": "Stone, sunlight and a little space to yourself. A guesthouse concept inspired by the quieter side of Lebanon.",
+    "arIntro": "حجر وشمس ومساحة لك. تصوّر لدار ضيافة مستوحاة من الجانب الهادئ للبنان.",
+    "brief": "Build a small hospitality brand around the feeling of arriving somewhere unhurried. Connect the courtyard-inspired identity, guest stationery, room discovery and a simple stay-planning journey.",
+    "arBrief": "تصميم علامة ضيافة صغيرة حول شعور الوصول إلى مكان هادئ. تربط الهوية المستوحاة من الساحة بين مطبوعات الضيوف، واكتشاف الغرف، وتجربة بسيطة لتخطيط الإقامة.",
+    "audience": "Weekend travellers, couples and Lebanese visitors looking for a thoughtful short escape.",
+    "arAudience": "مسافرو عطلة نهاية الأسبوع، والأزواج، وزوّار لبنان الباحثون عن استراحة قصيرة ومدروسة.",
+    "strategy": "An open courtyard and an arched doorway form the symbol. Cobalt comes from shutters and glazed tiles; chalk and honey stone bring warmth. Spacious serif lettering gives the guesthouse an inviting, quietly established voice.",
+    "arStrategy": "ساحة مفتوحة وباب مقوّس يصنعان الرمز. يستوحي الأزرق لونه من المصاريع والبلاط، ويضيف الأبيض الحجري والرملي دفئاً. تمنح الحروف الرحبة الدار صوتاً هادئاً ومرحباً.",
+    "storyTitle": "A stay with\nspace around it.",
+    "arStoryTitle": "إقامة\nتتّسع للهدوء.",
+    "story": "The idea starts with a shaded courtyard, a long breakfast and a view worth leaving your phone for. Dar Saha turns those moments into a considered guest experience, from first discovery to a stay plan.",
+    "arStory": "تبدأ الفكرة من ساحة مظلّلة، وفطور بلا استعجال، وإطلالة تستحق أن تترك هاتفك لأجلها. تحوّل دار ساحة هذه اللحظات إلى تجربة ضيافة مدروسة، من الاكتشاف إلى تخطيط الإقامة.",
+    "campaignTitle": "Stay for the slower part.",
+    "arCampaignTitle": "ابقَ للوقت الأهدأ.",
+    "campaignIdea": "A hospitality launch that introduces a feeling before a room: the courtyard, the morning light and the small rituals of a weekend away. Room discovery and a welcome email provide the next step.",
+    "arCampaignIdea": "إطلاق يقدّم الشعور قبل الغرفة: الساحة، وضوء الصباح، وتفاصيل عطلة قصيرة. يكمل اكتشاف الغرف ورسالة الترحيب الخطوة التالية.",
+    "measure": "Room-detail views, stay-plan completions and return visits. These are proposed measures; there are no real bookings or campaign results.",
+    "arMeasure": "مشاهدات تفاصيل الغرف، وإكمال خطط الإقامة، والزيارات المتكررة. هذه معايير مقترحة دون حجوزات حقيقية أو نتائج حملات.",
+    "posts": [
+      [
+        "Make room\nfor a slower day.",
+        "Dar Saha / A guesthouse concept."
+      ],
+      [
+        "A softer\nstart to the day.",
+        "Stone, sunlight and space to yourself."
+      ],
+      [
+        "Leave a little\nroom for quiet.",
+        "Explore the rooms. Plan a slower weekend."
+      ]
+    ],
+    "stories": [
+      [
+        "مساحة\nلتأخذ وقتك.",
+        "دار ساحة / تصوّر لضيافة هادئة."
+      ],
+      [
+        "ابقَ للوقت\nالأهدأ.",
+        "غرف مدروسة ولحظات بسيطة."
+      ]
+    ],
+    "emailSubject": "A little room for a slower day.",
+    "emailBody": "Step into the Dar Saha concept: a shaded courtyard, thoughtful rooms and a slower morning. Explore the guesthouse and put together a sample stay plan. This preview creates no booking or subscription.",
+    "plan": [
+      [
+        "Week 1",
+        "Introduce the courtyard feeling",
+        "Terrace post / identity story",
+        "Discovery"
+      ],
+      [
+        "Week 2",
+        "Explore the rooms",
+        "Room creative / room-detail page",
+        "Room-detail views"
+      ],
+      [
+        "Week 3",
+        "Imagine a slower weekend",
+        "Stay-planning creative / welcome email",
+        "Stay-plan completions"
+      ],
+      [
+        "Week 4",
+        "Return to the morning ritual",
+        "Editorial story / reminder creative",
+        "Return visits"
+      ]
+    ],
+    "arPlan": [
+      [
+        "الأسبوع ١",
+        "التعريف بشعور الساحة",
+        "منشور الشرفة / قصة الهوية",
+        "الاكتشاف"
+      ],
+      [
+        "الأسبوع ٢",
+        "اكتشاف الغرف",
+        "تصميم الغرفة / تفاصيل الإقامة",
+        "مشاهدات الغرف"
+      ],
+      [
+        "الأسبوع ٣",
+        "تصوّر عطلة هادئة",
+        "تصميم التخطيط / رسالة ترحيب",
+        "إكمال خطط الإقامة"
+      ],
+      [
+        "الأسبوع ٤",
+        "العودة إلى طقس الصباح",
+        "قصة بصرية / تصميم تذكيري",
+        "الزيارات المتكررة"
+      ]
+    ],
+    "tagline": "Make room for a slower day.",
+    "arTagline": "مساحة لتأخذ وقتك.",
+    "applicationLine": "A considered welcome.",
+    "arApplicationLine": "ترحيب مدروس.",
+    "boardLine": "A courtyard. A welcome. A slower day.",
+    "websiteDescription": "Explore room details, select a sample arrival date and number of nights, and build a stay plan with a calculated estimate. Available in English and Arabic.",
+    "arWebsiteDescription": "استكشف تفاصيل الغرف، واختر موعد وصول وعدد ليالٍ، وجهّز خطة إقامة بتكلفة تقديرية محسوبة. التجربة بالعربية والإنجليزية.",
+    "rooms": [
+      {
+        "id": "courtyard",
+        "name": "The Courtyard Room",
+        "ar": "غرفة الساحة",
+        "description": "Soft linen, honey stone and a quiet place to begin the day.",
+        "arDescription": "كتّان ناعم وحجر دافئ ومساحة هادئة لبداية اليوم.",
+        "price": 145,
+        "size": "28 m²",
+        "guests": 2,
+        "image": "room.webp"
+      },
+      {
+        "id": "terrace",
+        "name": "The Terrace Suite",
+        "ar": "جناح الشرفة",
+        "description": "A little more room, with a private terrace for unhurried mornings.",
+        "arDescription": "مساحة أرحب وشرفة خاصة لصباح بلا استعجال.",
+        "price": 195,
+        "size": "42 m²",
+        "guests": 2,
+        "image": "hero.webp"
+      }
+    ]
+  },
+  "paceform": {
+    "name": "Paceform",
+    "arName": "بيسفورم",
+    "kind": "A contemporary movement studio",
+    "arKind": "استوديو حركة وتدريب",
+    "dark": "#143EF0",
+    "light": "#E9F0FF",
+    "accent": "#FFA846",
+    "white": "#FFFFFF",
+    "ink": "#17254A",
+    "display": "Archivo",
+    "logoWeight": 800,
+    "experience": true,
+    "products": [],
+    "categories": [],
+    "headline": "Find\nyour pace.",
+    "arHeadline": "حركتك،\nعلى إيقاعك.",
+    "intro": "Strength, mobility and a rhythm that fits your week. A movement studio concept built around showing up.",
+    "arIntro": "قوة ومرونة وإيقاع يناسب أسبوعك. تصوّر لاستوديو حركة يشجّعك على البدء والاستمرار.",
+    "brief": "Create an approachable fitness identity that feels energetic without intimidation. Connect a clear class language, an adaptable graphic system and an easy weekly timetable.",
+    "arBrief": "تصميم هوية رياضية حيوية وقريبة من الناس. تربط بين أسماء حصص واضحة، ونظام بصري مرن، وجدول أسبوعي سهل الاستخدام.",
+    "audience": "Busy adults, first-time studio visitors and people building a regular movement habit.",
+    "arAudience": "البالغون أصحاب الجداول المزدحمة، وزوّار الاستوديو للمرة الأولى، والباحثون عن عادة حركة منتظمة.",
+    "strategy": "Two offset forms move forward together, suggesting an individual pace within a shared rhythm. Direct blue, generous white space and compact bold lettering make schedules and campaign messages easy to recognise.",
+    "arStrategy": "شكلان متتابعان يتجهان إلى الأمام، في إشارة إلى إيقاعك الخاص ضمن حركة مشتركة. الأزرق الواضح والمساحة البيضاء والحروف القوية تجعل الجداول ورسائل الحملة سهلة التمييز.",
+    "storyTitle": "A rhythm\nyou can return to.",
+    "arStoryTitle": "إيقاع\nتعود إليه.",
+    "story": "The studio concept puts useful information before pressure: what the class involves, how long it takes and where it fits into your week. The identity makes room for different starting points and a shared sense of momentum.",
+    "arStory": "يضع التصوّر المعلومات المفيدة أولاً: طبيعة الحصة، ومدّتها، ومكانها ضمن أسبوعك. تتّسع الهوية لبدايات مختلفة وشعور مشترك بالتقدّم.",
+    "campaignTitle": "Make space for your pace.",
+    "arCampaignTitle": "امنح إيقاعك مساحة.",
+    "campaignIdea": "A launch focused on the first useful decision: find a class that fits. Clear movement categories, short timetable-led creative and a welcome email turn a strong graphic identity into a practical weekly habit.",
+    "arCampaignIdea": "إطلاق يركّز على أول قرار مفيد: العثور على حصة تناسبك. فئات واضحة وتصاميم مرتبطة بالجدول ورسالة ترحيب تحوّل الهوية القوية إلى بداية عملية.",
+    "measure": "Timetable visits, class-detail views and completed sample session selections. These are proposed measures, without attendance, transformation or campaign-result claims.",
+    "arMeasure": "زيارات الجدول، ومشاهدات تفاصيل الحصص، وإكمال الاختيارات التجريبية. معايير مقترحة دون ادّعاءات حضور أو تحوّلات بدنية أو نتائج حملات.",
+    "posts": [
+      [
+        "Find\nyour pace.",
+        "Strength. Mobility. A rhythm for your week."
+      ],
+      [
+        "A good week\nstarts with one.",
+        "One class. One useful next step."
+      ],
+      [
+        "Show up\nas you are.",
+        "Explore the sample timetable."
+      ]
+    ],
+    "stories": [
+      [
+        "حركتك،\nعلى إيقاعك.",
+        "بيسفورم / تصوّر لاستوديو حركة."
+      ],
+      [
+        "خطوة\nتبدأ منك.",
+        "اختر الحصة التي تناسب أسبوعك."
+      ]
+    ],
+    "emailSubject": "Your week. Your pace.",
+    "emailBody": "Explore the Paceform concept timetable, discover the difference between strength, mobility and reformer sessions, and put together a sample week. No membership, reservation or payment is created.",
+    "plan": [
+      [
+        "Week 1",
+        "Introduce a clear movement identity",
+        "Hero post / movement story",
+        "Studio discovery"
+      ],
+      [
+        "Week 2",
+        "Help people choose a class",
+        "Class creative / timetable page",
+        "Class-detail views"
+      ],
+      [
+        "Week 3",
+        "Build a sample week",
+        "Schedule creative / welcome email",
+        "Session selections"
+      ],
+      [
+        "Week 4",
+        "Make the next visit familiar",
+        "Routine story / reminder creative",
+        "Return visits"
+      ]
+    ],
+    "arPlan": [
+      [
+        "الأسبوع ١",
+        "التعريف بهوية الحركة",
+        "منشور إطلاق / قصة الحركة",
+        "اكتشاف الاستوديو"
+      ],
+      [
+        "الأسبوع ٢",
+        "المساعدة في اختيار الحصة",
+        "تصميم الحصص / صفحة الجدول",
+        "مشاهدات تفاصيل الحصص"
+      ],
+      [
+        "الأسبوع ٣",
+        "بناء أسبوع تجريبي",
+        "تصميم الجدول / رسالة ترحيب",
+        "اختيارات الحصص"
+      ],
+      [
+        "الأسبوع ٤",
+        "تشجيع العودة",
+        "قصة العادة / تصميم تذكيري",
+        "الزيارات المتكررة"
+      ]
+    ],
+    "tagline": "Find your pace.",
+    "arTagline": "حركتك، على إيقاعك.",
+    "applicationLine": "Move with intention.",
+    "arApplicationLine": "تحرّك بخطوة واضحة.",
+    "boardLine": "A clear identity. A shared momentum.",
+    "websiteDescription": "Filter the weekly timetable by movement type, inspect class details and select a sample session. A practical bilingual experience with clear session feedback.",
+    "arWebsiteDescription": "صفِّ الجدول بحسب نوع الحركة، واستكشف تفاصيل الحصص، واختر جلسة تجريبية. تجربة ثنائية اللغة مع تأكيد واضح للاختيار.",
+    "classes": [
+      {
+        "id": "strength-mon",
+        "type": "strength",
+        "name": "Strength foundations",
+        "ar": "أساسيات القوة",
+        "day": "Monday",
+        "arDay": "الاثنين",
+        "time": "07:30",
+        "duration": 50,
+        "description": "A coached introduction to controlled strength movements.",
+        "arDescription": "مقدّمة موجّهة لحركات القوة المتحكّم بها.",
+        "price": 18
+      },
+      {
+        "id": "mobility-tue",
+        "type": "mobility",
+        "name": "Move & reset",
+        "ar": "حركة وتجديد",
+        "day": "Tuesday",
+        "arDay": "الثلاثاء",
+        "time": "18:00",
+        "duration": 45,
+        "description": "A steady session exploring mobility and comfortable movement.",
+        "arDescription": "جلسة متوازنة لاستكشاف المرونة والحركة المريحة.",
+        "price": 16
+      },
+      {
+        "id": "reformer-wed",
+        "type": "reformer",
+        "name": "Reformer flow",
+        "ar": "انسياب الريفورمر",
+        "day": "Wednesday",
+        "arDay": "الأربعاء",
+        "time": "09:00",
+        "duration": 50,
+        "description": "A focused reformer session with an unhurried rhythm.",
+        "arDescription": "جلسة ريفورمر مركّزة بإيقاع متأنٍّ.",
+        "price": 24
+      },
+      {
+        "id": "strength-thu",
+        "type": "strength",
+        "name": "Full-body strength",
+        "ar": "قوة للجسم بالكامل",
+        "day": "Thursday",
+        "arDay": "الخميس",
+        "time": "18:30",
+        "duration": 50,
+        "description": "A balanced strength session with adaptable movements.",
+        "arDescription": "جلسة قوة متوازنة مع حركات قابلة للتكييف.",
+        "price": 18
+      },
+      {
+        "id": "mobility-sat",
+        "type": "mobility",
+        "name": "Weekend reset",
+        "ar": "تجديد نهاية الأسبوع",
+        "day": "Saturday",
+        "arDay": "السبت",
+        "time": "10:00",
+        "duration": 45,
+        "description": "Make a little room for movement at the start of your weekend.",
+        "arDescription": "مساحة صغيرة للحركة في بداية عطلتك.",
+        "price": 16
+      }
+    ]
   }
 }

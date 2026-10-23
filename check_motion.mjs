@@ -29,7 +29,7 @@ try{
    await service.evaluate(el=>Promise.allSettled(el.getAnimations({subtree:true}).map(animation=>animation.finished)));
    await service.locator('summary').focus();await page.keyboard.press('Enter');
    await service.evaluate(el=>Promise.allSettled(el.getAnimations({subtree:true}).map(animation=>animation.finished)));
-   assert(await service.evaluate(el=>el.open));assert(await service.locator('.service-visual').isVisible());
+   assert(await service.evaluate(el=>el.open));assert(await service.locator('.service-projects').isVisible());
    if(!reduced)await service.screenshot({path:`qa/motion-${lang}-service-${i}.png`});
    await service.locator('summary').click();
    await service.evaluate(el=>Promise.allSettled(el.getAnimations({subtree:true}).map(animation=>animation.finished)));

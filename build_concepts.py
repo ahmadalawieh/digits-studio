@@ -43,12 +43,20 @@ def mark(slug,x,y,size,color,bg):
     if slug=='fornaya':
         body=f'<path d="M10 86V60C10 27 31 12 60 12S110 27 110 60V86Q110 103 93 103H27Q10 103 10 86Z" fill="{color}"/>'
         body+=''.join(f'<path d="M{v} 34L{v-12} 55" fill="none" stroke="{bg}" stroke-width="7" stroke-linecap="round"/>' for v in [39,65,91])
+    elif slug=='dar-saha':
+        body=f'<path d="M18 105V17H102V105H78V61C78 35 42 35 42 61V105Z" fill="none" stroke="{color}" stroke-width="7"/><path d="M60 13V25M14 61H26M94 61H106" stroke="{color}" stroke-width="5"/>'
+    elif slug=='paceform':
+        body=f'<path d="M12 33H51L34 87H-5Z M70 33H109L92 87H53Z" transform="translate(8 0)" fill="{color}"/>'
     else:
         body=f'<ellipse cx="60" cy="61" rx="32" ry="46" transform="rotate(30 60 61)" fill="{color}"/><path d="M35 94L86 25" fill="none" stroke="{bg}" stroke-width="3"/><ellipse cx="61" cy="63" rx="8" ry="14" transform="rotate(30 61 63)" fill="{bg}"/>'
     return f'<g transform="translate({x} {y}) scale({size/120})">{body}</g>'
 def logo(slug,b,color,bg):
     if slug=='fornaya':
         return mark(slug,20,42,155,color,bg)+text('fornaya',195,54,139,color,'Archivo',850,maxw=575)+text(b['arName'],480,206,42,color,'Arabic',600,'center')
+    if slug=='dar-saha':
+        return mark(slug,28,71,165,color,bg)+text('Dar Saha',245,65,108,color,'Fraunces',500,maxw=530)+text(b['arName'],510,230,35,color,'Arabic',600,'center')
+    if slug=='paceform':
+        return mark(slug,18,60,145,color,bg)+text('paceform',190,74,111,color,'Archivo',850,maxw=580)+text(b['arName'],480,227,33,color,'Arabic',600,'center')
     return mark(slug,42,98,150,color,bg)+text('RIWA',475,30,106,color,'Fraunces',500,'center')+text('GROVE',475,147,73,color,'Fraunces',500,'center')+text(b['arName'],475,250,34,color,'Arabic',600,'center')
 def placed_logo(slug,b,x,y,width,color=None,bg=None):
     return f'<g transform="translate({x} {y}) scale({width/800})">'+logo(slug,b,color or b['dark'],bg or b['light'])+'</g>'
@@ -65,18 +73,18 @@ for slug,b in DATA.items():
     packaging=folder/('packaging.webp' if slug=='fornaya' else 'hero.webp')
     board=rect(1600,1000,b['light'])+placed_logo(slug,b,70,45,630)
     board+=photo(packaging,780,40,780,690)
-    board+=text(b['display'],70,355,74,b['dark'],b['display'],b['logoWeight'])+text('A familiar feeling. A distinct identity.' if slug=='fornaya' else 'Rooted in a generous table.',70,470,29,b['dark'],maxw=635)
+    board+=text(b['display'],70,355,74,b['dark'],b['display'],b['logoWeight'])+text('A familiar feeling. A distinct identity.' if slug=='fornaya' else b.get('boardLine','Rooted in a generous table.'),70,470,29,b['dark'],maxw=635)
     for i,(name,color) in enumerate([('Signature',b['dark']),('Base',b['light']),('Accent',b['accent'])]):
         x=70+i*215;board+=f'<rect x="{x}" y="555" width="188" height="145" fill="{color}" stroke="{b["dark"]}" stroke-width="1"/>'+text(name,x,727,22,b['dark'])+text(color,x,762,19,b['dark'])
     board+=mark(slug,85,830,95,b['dark'],b['light'])+text('Branding. Website. Launch campaign.',220,850,34,b['dark'])+text('Self-initiated concept by Digits Studio',220,913,22,b['dark'])
     write(folder,'brand-board',1600,1000,board,b['name']+' identity board / self-initiated concept')
     label=rect(600,900,b['light'])+placed_logo(slug,b,55,105,490)
-    label+=text('Good mornings. Made slowly.' if slug=='fornaya' else 'Extra virgin olive oil',300,430,29,b['dark'],align='center',maxw=500)
-    label+=text('صباحنا من الفرن' if slug=='fornaya' else 'من الزيتون إلى المائدة',300,512,34,b['dark'],'Arabic',600,'center',500)
+    label+=text('Good mornings. Made slowly.' if slug=='fornaya' else b.get('applicationLine','Extra virgin olive oil'),300,430,29,b['dark'],align='center',maxw=500)
+    label+=text('صباحنا من الفرن' if slug=='fornaya' else b.get('arApplicationLine','من الزيتون إلى المائدة'),300,512,34,b['dark'],'Arabic',600,'center',500)
     label+=mark(slug,240,630,120,b['dark'],b['light'])+text('Packaging concept / Digits Studio',300,817,20,b['dark'],align='center')
     write(folder,'packaging-label',600,900,label,b['name']+' editable packaging label concept')
     front=rect(910,610,b['dark'])+placed_logo(slug,b,130,155,650,b['light'],b['dark'])
-    front+=text('Good mornings. Made slowly.' if slug=='fornaya' else 'Pour a little Lebanon.',455,455,32,b['light'],align='center')
+    front+=text('Good mornings. Made slowly.' if slug=='fornaya' else b.get('tagline','Pour a little Lebanon.'),455,455,32,b['light'],align='center')
     write(folder,'business-card-front',910,610,front,b['name']+' concept business card front')
     qr=qrcode.QRCode(box_size=1,border=4);qr.add_data('https://digitsstudio.online/projects/'+slug+'/');qr.make(fit=True);mat=qr.get_matrix();n=len(mat)
     qrbody=f'<rect width="{n}" height="{n}" fill="white"/>'+''.join(f'<rect x="{x}" y="{y}" width="1" height="1" fill="black"/>' for y,row in enumerate(mat) for x,value in enumerate(row) if value)
@@ -94,7 +102,7 @@ for slug,b in DATA.items():
         for j,line in enumerate(lines):body+=text(line,w-70 if story else 65,start+j*(size*1.45 if story else size*1.2),size,fg,font,600 if story else b['logoWeight'],'right' if story else 'left',w-135 if not ad else 545)
         body+=text(sub,w-70 if story else 68,start+len(lines)*size*1.55+30 if story else 525 if not ad else 390,30 if story else 25,fg,'Arabic' if story else 'InstrumentSans',500,'right' if story else 'left',w-135 if not ad else 520)
         if ad:body+=photo(folder/'hero.webp',650,0,550,628)
-        else:body+=photo(folder/('croissant.webp' if slug=='fornaya' and i==2 else 'pour.webp' if slug!='fornaya' and i==2 else 'hero.webp'),65,970 if story else 650,w-130,690 if story else 570)
+        else:body+=photo(folder/('croissant.webp' if slug=='fornaya' and i==2 else ('room.webp' if slug=='dar-saha' else 'studio.webp' if slug=='paceform' else 'pour.webp') if slug!='fornaya' and i==2 else 'hero.webp'),65,970 if story else 650,w-130,690 if story else 570)
         body+=text('A Digits Studio concept',68,h-57,19,fg)
         write(folder,name,w,h,body,b['name']+' '+name+' / proposed campaign creative')
         assets.append({'name':name,'width':w,'height':h,'purpose':'Proposed campaign creative'})
@@ -108,9 +116,9 @@ for slug,b in DATA.items():
     (pack/'captions.md').write_text('\n'.join(captions),encoding='utf-8')
     (pack/'README.md').write_text(f'''# {b['name']}
 
-A self-initiated, fictional portfolio concept by Digits Studio. No affiliation with an operating bakery, producer or shop is claimed. Names, products, prices and commercial stories are illustrative. Photography was created with the built-in image-generation tool. Campaigns are proposed creative, not reported performance. No client testimonials, awards or certifications are represented.
+A self-initiated, fictional portfolio concept by Digits Studio. No affiliation with an operating business is claimed. Names, products, prices and commercial stories are illustrative. Photography was created with the built-in image-generation tool. Campaigns are proposed creative, not reported performance. No client testimonials, awards or certifications are represented.
 
-Deliverables: original outlined bilingual SVG logos and symbol, brand board, packaging label, concept business cards with a working case-study QR, 3 portrait posts, 2 Arabic stories, 1 landscape ad, PNG exports, bilingual captions, a four-week campaign plan, welcome-email preview and a functional website demo. The demo basket performs calculations locally and does not process payments, orders or personal data.
+Deliverables: original outlined bilingual SVG logos and symbol, brand board, packaging label, concept business cards with a working case-study QR, 3 portrait posts, 2 Arabic stories, 1 landscape ad, PNG exports, bilingual captions, a four-week campaign plan, welcome-email preview and a functional website demo. {'The stay planner and class-selection demos work locally and do not create reservations, memberships or payments.' if b.get('experience') else 'The demo basket performs calculations locally and does not process payments, orders or personal data.'}
 
 Website: https://digitsstudio.online/demos/{slug}/
 Case study: https://digitsstudio.online/projects/{slug}/
@@ -121,12 +129,12 @@ Fonts: Archivo, Instrument Sans, IBM Plex Sans Arabic{', and Fraunces' if slug!=
 def head(title,description,canonical,lang='en',demo=False):
     return f'''<!doctype html><html lang="{lang}" dir="{'rtl' if lang=='ar' else 'ltr'}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{esc(title)}</title><meta name="description" content="{esc(description)}"><meta name="robots" content="{'noindex,follow' if demo else 'index,follow'}"><link rel="canonical" href="https://digitsstudio.online{canonical}"><link rel="icon" href="/brand/favicon.svg"><link rel="stylesheet" href="/assets/concepts/concepts.css"><meta property="og:title" content="{esc(title)}"><meta property="og:type" content="website"><meta name="twitter:card" content="summary_large_image"><meta property="og:description" content="{esc(description)}"></head>'''
 def theme(b):return f'--dark:{b["dark"]};--light:{b["light"]};--accent:{b["accent"]};--paper:{b["white"]};--ink:{b["ink"]};--display:{b["display"]}'
-def image(slug,name,alt,cls='',lazy=True):return f'<img class="{cls}" src="/assets/concepts/{slug}/{name}" alt="{esc(alt)}" loading="{"lazy" if lazy else "eager"}" width="1536" height="1024">'
+def image(slug,name,alt,cls='',lazy=True):return f'<img class="{cls}" src="/assets/concepts/{slug}/{name.replace('.png','.webp') if name in ['brand-board.png','post-01.png','post-02.png','post-03.png','story-01.png','story-02.png','campaign-ad.png'] else name}" alt="{esc(alt)}" loading="{"lazy" if lazy else "eager"}" width="1536" height="1024">'
 
 for slug,b in DATA.items():
     asset='/assets/concepts/'+slug+'/';pack='/concepts/'+slug+'/'
     email=head(b['name']+' / Concept welcome email','A proposed email creative by Digits Studio.',pack+'welcome-email.html',demo=True)
-    email+=f'''<body class="email-preview" style="{theme(b)}"><main><p class="concept-label">Sample campaign email / not a sent campaign</p><div class="email-card"><img class="email-logo" src="{asset}logo-primary.png" width="240" alt="{b['name']}"><h1>{b['emailSubject']}</h1>{image(slug,'hero.webp',b['name']+' concept photography')}<p>{b['emailBody']}</p><a class="action" href="/demos/{slug}/#collection">{'Explore the morning menu' if slug=='fornaya' else 'Explore the collection'}</a><hr><p class="small">A fictional brand and proposed campaign created by Digits Studio. No subscription has been created and no email has been sent.</p><a href="/projects/{slug}/">Explore the case study</a></div></main></body></html>'''
+    email+=f'''<body class="email-preview" style="{theme(b)}"><main><p class="concept-label">Sample campaign email / not a sent campaign</p><div class="email-card"><img class="email-logo" src="{asset}logo-primary.png" width="240" alt="{b['name']}"><h1>{b['emailSubject']}</h1>{image(slug,'hero.webp',b['name']+' concept photography')}<p>{b['emailBody']}</p><a class="action" href="/demos/{slug}/#collection">{'Explore the morning menu' if slug=='fornaya' else 'Explore the experience' if b.get('experience') else 'Explore the collection'}</a><hr><p class="small">A fictional brand and proposed campaign created by Digits Studio. No subscription has been created and no email has been sent.</p><a href="/projects/{slug}/">Explore the case study</a></div></main></body></html>'''
     (D/'concepts'/slug/'welcome-email.html').write_text(email,encoding='utf-8')
     for ar in [False,True]:
         lang='ar' if ar else 'en';prefix='/ar' if ar else ''
@@ -138,7 +146,7 @@ for slug,b in DATA.items():
 <main id="case-main"><section class="case-hero"><div><p class="concept-label">{t('Self-initiated concept project','مشروع تصوّري بمبادرة من الاستوديو')}</p><h1><bdi>{b['name']}</bdi></h1><p class="case-kind">{b['arKind'] if ar else b['kind']}</p><p>{b['arBrief'] if ar else b['brief']}</p><div class="actions"><a class="action" href="/demos/{slug}/{'?lang=ar' if ar else ''}">{t('Explore the live demo','استكشف الموقع التجريبي')} ↗</a><a href="{pack}brand-kit.zip" download>{t('Download the project kit','تحميل ملفات المشروع')}</a></div></div>{image(slug,'packaging.webp' if slug=='fornaya' else 'hero.webp',t(b['name']+' concept packaging photography','تصوير تصوّري لتغليف '+b['arName']),'case-hero-image',False)}</section>
 <section class="case-overview"><div><span>{t('The audience','الجمهور')}</span><p>{b['arAudience'] if ar else b['audience']}</p></div><div><span>{t('The scope','نطاق العمل')}</span><p>{t('Brand strategy, bilingual identity, packaging, website and launch campaign.','استراتيجية العلامة، وهوية ثنائية اللغة، وتغليف، وموقع، وحملة إطلاق.')}</p></div><div><span>{t('Project status','حالة المشروع')}</span><p>{t('Fictional brand. Original concept work by Digits Studio.','علامة خيالية وعمل تصوّري أصلي من ديجيتس ستوديو.')}</p></div></section>
 <section class="case-section" id="identity"><div class="section-heading"><h2>{t('A feeling, made recognisable.','شعور يتحوّل إلى هوية.')}</h2><p>{b['arStrategy'] if ar else b['strategy']}</p></div>{image(slug,'brand-board.png',t(b['name']+' bilingual identity, colours and typography','هوية '+b['arName']+' وألوانها وخطوطها'),'board')}<div class="application-grid"><div class="logo-application">{image(slug,'logo-primary.svg',b['name']+' bilingual logo')}</div>{image(slug,'business-card-front.svg',t('Concept business card','بطاقة تصوّرية'))}{image(slug,'business-card-back.svg',t('Case-study QR contact card','بطاقة مع رمز للمشروع'))}</div><a class="text-link" href="{pack}brand-guide.html">{t('Open the identity guide','افتح دليل الهوية')} ↗</a></section>
-<section class="case-section website-case" id="website"><div class="section-heading"><h2>{t('Made to be used.','تصميم للاستخدام الفعلي.')}</h2><p>{t('English and Arabic, category filters, product details and a working demo basket. A complete journey from first look to reviewing a selection.','لغتان، وفلاتر للفئات، وتفاصيل للمنتجات، وسلّة تجريبية تعمل. رحلة متكاملة من التصفّح إلى مراجعة الاختيارات.')}</p></div><div class="device-pair"><a class="desktop-shot" href="/demos/{slug}/{'?lang=ar' if ar else ''}"><span class="window-bar"><i></i><i></i><i></i><bdi>{b['name']} / website demo</bdi></span>{image(slug,'website-desktop.webp',t('Desktop website preview','معاينة الموقع على الكمبيوتر'))}</a><a class="phone-shot" href="/demos/{slug}/?lang=ar">{image(slug,'website-mobile.webp',t('Mobile website preview','معاينة الموقع على الهاتف'))}</a></div><div class="actions"><a class="action" href="/demos/{slug}/{'?lang=ar' if ar else ''}">{t('Try the website','جرّب الموقع')} ↗</a><p class="small">{t('Demo only. Prices are examples; no orders, payments or personal data are processed.','للتجربة فقط. الأسعار أمثلة، ولا تُعالَج طلبات أو مدفوعات أو بيانات شخصية.')}</p></div></section>
+<section class="case-section website-case" id="website"><div class="section-heading"><h2>{t('Made to be used.','تصميم للاستخدام الفعلي.')}</h2><p>{t(b.get('websiteDescription','English and Arabic, category filters, product details and a working demo basket. A complete journey from first look to reviewing a selection.'),b.get('arWebsiteDescription','لغتان، وفلاتر للفئات، وتفاصيل للمنتجات، وسلّة تجريبية تعمل. رحلة متكاملة من التصفّح إلى مراجعة الاختيارات.'))}</p></div><div class="device-pair"><a class="desktop-shot" href="/demos/{slug}/{'?lang=ar' if ar else ''}"><span class="window-bar"><i></i><i></i><i></i><bdi>{b['name']} / website demo</bdi></span>{image(slug,'website-desktop.webp',t('Desktop website preview','معاينة الموقع على الكمبيوتر'))}</a><a class="phone-shot" href="/demos/{slug}/?lang=ar">{image(slug,'website-mobile.webp',t('Mobile website preview','معاينة الموقع على الهاتف'))}</a></div><div class="actions"><a class="action" href="/demos/{slug}/{'?lang=ar' if ar else ''}">{t('Try the website','جرّب الموقع')} ↗</a><p class="small">{t('Demo only. Prices are examples; no orders, payments or personal data are processed.','للتجربة فقط. الأسعار أمثلة، ولا تُعالَج طلبات أو مدفوعات أو بيانات شخصية.')}</p></div></section>
 <section class="case-section" id="campaign"><div class="section-heading"><h2>{b['arCampaignTitle'] if ar else b['campaignTitle']}</h2><p>{b['arCampaignIdea'] if ar else b['campaignIdea']}</p></div><p class="concept-label">{t('Proposed launch campaign / no performance results claimed','حملة إطلاق مقترحة / دون ادّعاء نتائج أداء')}</p><div class="creative-grid">'''
         for i in range(1,4):case+=f'<figure><a href="{asset}post-0{i}.png" download>{image(slug,f"post-0{i}.png",t(f"Campaign post {i}",f"منشور الحملة {i}"))}</a><figcaption>{t("Feed creative","تصميم منشور")} / 1080 × 1350</figcaption></figure>'
         case+='</div><div class="campaign-extras">'
@@ -153,6 +161,7 @@ for slug,b in DATA.items():
     for file,label in [('logo-primary.svg','Primary bilingual logo / SVG'),('logo-reverse.svg','Reverse logo / SVG'),('symbol.svg','Original symbol / SVG'),('packaging-label.svg','Concept packaging label / SVG'),('business-card-front.svg','Business card front / SVG'),('business-card-back.svg','Business card reverse / SVG'),('brand-board.png','Identity board / PNG')]:guide+=f'<a href="{asset}{file}" download>{label} ↓</a>'
     guide+=f'''</div><h2>Use it with care.</h2><p>Leave clear space at least one quarter of the symbol width. Keep small text in the darkest brand colour on a light background. Do not distort the mark. SVG type is outlined; edit copy in the source generator. Packaging and cards are concept artwork, not production-certified print files.</p><p>This is a fictional portfolio brand. Photography was generated for this project. Sample products, prices and campaign plans are illustrative.</p><a class="action" href="{pack}brand-kit.zip" download>Download the concept kit</a></main></body></html>'''
     (D/'concepts'/slug/'brand-guide.html').write_text(guide,encoding='utf-8')
+    if b.get('experience'):continue
     demo=head(b['name']+' | '+b['kind'],'A working fictional brand website demo by Digits Studio.','/demos/'+slug+'/',demo=True)
     def bi(en,ar,tag='span',attrs=''):return f'<{tag} data-en="{esc(en)}" data-ar="{esc(ar)}" {attrs}>{esc(en)}</{tag}>'
     demo+=f'''<body class="demo {slug}" style="{theme(b)}"><a class="skip" href="#demo-main">Skip to content</a><div class="demo-notice">{bi('A fictional brand, thoughtfully made by Digits Studio.','علامة خيالية صُمّمت بعناية من ديجيتس ستوديو.')}<a href="/projects/{slug}/">{bi('Explore the case study','استكشف المشروع')} ↗</a></div><header class="demo-header"><a href="#demo-main"><img class="demo-logo" src="{asset}logo-primary.svg" alt="{b['name']}" width="175" height="70"></a><nav><a href="#collection">{bi('The menu' if slug=='fornaya' else 'The collection','القائمة' if slug=='fornaya' else 'المجموعة')}</a><a href="#story">{bi('Our idea','الفكرة')}</a></nav><div class="demo-header-actions"><button class="demo-language" type="button" aria-label="Read in Arabic">عربي</button><button class="basket-open" type="button" aria-haspopup="dialog">{bi('Basket','السلّة')} <span class="basket-count">0</span></button></div></header>
@@ -170,4 +179,4 @@ for slug,b in DATA.items():
 <dialog id="product-dialog" aria-labelledby="product-dialog-title"><div class="modal-heading"><h2 id="product-dialog-title"></h2><button class="dialog-close" type="button" aria-label="Close product">×</button></div><div id="product-dialog-content"></div></dialog><script type="application/json" id="demo-data">{json.dumps(b,ensure_ascii=False).replace('</','<\\/')}</script><script src="/assets/concepts/demo.js" defer></script></body></html>'''
     directory=D/'demos'/slug;directory.mkdir(parents=True,exist_ok=True);(directory/'index.html').write_text(demo,encoding='utf-8')
 
-print('Two bilingual concept identities, 12 campaign creatives, four case pages, two working demo pages, guides, emails and plans built.')
+print('Bilingual concept identities, case studies, campaign creatives, guides, emails and plans built.')

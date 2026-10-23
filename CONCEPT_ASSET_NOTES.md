@@ -41,3 +41,14 @@ The following records the six image briefs and constraints used; it is a concise
 `concepts-content.json` contains the bilingual brand, product and campaign copy. `build_concepts.py` builds outlined SVGs and HTML using fontTools, HarfBuzz, Pillow and qrcode; `export_concepts.mjs` exports PNGs with Sharp. Fonts are supplied with their SIL OFL licences. SVG photos embed JPEG for portable renderer support. The original photographic WebPs remain the website assets.
 
 Run locally: `python build_concepts.py`, `node export_concepts.mjs`, `python build_site.py`, then start the static server and run `node check_concepts.mjs` to test and capture the actual demo previews. Finish with `node build_public_kit.mjs` and `node validate-production.mjs`. Website source is static and deploys without the development image/font packages. Print cards and labels are concepts, not printer-certified production artwork.
+
+
+## Dar Saha and Paceform / unified projects
+
+Two additional fictional brands were created on 23 October 2026. Dar Saha is a guesthouse with an original courtyard/doorway symbol, room discovery and a local stay planner. Paceform is a movement studio with an original forward-motion symbol, filtered timetable, class details and local session selection. Both include bilingual identities, brand boards, application cards, campaign posts, Arabic stories, an ad, email preview, case studies and kits. There are no actual reservations, memberships, availability checks or payments.
+
+Four new photographs were generated in built-in image_gen mode and copied into `output/concepts/originals/`. The optimized saved assets are `dist/assets/concepts/dar-saha/hero.webp`, `dist/assets/concepts/dar-saha/room.webp`, `dist/assets/concepts/paceform/hero.webp`, and `dist/assets/concepts/paceform/studio.webp`. Exact prompts, mode, original saved paths and production paths are recorded in `concept-generation-briefs.json`.
+
+The homepage now uses one seven-project collection: B1 Ventures, Kaizen Firm, Umbrella500, Fornaya, Riwa Grove, Dar Saha and Paceform. The client work is classified as websites, based on the known scope. Four concepts support branding, websites and marketing. Category filters change the relevant media and case-study destination. The three service accordions contain the corresponding work: 4 identities, 7 websites and 4 campaigns.
+
+The portfolio catalogue is `projects-catalog.json`; concept content remains in `concepts-content.json`. Rebuild the two service-business demos with `python build_experience_demos.py` after running `python build_concepts.py`. `node export_concepts.mjs` now also produces WebP display previews while preserving the full-size downloadable PNGs. Run `node check_projects.mjs` to exercise the unified filters, service destinations, stay estimates, timetable filtering, modal details and language-preserved selections; it captures the actual new website previews.

@@ -1,0 +1,42 @@
+{
+  "brand": "Paceform",
+  "status": "Self-initiated fictional concept",
+  "campaignAssets": [
+    {
+      "name": "post-01",
+      "width": 1080,
+      "height": 1350,
+      "purpose": "Proposed campaign creative"
+    },
+    {
+      "name": "post-02",
+      "width": 1080,
+      "height": 1350,
+      "purpose": "Proposed campaign creative"
+    },
+    {
+      "name": "post-03",
+      "width": 1080,
+      "height": 1350,
+      "purpose": "Proposed campaign creative"
+    },
+    {
+      "name": "story-01",
+      "width": 1080,
+      "height": 1920,
+      "purpose": "Proposed campaign creative"
+    },
+    {
+      "name": "story-02",
+      "width": 1080,
+      "height": 1920,
+      "purpose": "Proposed campaign creative"
+    },
+    {
+      "name": "campaign-ad",
+      "width": 1200,
+      "height": 628,
+      "purpose": "Proposed campaign creative"
+    }
+  ]
+}

@@ -1,0 +1,167 @@
+{
+  "name": "Riwa Grove",
+  "arName": "ريوا غروف",
+  "kind": "A Lebanese olive-oil concept",
+  "arKind": "تصوّر لعلامة زيت زيتون لبنانية",
+  "dark": "#263E32",
+  "light": "#F2EEE3",
+  "accent": "#BCA455",
+  "white": "#FFFFFF",
+  "ink": "#172B22",
+  "display": "Fraunces",
+  "logoWeight": 500,
+  "headline": "From grove\nto gathering.",
+  "arHeadline": "من الزيتون\nإلى المائدة.",
+  "intro": "A considered olive-oil collection inspired by the Lebanese table. For the everyday pour and the meals that bring us together.",
+  "arIntro": "مجموعة مدروسة من زيت الزيتون مستوحاة من المائدة اللبنانية. للتفاصيل اليومية والوجبات التي تجمعنا.",
+  "brief": "Imagine a Lebanese olive-oil label with the clarity to travel. Give the bottle a strong shelf presence, explain the collection without inflated claims, and build a shopping journey that feels as thoughtful as the product.",
+  "arBrief": "تصوّر علامة لزيت زيتون لبناني بهوية واضحة قادرة على الوصول إلى جمهور عالمي. حضور قوي للعبوة، وشرح بسيط للمجموعة، وتجربة تسوّق مدروسة.",
+  "audience": "Design-conscious home cooks, gift buyers and the Lebanese diaspora.",
+  "arAudience": "محبّو الطبخ والتصميم، ومشترو الهدايا، واللبنانيون حول العالم.",
+  "strategy": "An olive form and a small stone-like seed make a quiet, ownable symbol. Forest green connects the brand to the grove; limestone and generous serif lettering bring tactility and room to breathe. Labels keep product type and volume easy to find.",
+  "arStrategy": "حبّة زيتون وبذرة تشبه الحجر تصنعان رمزاً هادئاً ومميّزاً. يربط الأخضر الهوية بالبستان، ويمنح لون الحجر والحرف الواضح حضوراً ملموساً. تبقى فئة المنتج وحجمه سهلَي القراءة.",
+  "storyTitle": "A little Lebanon,\nat your table.",
+  "arStoryTitle": "قليل من لبنان\nعلى مائدتك.",
+  "story": "The creative direction takes its cues from limestone, olive leaves and the generous act of sharing bread. This fictional collection turns those references into a restrained packaging system and a clear product-led website.",
+  "arStory": "يستلهم الاتجاه الإبداعي الحجر وأوراق الزيتون ومشاركة الخبز. يحوّل هذا التصوّر تلك التفاصيل إلى نظام تغليف هادئ وموقع واضح يضع المنتج أولاً.",
+  "campaignTitle": "Pour a little Lebanon.",
+  "arCampaignTitle": "قطرة من لبنان.",
+  "campaignIdea": "An editorial launch connecting the bottle to the occasion: product-led introduction, a serving ritual and a giftable table pair. A welcome email and a focused collection page continue the same story.",
+  "arCampaignIdea": "إطلاق بصري يربط العبوة بالمناسبة: تقديم المنتج، وطقس التقديم، وثنائي مناسب للمشاركة. تكمل رسالة ترحيب وصفحة المجموعة القصة نفسها.",
+  "measure": "Collection visits, product-detail views, basket starts and email clicks. These are a measurement plan, not reported results.",
+  "arMeasure": "زيارات المجموعة، ومشاهدات تفاصيل المنتجات، وبدء السلال، ونقرات البريد. هذه خطة للقياس، وليست نتائج محقّقة.",
+  "categories": [
+    [
+      "all",
+      "The collection",
+      "المجموعة"
+    ],
+    [
+      "bottle",
+      "For every day",
+      "لليوميات"
+    ],
+    [
+      "pair",
+      "To share",
+      "للمشاركة"
+    ]
+  ],
+  "products": [
+    {
+      "id": "everyday",
+      "name": "The everyday bottle",
+      "ar": "عبوة كل يوم",
+      "description": "Extra virgin olive oil / 500 ml. Made for the table.",
+      "arDescription": "زيت زيتون بكر ممتاز / ٥٠٠ مل. للمائدة اليومية.",
+      "price": 24,
+      "category": "bottle",
+      "image": "hero.webp",
+      "position": "45% 50%",
+      "detail": "A fictional 500 ml product that demonstrates clear product hierarchy, label design and a simple shopping flow. Origin, product descriptions and prices form part of the concept brief."
+    },
+    {
+      "id": "table-pair",
+      "name": "The table pair",
+      "ar": "ثنائي المائدة",
+      "description": "Two 500 ml bottles. One to keep, one to share.",
+      "arDescription": "عبوتان بحجم ٥٠٠ مل. واحدة لك، وأخرى للمشاركة.",
+      "price": 44,
+      "category": "pair",
+      "image": "hero.webp",
+      "position": "15% 50%",
+      "detail": "A two-bottle bundle illustrates a giftable product option without invented discounts, reviews or sales results. This demonstration does not process purchases."
+    },
+    {
+      "id": "tasting",
+      "name": "The tasting moment",
+      "ar": "لحظة التذوّق",
+      "description": "One 500 ml bottle, with a guide to the first pour.",
+      "arDescription": "عبوة ٥٠٠ مل مع دليل للحظة التقديم الأولى.",
+      "price": 24,
+      "category": "bottle",
+      "image": "pour.webp",
+      "position": "50% 50%",
+      "detail": "An editorial product presentation shows how an olive-oil brand can explain an occasion and guide selection. All imagery was created for this concept."
+    }
+  ],
+  "posts": [
+    [
+      "Pour a little\nLebanon.",
+      "Riwa Grove / The concept collection."
+    ],
+    [
+      "Good things\ntake root.",
+      "A considered place at your table."
+    ],
+    [
+      "Keep one.\nShare one.",
+      "Meet the table pair."
+    ]
+  ],
+  "stories": [
+    [
+      "من الزيتون\nإلى المائدة.",
+      "ريوا غروف / مجموعة تصوّرية."
+    ],
+    [
+      "قطرة\nمن لبنان.",
+      "تفاصيل صغيرة، ومائدة تجمعنا."
+    ]
+  ],
+  "emailSubject": "A little Lebanon, at your table.",
+  "emailBody": "A bottle can hold more than an ingredient. Discover a collection inspired by olive leaves, limestone and the Lebanese table. Start with the everyday bottle, or explore a pair made to share.",
+  "plan": [
+    [
+      "Week 1",
+      "Introduce the bottle and identity",
+      "Product film / hero post / launch story",
+      "Collection discovery"
+    ],
+    [
+      "Week 2",
+      "Explain the serving occasion",
+      "Pouring creative / editorial email",
+      "Product-detail views"
+    ],
+    [
+      "Week 3",
+      "Introduce a giftable pair",
+      "Table-pair creative / collection page",
+      "Basket starts"
+    ],
+    [
+      "Week 4",
+      "Continue the table story",
+      "Serving story / welcome-email test",
+      "Return visits and email clicks"
+    ]
+  ],
+  "arPlan": [
+    [
+      "الأسبوع ١",
+      "التعريف بالعبوة والهوية",
+      "منشور المنتج / قصة إطلاق",
+      "اكتشاف المجموعة"
+    ],
+    [
+      "الأسبوع ٢",
+      "شرح مناسبة التقديم",
+      "تصميم التقديم / رسالة بريد",
+      "مشاهدات تفاصيل المنتج"
+    ],
+    [
+      "الأسبوع ٣",
+      "تقديم ثنائي المائدة",
+      "تصميم المشاركة / صفحة المجموعة",
+      "بدء السلال"
+    ],
+    [
+      "الأسبوع ٤",
+      "استكمال قصة المائدة",
+      "قصة التقديم / اختبار رسالة الترحيب",
+      "العودة ونقرات البريد"
+    ]
+  ],
+  "slug": "riwa-grove"
+}

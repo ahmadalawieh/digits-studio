@@ -1,0 +1,184 @@
+{
+  "name": "Fornaya",
+  "arName": "فرنايا",
+  "kind": "A contemporary Lebanese bakery",
+  "arKind": "مخبز لبناني معاصر",
+  "dark": "#632B35",
+  "light": "#F3E7CB",
+  "accent": "#DC5137",
+  "white": "#FFFCF5",
+  "ink": "#302325",
+  "display": "Archivo",
+  "logoWeight": 850,
+  "headline": "Good mornings.\nMade slowly.",
+  "arHeadline": "صباحنا\nمن الفرن.",
+  "intro": "Warm manoushe, flaky layers, coffee worth sitting down for. A little time for the good part of your day.",
+  "arIntro": "مناقيش ساخنة، معجّنات هشّة، وقهوة تستحق أن تتمهّل من أجلها. وقت صغير لأجمل ما في يومك.",
+  "brief": "Create a neighbourhood bakery that feels unmistakably Lebanese and comfortably contemporary. Make the morning menu easy to understand, the packaging recognisable, and pickup quick to explore.",
+  "arBrief": "تصوّر مخبز حيّ بروح لبنانية واضحة وحضور معاصر. المطلوب قائمة صباحية سهلة، وتغليف مميّز، وتجربة واضحة لاختيار الطلبات.",
+  "audience": "Neighbourhood regulars, office mornings and friends sharing breakfast.",
+  "arAudience": "أهل الحي، وصباحات العمل، والأصدقاء حول الفطور.",
+  "strategy": "The rounded loaf symbol comes from three bread-scoring cuts. Oxblood gives everyday paper bags a distinctive signature; butter-yellow keeps the identity generous and warm. Confident lettering works on a small cup and a full shopfront.",
+  "arStrategy": "ينطلق الرمز من شقوق سطح الخبز الثلاثة. يمنح العنّابي أكياس الورق بصمة واضحة، ويضيف الأصفر الزبدي دفئاً وترحاباً. حروف قوية تقرأها على كوب صغير أو واجهة كاملة.",
+  "storyTitle": "A morning ritual,\nwith room for everyone.",
+  "arStoryTitle": "طقس صباحي\nيتّسع للجميع.",
+  "story": "The concept starts with a familiar Lebanese morning: zaatar, warm bread and a coffee shared without rushing. We translated that feeling into a short menu, practical packaging and a digital experience that gets out of the way.",
+  "arStory": "يبدأ التصوّر من صباح لبناني مألوف: زعتر وخبز ساخن وقهوة بلا استعجال. ترجمنا هذا الشعور إلى قائمة مختصرة، وتغليف عملي، وتجربة رقمية بسيطة وواضحة.",
+  "campaignTitle": "Your morning has a place.",
+  "arCampaignTitle": "لصباحك مكان.",
+  "campaignIdea": "A neighbourhood launch built around the daily ritual: a warm product introduction, a menu people can save, and a gentle invitation to build a breakfast basket.",
+  "arCampaignIdea": "حملة إطلاق حول تفاصيل الصباح اليومية: تقديم شهيّ للمنتجات، وقائمة يسهل حفظها، ودعوة بسيطة لاختيار الفطور.",
+  "measure": "Menu visits, product saves, basket starts and return visits. These are proposed measures; this campaign has not been run.",
+  "arMeasure": "زيارات القائمة، وحفظ المنتجات، وبدء السلال، والعودة إلى الموقع. هذه معايير قياس مقترحة؛ لم تُنفَّذ الحملة.",
+  "categories": [
+    [
+      "all",
+      "Everything",
+      "الكل"
+    ],
+    [
+      "oven",
+      "From the oven",
+      "من الفرن"
+    ],
+    [
+      "coffee",
+      "Coffee",
+      "القهوة"
+    ],
+    [
+      "table",
+      "For the table",
+      "للمشاركة"
+    ]
+  ],
+  "products": [
+    {
+      "id": "zaatar",
+      "name": "Zaatar manoushe",
+      "ar": "منقوشة زعتر",
+      "description": "Toasted sesame, tangy sumac and a soft, golden base.",
+      "arDescription": "سمسم محمّص وسماق منعش وعجينة طرية ذهبية.",
+      "price": 4.5,
+      "category": "oven",
+      "image": "hero.webp",
+      "position": "25% 60%",
+      "detail": "The familiar morning favourite, made the centre of a simple menu. This is an illustrative menu item in a fictional bakery concept."
+    },
+    {
+      "id": "croissant",
+      "name": "Butter croissant",
+      "ar": "كرواسون بالزبدة",
+      "description": "Golden, crisp layers. A slow start done well.",
+      "arDescription": "طبقات ذهبية وهشّة لبداية هادئة.",
+      "price": 3.5,
+      "category": "oven",
+      "image": "croissant.webp",
+      "position": "50% 50%",
+      "detail": "An everyday pastry presented with clear photography, an uncomplicated description and a direct add-to-basket action."
+    },
+    {
+      "id": "flat-white",
+      "name": "Flat white",
+      "ar": "فلات وايت",
+      "description": "A double espresso, silky milk and a little pause.",
+      "arDescription": "إسبريسو مزدوج وحليب ناعم ولحظة استراحة.",
+      "price": 4,
+      "category": "coffee",
+      "image": "coffee.webp",
+      "position": "50% 50%",
+      "detail": "Coffee completes the morning occasion. Basket quantities and totals work locally in this demonstration."
+    },
+    {
+      "id": "breakfast-pair",
+      "name": "Morning for two",
+      "ar": "صباح لشخصين",
+      "description": "Two manoushe and two coffees, for a shared table.",
+      "arDescription": "منقوشتان وقهوتان لصباح مشترك.",
+      "price": 16,
+      "category": "table",
+      "image": "hero.webp",
+      "position": "65% 35%",
+      "detail": "A simple bundle illustrates how a bakery can make the next decision easier. All prices are sample USD values."
+    }
+  ],
+  "posts": [
+    [
+      "Good mornings.\nMade slowly.",
+      "Your morning has a place."
+    ],
+    [
+      "Layers worth\nslowing for.",
+      "Butter, coffee and a little time."
+    ],
+    [
+      "Meet your\nmorning ritual.",
+      "Manoushe. Croissants. Coffee."
+    ]
+  ],
+  "stories": [
+    [
+      "صباحنا\nمن الفرن.",
+      "اختر فطورك، وخذ وقتك."
+    ],
+    [
+      "لصباحك\nمكان.",
+      "فرنايا / فكرة بهوية لبنانية."
+    ]
+  ],
+  "emailSubject": "Your morning has a place.",
+  "emailBody": "Meet a menu made for the good part of the day: warm manoushe, a crisp croissant and a coffee worth taking your time over. Explore the Fornaya concept and build your own breakfast basket.",
+  "plan": [
+    [
+      "Week 1",
+      "Introduce the morning ritual",
+      "Hero film / launch post / story",
+      "Brand and menu discovery"
+    ],
+    [
+      "Week 2",
+      "Make the menu useful",
+      "Product carousel / saved-menu story",
+      "Menu visits and product saves"
+    ],
+    [
+      "Week 3",
+      "Build a shared occasion",
+      "Breakfast-pair creative / email",
+      "Basket starts"
+    ],
+    [
+      "Week 4",
+      "Bring people back",
+      "Coffee ritual / reminder creative",
+      "Return visits"
+    ]
+  ],
+  "arPlan": [
+    [
+      "الأسبوع ١",
+      "التعريف بطقس الصباح",
+      "منشور إطلاق / قصة / تصوير أساسي",
+      "التعرّف إلى العلامة والقائمة"
+    ],
+    [
+      "الأسبوع ٢",
+      "قائمة مفيدة وسهلة",
+      "منشورات المنتجات / قصة للقائمة",
+      "زيارات القائمة وحفظ المنتجات"
+    ],
+    [
+      "الأسبوع ٣",
+      "فطور للمشاركة",
+      "تصميم لشخصين / رسالة بريد",
+      "بدء السلال"
+    ],
+    [
+      "الأسبوع ٤",
+      "دعوة للعودة",
+      "طقس القهوة / تصميم تذكيري",
+      "الزيارات المتكررة"
+    ]
+  ],
+  "slug": "fornaya"
+}

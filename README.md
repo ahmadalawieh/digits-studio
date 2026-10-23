@@ -45,3 +45,10 @@ For a fresh machine, install Python packages `fonttools pillow qrcode reportlab 
 QA: `node check_site.mjs` against the server checks English and Arabic at 360, 768 and 1440 px, overflow, browser errors, axe WCAG checks, mobile navigation, project dialogs and inquiry encoding. `node check_extras.mjs` checks the brand page, social editor, generated downloads and internal static links. Automated checks do not replace manual keyboard and visual review.
 
 Website motion: one short hero arrival, selectable real project previews, browser-window project interactions, animated native service accordions and dialog transitions. All seven sections retain their original order. Reduced-motion settings remove animation; keyboard and touch interactions remain available. IBM Plex Sans Arabic is served locally as WOFF2, with 400/500/600/700 weights, zero Arabic tracking and a separate reading scale.
+
+
+## Portfolio concepts — 23 October 2026
+
+Fornaya and Riwa Grove are two complete self-initiated fictional brands, each covering identity, a functional English/Arabic website and a proposed marketing launch. Case studies are at `/projects/fornaya/` and `/projects/riwa-grove/`, with Arabic equivalents under `/ar/projects/`. Website demos are at `/demos/{slug}/`; they are noindex, clearly labelled and process no orders or personal data. Existing real client work remains visible.
+
+Concept source: `concepts-content.json`, `build_concepts.py`, `export_concepts.mjs`, and `dist/assets/concepts/`. Read `CONCEPT_ASSET_NOTES.md` for deliverables, generation briefs, original image paths, typography and rebuild steps. Install `uharfbuzz` alongside the existing Python dependencies. `node check_concepts.mjs` exercises the bilingual demo baskets, filters, product details and case layouts, then captures actual website previews. Run it against the local static server before regenerating the downloadable kits.

@@ -1,0 +1,351 @@
+{
+  "fornaya": {
+    "name": "Fornaya",
+    "arName": "فرنايا",
+    "kind": "A contemporary Lebanese bakery",
+    "arKind": "مخبز لبناني معاصر",
+    "dark": "#632B35",
+    "light": "#F3E7CB",
+    "accent": "#DC5137",
+    "white": "#FFFCF5",
+    "ink": "#302325",
+    "display": "Archivo",
+    "logoWeight": 850,
+    "headline": "Good mornings.\nMade slowly.",
+    "arHeadline": "صباحنا\nمن الفرن.",
+    "intro": "Warm manoushe, flaky layers, coffee worth sitting down for. A little time for the good part of your day.",
+    "arIntro": "مناقيش ساخنة، معجّنات هشّة، وقهوة تستحق أن تتمهّل من أجلها. وقت صغير لأجمل ما في يومك.",
+    "brief": "Create a neighbourhood bakery that feels unmistakably Lebanese and comfortably contemporary. Make the morning menu easy to understand, the packaging recognisable, and pickup quick to explore.",
+    "arBrief": "تصوّر مخبز حيّ بروح لبنانية واضحة وحضور معاصر. المطلوب قائمة صباحية سهلة، وتغليف مميّز، وتجربة واضحة لاختيار الطلبات.",
+    "audience": "Neighbourhood regulars, office mornings and friends sharing breakfast.",
+    "arAudience": "أهل الحي، وصباحات العمل، والأصدقاء حول الفطور.",
+    "strategy": "The rounded loaf symbol comes from three bread-scoring cuts. Oxblood gives everyday paper bags a distinctive signature; butter-yellow keeps the identity generous and warm. Confident lettering works on a small cup and a full shopfront.",
+    "arStrategy": "ينطلق الرمز من شقوق سطح الخبز الثلاثة. يمنح العنّابي أكياس الورق بصمة واضحة، ويضيف الأصفر الزبدي دفئاً وترحاباً. حروف قوية تقرأها على كوب صغير أو واجهة كاملة.",
+    "storyTitle": "A morning ritual,\nwith room for everyone.",
+    "arStoryTitle": "طقس صباحي\nيتّسع للجميع.",
+    "story": "The concept starts with a familiar Lebanese morning: zaatar, warm bread and a coffee shared without rushing. We translated that feeling into a short menu, practical packaging and a digital experience that gets out of the way.",
+    "arStory": "يبدأ التصوّر من صباح لبناني مألوف: زعتر وخبز ساخن وقهوة بلا استعجال. ترجمنا هذا الشعور إلى قائمة مختصرة، وتغليف عملي، وتجربة رقمية بسيطة وواضحة.",
+    "campaignTitle": "Your morning has a place.",
+    "arCampaignTitle": "لصباحك مكان.",
+    "campaignIdea": "A neighbourhood launch built around the daily ritual: a warm product introduction, a menu people can save, and a gentle invitation to build a breakfast basket.",
+    "arCampaignIdea": "حملة إطلاق حول تفاصيل الصباح اليومية: تقديم شهيّ للمنتجات، وقائمة يسهل حفظها، ودعوة بسيطة لاختيار الفطور.",
+    "measure": "Menu visits, product saves, basket starts and return visits. These are proposed measures; this campaign has not been run.",
+    "arMeasure": "زيارات القائمة، وحفظ المنتجات، وبدء السلال، والعودة إلى الموقع. هذه معايير قياس مقترحة؛ لم تُنفَّذ الحملة.",
+    "categories": [
+      [
+        "all",
+        "Everything",
+        "الكل"
+      ],
+      [
+        "oven",
+        "From the oven",
+        "من الفرن"
+      ],
+      [
+        "coffee",
+        "Coffee",
+        "القهوة"
+      ],
+      [
+        "table",
+        "For the table",
+        "للمشاركة"
+      ]
+    ],
+    "products": [
+      {
+        "id": "zaatar",
+        "name": "Zaatar manoushe",
+        "ar": "منقوشة زعتر",
+        "description": "Toasted sesame, tangy sumac and a soft, golden base.",
+        "arDescription": "سمسم محمّص وسماق منعش وعجينة طرية ذهبية.",
+        "price": 4.5,
+        "category": "oven",
+        "image": "hero.webp",
+        "position": "25% 60%",
+        "detail": "The familiar morning favourite, made the centre of a simple menu. This is an illustrative menu item in a fictional bakery concept."
+      },
+      {
+        "id": "croissant",
+        "name": "Butter croissant",
+        "ar": "كرواسون بالزبدة",
+        "description": "Golden, crisp layers. A slow start done well.",
+        "arDescription": "طبقات ذهبية وهشّة لبداية هادئة.",
+        "price": 3.5,
+        "category": "oven",
+        "image": "croissant.webp",
+        "position": "50% 50%",
+        "detail": "An everyday pastry presented with clear photography, an uncomplicated description and a direct add-to-basket action."
+      },
+      {
+        "id": "flat-white",
+        "name": "Flat white",
+        "ar": "فلات وايت",
+        "description": "A double espresso, silky milk and a little pause.",
+        "arDescription": "إسبريسو مزدوج وحليب ناعم ولحظة استراحة.",
+        "price": 4,
+        "category": "coffee",
+        "image": "coffee.webp",
+        "position": "50% 50%",
+        "detail": "Coffee completes the morning occasion. Basket quantities and totals work locally in this demonstration."
+      },
+      {
+        "id": "breakfast-pair",
+        "name": "Morning for two",
+        "ar": "صباح لشخصين",
+        "description": "Two manoushe and two coffees, for a shared table.",
+        "arDescription": "منقوشتان وقهوتان لصباح مشترك.",
+        "price": 16,
+        "category": "table",
+        "image": "hero.webp",
+        "position": "65% 35%",
+        "detail": "A simple bundle illustrates how a bakery can make the next decision easier. All prices are sample USD values."
+      }
+    ],
+    "posts": [
+      [
+        "Good mornings.\nMade slowly.",
+        "Your morning has a place."
+      ],
+      [
+        "Layers worth\nslowing for.",
+        "Butter, coffee and a little time."
+      ],
+      [
+        "Meet your\nmorning ritual.",
+        "Manoushe. Croissants. Coffee."
+      ]
+    ],
+    "stories": [
+      [
+        "صباحنا\nمن الفرن.",
+        "اختر فطورك، وخذ وقتك."
+      ],
+      [
+        "لصباحك\nمكان.",
+        "فرنايا / فكرة بهوية لبنانية."
+      ]
+    ],
+    "emailSubject": "Your morning has a place.",
+    "emailBody": "Meet a menu made for the good part of the day: warm manoushe, a crisp croissant and a coffee worth taking your time over. Explore the Fornaya concept and build your own breakfast basket.",
+    "plan": [
+      [
+        "Week 1",
+        "Introduce the morning ritual",
+        "Hero film / launch post / story",
+        "Brand and menu discovery"
+      ],
+      [
+        "Week 2",
+        "Make the menu useful",
+        "Product carousel / saved-menu story",
+        "Menu visits and product saves"
+      ],
+      [
+        "Week 3",
+        "Build a shared occasion",
+        "Breakfast-pair creative / email",
+        "Basket starts"
+      ],
+      [
+        "Week 4",
+        "Bring people back",
+        "Coffee ritual / reminder creative",
+        "Return visits"
+      ]
+    ],
+    "arPlan": [
+      [
+        "الأسبوع ١",
+        "التعريف بطقس الصباح",
+        "منشور إطلاق / قصة / تصوير أساسي",
+        "التعرّف إلى العلامة والقائمة"
+      ],
+      [
+        "الأسبوع ٢",
+        "قائمة مفيدة وسهلة",
+        "منشورات المنتجات / قصة للقائمة",
+        "زيارات القائمة وحفظ المنتجات"
+      ],
+      [
+        "الأسبوع ٣",
+        "فطور للمشاركة",
+        "تصميم لشخصين / رسالة بريد",
+        "بدء السلال"
+      ],
+      [
+        "الأسبوع ٤",
+        "دعوة للعودة",
+        "طقس القهوة / تصميم تذكيري",
+        "الزيارات المتكررة"
+      ]
+    ]
+  },
+  "riwa-grove": {
+    "name": "Riwa Grove",
+    "arName": "ريوا غروف",
+    "kind": "A Lebanese olive-oil concept",
+    "arKind": "تصوّر لعلامة زيت زيتون لبنانية",
+    "dark": "#263E32",
+    "light": "#F2EEE3",
+    "accent": "#BCA455",
+    "white": "#FFFFFF",
+    "ink": "#172B22",
+    "display": "Fraunces",
+    "logoWeight": 500,
+    "headline": "From grove\nto gathering.",
+    "arHeadline": "من الزيتون\nإلى المائدة.",
+    "intro": "A considered olive-oil collection inspired by the Lebanese table. For the everyday pour and the meals that bring us together.",
+    "arIntro": "مجموعة مدروسة من زيت الزيتون مستوحاة من المائدة اللبنانية. للتفاصيل اليومية والوجبات التي تجمعنا.",
+    "brief": "Imagine a Lebanese olive-oil label with the clarity to travel. Give the bottle a strong shelf presence, explain the collection without inflated claims, and build a shopping journey that feels as thoughtful as the product.",
+    "arBrief": "تصوّر علامة لزيت زيتون لبناني بهوية واضحة قادرة على الوصول إلى جمهور عالمي. حضور قوي للعبوة، وشرح بسيط للمجموعة، وتجربة تسوّق مدروسة.",
+    "audience": "Design-conscious home cooks, gift buyers and the Lebanese diaspora.",
+    "arAudience": "محبّو الطبخ والتصميم، ومشترو الهدايا، واللبنانيون حول العالم.",
+    "strategy": "An olive form and a small stone-like seed make a quiet, ownable symbol. Forest green connects the brand to the grove; limestone and generous serif lettering bring tactility and room to breathe. Labels keep product type and volume easy to find.",
+    "arStrategy": "حبّة زيتون وبذرة تشبه الحجر تصنعان رمزاً هادئاً ومميّزاً. يربط الأخضر الهوية بالبستان، ويمنح لون الحجر والحرف الواضح حضوراً ملموساً. تبقى فئة المنتج وحجمه سهلَي القراءة.",
+    "storyTitle": "A little Lebanon,\nat your table.",
+    "arStoryTitle": "قليل من لبنان\nعلى مائدتك.",
+    "story": "The creative direction takes its cues from limestone, olive leaves and the generous act of sharing bread. This fictional collection turns those references into a restrained packaging system and a clear product-led website.",
+    "arStory": "يستلهم الاتجاه الإبداعي الحجر وأوراق الزيتون ومشاركة الخبز. يحوّل هذا التصوّر تلك التفاصيل إلى نظام تغليف هادئ وموقع واضح يضع المنتج أولاً.",
+    "campaignTitle": "Pour a little Lebanon.",
+    "arCampaignTitle": "قطرة من لبنان.",
+    "campaignIdea": "An editorial launch connecting the bottle to the occasion: product-led introduction, a serving ritual and a giftable table pair. A welcome email and a focused collection page continue the same story.",
+    "arCampaignIdea": "إطلاق بصري يربط العبوة بالمناسبة: تقديم المنتج، وطقس التقديم، وثنائي مناسب للمشاركة. تكمل رسالة ترحيب وصفحة المجموعة القصة نفسها.",
+    "measure": "Collection visits, product-detail views, basket starts and email clicks. These are a measurement plan, not reported results.",
+    "arMeasure": "زيارات المجموعة، ومشاهدات تفاصيل المنتجات، وبدء السلال، ونقرات البريد. هذه خطة للقياس، وليست نتائج محقّقة.",
+    "categories": [
+      [
+        "all",
+        "The collection",
+        "المجموعة"
+      ],
+      [
+        "bottle",
+        "For every day",
+        "لليوميات"
+      ],
+      [
+        "pair",
+        "To share",
+        "للمشاركة"
+      ]
+    ],
+    "products": [
+      {
+        "id": "everyday",
+        "name": "The everyday bottle",
+        "ar": "عبوة كل يوم",
+        "description": "Extra virgin olive oil / 500 ml. Made for the table.",
+        "arDescription": "زيت زيتون بكر ممتاز / ٥٠٠ مل. للمائدة اليومية.",
+        "price": 24,
+        "category": "bottle",
+        "image": "hero.webp",
+        "position": "45% 50%",
+        "detail": "A fictional 500 ml product that demonstrates clear product hierarchy, label design and a simple shopping flow. Origin, product descriptions and prices form part of the concept brief."
+      },
+      {
+        "id": "table-pair",
+        "name": "The table pair",
+        "ar": "ثنائي المائدة",
+        "description": "Two 500 ml bottles. One to keep, one to share.",
+        "arDescription": "عبوتان بحجم ٥٠٠ مل. واحدة لك، وأخرى للمشاركة.",
+        "price": 44,
+        "category": "pair",
+        "image": "hero.webp",
+        "position": "15% 50%",
+        "detail": "A two-bottle bundle illustrates a giftable product option without invented discounts, reviews or sales results. This demonstration does not process purchases."
+      },
+      {
+        "id": "tasting",
+        "name": "The tasting moment",
+        "ar": "لحظة التذوّق",
+        "description": "One 500 ml bottle, with a guide to the first pour.",
+        "arDescription": "عبوة ٥٠٠ مل مع دليل للحظة التقديم الأولى.",
+        "price": 24,
+        "category": "bottle",
+        "image": "pour.webp",
+        "position": "50% 50%",
+        "detail": "An editorial product presentation shows how an olive-oil brand can explain an occasion and guide selection. All imagery was created for this concept."
+      }
+    ],
+    "posts": [
+      [
+        "Pour a little\nLebanon.",
+        "Riwa Grove / The concept collection."
+      ],
+      [
+        "Good things\ntake root.",
+        "A considered place at your table."
+      ],
+      [
+        "Keep one.\nShare one.",
+        "Meet the table pair."
+      ]
+    ],
+    "stories": [
+      [
+        "من الزيتون\nإلى المائدة.",
+        "ريوا غروف / مجموعة تصوّرية."
+      ],
+      [
+        "قطرة\nمن لبنان.",
+        "تفاصيل صغيرة، ومائدة تجمعنا."
+      ]
+    ],
+    "emailSubject": "A little Lebanon, at your table.",
+    "emailBody": "A bottle can hold more than an ingredient. Discover a collection inspired by olive leaves, limestone and the Lebanese table. Start with the everyday bottle, or explore a pair made to share.",
+    "plan": [
+      [
+        "Week 1",
+        "Introduce the bottle and identity",
+        "Product film / hero post / launch story",
+        "Collection discovery"
+      ],
+      [
+        "Week 2",
+        "Explain the serving occasion",
+        "Pouring creative / editorial email",
+        "Product-detail views"
+      ],
+      [
+        "Week 3",
+        "Introduce a giftable pair",
+        "Table-pair creative / collection page",
+        "Basket starts"
+      ],
+      [
+        "Week 4",
+        "Continue the table story",
+        "Serving story / welcome-email test",
+        "Return visits and email clicks"
+      ]
+    ],
+    "arPlan": [
+      [
+        "الأسبوع ١",
+        "التعريف بالعبوة والهوية",
+        "منشور المنتج / قصة إطلاق",
+        "اكتشاف المجموعة"
+      ],
+      [
+        "الأسبوع ٢",
+        "شرح مناسبة التقديم",
+        "تصميم التقديم / رسالة بريد",
+        "مشاهدات تفاصيل المنتج"
+      ],
+      [
+        "الأسبوع ٣",
+        "تقديم ثنائي المائدة",
+        "تصميم المشاركة / صفحة المجموعة",
+        "بدء السلال"
+      ],
+      [
+        "الأسبوع ٤",
+        "استكمال قصة المائدة",
+        "قصة التقديم / اختبار رسالة الترحيب",
+        "العودة ونقرات البريد"
+      ]
+    ]
+  }
+}

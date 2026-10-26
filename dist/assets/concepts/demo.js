@@ -18,7 +18,7 @@
     if(basket.open)renderBasket();
   }
   function renderBasket(){
-    const container=document.querySelector('#basket-items');container.replaceChildren();let total=0;
+    const activeLabel=document.activeElement?.getAttribute('aria-label'),container=document.querySelector('#basket-items');container.replaceChildren();let total=0;
     if(!cart.size)container.append(node('p',tr('Your basket is waiting for something good.','سلّتك بانتظار شيء لذيذ.')));
     for(const [id,quantity] of cart){
       const p=products.get(id);total+=p.price*quantity;
@@ -32,7 +32,8 @@
       counter.append(less,node('bdi',String(quantity)),more);controls.append(counter);row.append(controls);container.append(row);
     }
     document.querySelector('#basket-total').textContent=money(total);
-    document.querySelector('#review-order').disabled=!cart.size;
+    document.querySelector('#review-order').disabled=!cart.size;document.querySelector('#basket-total').setAttribute('aria-live','polite');
+    if(activeLabel){const replacement=[...container.querySelectorAll('button[aria-label]')].find(b=>b.getAttribute('aria-label')===activeLabel);(replacement||basket.querySelector('.dialog-close')).focus({preventScroll:true});}
   }
   function renderProduct(){
     if(!selected)return;const p=products.get(selected);

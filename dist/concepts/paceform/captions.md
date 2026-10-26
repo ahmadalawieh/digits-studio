@@ -3,21 +3,21 @@ Self-initiated fictional concept. No campaign has been run.
 
 ## Post 1
 Find your pace.
-Strength, mobility and a rhythm that fits your week. A movement studio concept built around showing up.
+Strength. Mobility. Reformer. Find a class that fits your week, and start where you are.
 
 حركتك، على إيقاعك.
-قوة ومرونة وإيقاع يناسب أسبوعك. تصوّر لاستوديو حركة يشجّعك على البدء والاستمرار.
+قوة ومرونة وريفورمر. اختر حصة تناسب أسبوعك وابدأ من حيث أنت.
 
 ## Post 2
 A good week starts with one.
-Strength, mobility and a rhythm that fits your week. A movement studio concept built around showing up.
+Strength. Mobility. Reformer. Find a class that fits your week, and start where you are.
 
 خطوة تبدأ منك.
-قوة ومرونة وإيقاع يناسب أسبوعك. تصوّر لاستوديو حركة يشجّعك على البدء والاستمرار.
+قوة ومرونة وريفورمر. اختر حصة تناسب أسبوعك وابدأ من حيث أنت.
 
 ## Post 3
 Show up as you are.
-Strength, mobility and a rhythm that fits your week. A movement studio concept built around showing up.
+Strength. Mobility. Reformer. Find a class that fits your week, and start where you are.
 
 حركتك، على إيقاعك.
-قوة ومرونة وإيقاع يناسب أسبوعك. تصوّر لاستوديو حركة يشجّعك على البدء والاستمرار.
+قوة ومرونة وريفورمر. اختر حصة تناسب أسبوعك وابدأ من حيث أنت.

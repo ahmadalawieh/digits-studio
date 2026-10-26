@@ -1,0 +1,42 @@
+[
+  {
+    "brand": "fornaya",
+    "asset": "dist/assets/concepts/fornaya/croissant.webp",
+    "source": "https://commons.wikimedia.org/wiki/File:Croissants_au_beurre_(18953292873).jpg",
+    "authorHtml": "Herry Wibisono (<a rel=\"nofollow\" class=\"external text\" href=\"https://pixabay.com/en/users/herryway-29985/\">herryway</a>)",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "changes": "Resized and converted to WebP"
+  },
+  {
+    "brand": "fornaya",
+    "asset": "dist/assets/concepts/fornaya/coffee.webp",
+    "source": "https://commons.wikimedia.org/wiki/File:Cappuccino_at_ARS_Cafe.jpg",
+    "authorHtml": "Robert Smith",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "changes": "Resized and converted to WebP"
+  },
+  {
+    "brand": "fornaya",
+    "asset": "dist/assets/concepts/fornaya/manoushe.webp",
+    "source": "https://commons.wikimedia.org/wiki/File:Manakish_Za%27atar.jpg",
+    "author": "myahya",
+    "license": "CC BY-SA 2.0",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/70/Manakish_Za%27atar.jpg",
+    "changes": "Resized and converted to WebP",
+    "size": [
+      1800,
+      1350
+    ]
+  },
+  {
+    "brand": "fornaya",
+    "asset": "dist/assets/concepts/fornaya/hero.webp",
+    "source": "https://commons.wikimedia.org/wiki/File:Croissants_au_beurre_(18953292873).jpg",
+    "authorHtml": "Herry Wibisono (<a rel=\"nofollow\" class=\"external text\" href=\"https://pixabay.com/en/users/herryway-29985/\">herryway</a>)",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "changes": "Resized and converted to WebP"
+  }
+]

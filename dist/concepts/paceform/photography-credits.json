@@ -1,0 +1,20 @@
+[
+  {
+    "brand": "paceform",
+    "asset": "dist/assets/concepts/paceform/studio.webp",
+    "source": "https://commons.wikimedia.org/wiki/File:Pilates_reformer.jpg",
+    "authorHtml": "Maddi Bazzocco",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "changes": "Resized and converted to WebP"
+  },
+  {
+    "brand": "paceform",
+    "asset": "dist/assets/concepts/paceform/hero.webp",
+    "source": "https://commons.wikimedia.org/wiki/File:Pilates_reformer.jpg",
+    "authorHtml": "Maddi Bazzocco",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "changes": "Resized and converted to WebP"
+  }
+]

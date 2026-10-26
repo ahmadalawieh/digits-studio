@@ -22,7 +22,7 @@ async function walk(directory){
  }
  return files;
 }
-const sources=['build_assets.py','build_public_kit.mjs','export_assets.mjs','build_site.py','build_guide.py','build_showcase.py','build_experience_demos.py','projects-catalog.json','concept-generation-briefs.json','check_projects.mjs','build_concepts.py','export_concepts.mjs','concepts-content.json','concepts-plan.md','CONCEPT_ASSET_NOTES.md','check_concepts.mjs','package_kit.py','check_site.mjs','check_extras.mjs','check_motion.mjs','package.json','package-lock.json','vercel.json','validate-production.mjs','design-plan.md','QA_REPORT.md','DEPLOYMENT.md','.gitattributes','README.md','strategy.md'];
+const sources=['build_professional.py','build_brand_worlds.py','brand_drawing.py','build_client_cases.py','polish_portfolio.py','check_professional.mjs','professional-direction.md','photography-credits.json','build_assets.py','build_public_kit.mjs','export_assets.mjs','build_site.py','build_guide.py','build_showcase.py','build_experience_demos.py','projects-catalog.json','concept-generation-briefs.json','check_projects.mjs','build_concepts.py','export_concepts.mjs','concepts-content.json','concepts-plan.md','CONCEPT_ASSET_NOTES.md','check_concepts.mjs','package_kit.py','check_site.mjs','check_extras.mjs','check_motion.mjs','package.json','package-lock.json','vercel.json','validate-production.mjs','design-plan.md','QA_REPORT.md','DEPLOYMENT.md','.gitattributes','README.md','strategy.md'];
 async function zipFiles(files,destination,prefix,base=root){
 const local=[],central=[];let offset=0;
 for(const file of files){
@@ -47,7 +47,7 @@ await writeFile(destination,Buffer.concat([...local,directory,end]));
 console.log(`${prefix} kit generated from ${files.length} files.`);
 }
 for(const slug of ['fornaya','riwa-grove','dar-saha','paceform']){
- const files=[...await walk(path.join(dist,'assets','concepts',slug)),...await walk(path.join(dist,'concepts',slug)),...await walk(path.join(dist,'demos',slug)),...await walk(path.join(dist,'assets','fonts')),path.join(dist,'assets','concepts','concepts.css'),path.join(dist,'assets','concepts','demo.js'),path.join(dist,'assets','concepts','experiences.css'),path.join(dist,'assets','concepts','experiences.js')].sort();
+ const files=[...await walk(path.join(dist,'assets','concepts',slug)),...await walk(path.join(dist,'concepts',slug)),...await walk(path.join(dist,'demos',slug)),...await walk(path.join(dist,'assets','fonts')),path.join(dist,'assets','concepts','concepts.css'),path.join(dist,'assets','concepts','demo.js'),path.join(dist,'assets','concepts','experiences.css'),path.join(dist,'assets','concepts','experiences.js'),path.join(dist,'assets','concepts','brand-experiences.css'),path.join(dist,'assets','case-editorial.css'),path.join(dist,'photography-credits.html')].sort();
  await zipFiles(files,path.join(dist,'concepts',slug,'brand-kit.zip'),slug,dist);
 }
 const files=[...await walk(dist),...sources.map(name=>path.join(root,name))].sort();

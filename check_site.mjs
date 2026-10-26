@@ -19,7 +19,7 @@ for(const lang of ['en','ar']){
     const overflow=await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth);
     const axe=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa']).analyze();
     if(width===360){await page.locator('.menu-button').click();if(await page.locator('#mobile-menu').isHidden())errors.push('Mobile menu did not open');await page.locator('#mobile-menu a[href="#services"]').click();if(!(await page.locator('#mobile-menu').isHidden()))errors.push('Mobile menu did not close after navigation');}
-    await page.locator('.work-image[data-open="project-0"]').click();if(!(await page.locator('#project-0').evaluate(d=>d.open)))errors.push('Project dialog did not open');await page.keyboard.press('Escape');
+    await page.locator('.client-project-link').first().click();if(!page.url().includes('/projects/b1-ventures/'))errors.push('Client case did not open');await page.goBack();
     await page.locator('input[name="name"]').fill('Test Visitor');await page.locator('input[name="email"]').fill('visitor@example.com');await page.locator('input[value="Website"]').check({force:true});await page.locator('textarea[name="message"]').fill('A bilingual website & brand project. <script>alert(1)</script>');await page.locator('button[type="submit"]').click();
     const preview=await page.locator('#inquiry-preview').textContent();const whatsapp=await page.locator('#inquiry-whatsapp').getAttribute('href');const email=await page.locator('#inquiry-email').getAttribute('href');
     if(!preview.includes('<script>')||!decodeURIComponent(whatsapp).includes('visitor@example.com')||!email.startsWith('mailto:ahmad.alawieh77@gmail.com?'))errors.push('Inquiry composition failed');

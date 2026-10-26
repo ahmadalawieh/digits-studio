@@ -13,8 +13,8 @@
     "logoWeight": 850,
     "headline": "Good mornings.\nMade slowly.",
     "arHeadline": "صباحنا\nمن الفرن.",
-    "intro": "Warm manoushe, flaky layers, coffee worth sitting down for. A little time for the good part of your day.",
-    "arIntro": "مناقيش ساخنة، معجّنات هشّة، وقهوة تستحق أن تتمهّل من أجلها. وقت صغير لأجمل ما في يومك.",
+    "intro": "Manoushe, croissants and coffee. A morning menu made for taking your time.",
+    "arIntro": "مناقيش وكرواسون وقهوة. قائمة صباحية تستحق أن تتمهّل من أجلها.",
     "brief": "Create a neighbourhood bakery that feels unmistakably Lebanese and comfortably contemporary. Make the morning menu easy to understand, the packaging recognisable, and pickup quick to explore.",
     "arBrief": "تصوّر مخبز حيّ بروح لبنانية واضحة وحضور معاصر. المطلوب قائمة صباحية سهلة، وتغليف مميّز، وتجربة واضحة لاختيار الطلبات.",
     "audience": "Neighbourhood regulars, office mornings and friends sharing breakfast.",
@@ -23,8 +23,8 @@
     "arStrategy": "ينطلق الرمز من شقوق سطح الخبز الثلاثة. يمنح العنّابي أكياس الورق بصمة واضحة، ويضيف الأصفر الزبدي دفئاً وترحاباً. حروف قوية تقرأها على كوب صغير أو واجهة كاملة.",
     "storyTitle": "A morning ritual,\nwith room for everyone.",
     "arStoryTitle": "طقس صباحي\nيتّسع للجميع.",
-    "story": "The concept starts with a familiar Lebanese morning: zaatar, warm bread and a coffee shared without rushing. We translated that feeling into a short menu, practical packaging and a digital experience that gets out of the way.",
-    "arStory": "يبدأ التصوّر من صباح لبناني مألوف: زعتر وخبز ساخن وقهوة بلا استعجال. ترجمنا هذا الشعور إلى قائمة مختصرة، وتغليف عملي، وتجربة رقمية بسيطة وواضحة.",
+    "story": "Start with zaatar while the coffee brews. Take a croissant for the road, or make room at the table for two. Familiar favourites, with a little more care in the everyday.",
+    "arStory": "ابدأ بالزعتر ريثما تجهز القهوة. خذ كرواسون للطريق، أو اترك مكاناً على المائدة لشخصين. نكهات مألوفة واهتمام أكبر بتفاصيل كل يوم.",
     "campaignTitle": "Your morning has a place.",
     "arCampaignTitle": "لصباحك مكان.",
     "campaignIdea": "A neighbourhood launch built around the daily ritual: a warm product introduction, a menu people can save, and a gentle invitation to build a breakfast basket.",
@@ -62,9 +62,9 @@
         "arDescription": "سمسم محمّص وسماق منعش وعجينة طرية ذهبية.",
         "price": 4.5,
         "category": "oven",
-        "image": "hero.webp",
+        "image": "manoushe.webp",
         "position": "25% 60%",
-        "detail": "The familiar morning favourite, made the centre of a simple menu. This is an illustrative menu item in a fictional bakery concept."
+        "detail": "Toasted sesame, tangy sumac and a soft, golden base. Choose a single favourite or put together breakfast for the table. Menu and prices are illustrative."
       },
       {
         "id": "croissant",
@@ -76,7 +76,7 @@
         "category": "oven",
         "image": "croissant.webp",
         "position": "50% 50%",
-        "detail": "An everyday pastry presented with clear photography, an uncomplicated description and a direct add-to-basket action."
+        "detail": "Golden, crisp layers. A slow start done well. Choose a single favourite or put together breakfast for the table. Menu and prices are illustrative."
       },
       {
         "id": "flat-white",
@@ -88,7 +88,7 @@
         "category": "coffee",
         "image": "coffee.webp",
         "position": "50% 50%",
-        "detail": "Coffee completes the morning occasion. Basket quantities and totals work locally in this demonstration."
+        "detail": "A double espresso, silky milk and a little pause. Choose a single favourite or put together breakfast for the table. Menu and prices are illustrative."
       },
       {
         "id": "breakfast-pair",
@@ -98,9 +98,9 @@
         "arDescription": "منقوشتان وقهوتان لصباح مشترك.",
         "price": 16,
         "category": "table",
-        "image": "hero.webp",
+        "image": "manoushe.webp",
         "position": "65% 35%",
-        "detail": "A simple bundle illustrates how a bakery can make the next decision easier. All prices are sample USD values."
+        "detail": "Two manoushe and two coffees, for a shared table. Choose a single favourite or put together breakfast for the table. Menu and prices are illustrative."
       }
     ],
     "posts": [
@@ -196,8 +196,8 @@
     "logoWeight": 500,
     "headline": "From grove\nto gathering.",
     "arHeadline": "من الزيتون\nإلى المائدة.",
-    "intro": "A considered olive-oil collection inspired by the Lebanese table. For the everyday pour and the meals that bring us together.",
-    "arIntro": "مجموعة مدروسة من زيت الزيتون مستوحاة من المائدة اللبنانية. للتفاصيل اليومية والوجبات التي تجمعنا.",
+    "intro": "Extra virgin olive oil. For the everyday pour and the meals worth gathering for.",
+    "arIntro": "زيت زيتون بكر ممتاز. للتفاصيل اليومية والوجبات التي تستحق أن نجتمع حولها.",
     "brief": "Imagine a Lebanese olive-oil label with the clarity to travel. Give the bottle a strong shelf presence, explain the collection without inflated claims, and build a shopping journey that feels as thoughtful as the product.",
     "arBrief": "تصوّر علامة لزيت زيتون لبناني بهوية واضحة قادرة على الوصول إلى جمهور عالمي. حضور قوي للعبوة، وشرح بسيط للمجموعة، وتجربة تسوّق مدروسة.",
     "audience": "Design-conscious home cooks, gift buyers and the Lebanese diaspora.",
@@ -206,8 +206,8 @@
     "arStrategy": "حبّة زيتون وبذرة تشبه الحجر تصنعان رمزاً هادئاً ومميّزاً. يربط الأخضر الهوية بالبستان، ويمنح لون الحجر والحرف الواضح حضوراً ملموساً. تبقى فئة المنتج وحجمه سهلَي القراءة.",
     "storyTitle": "A little Lebanon,\nat your table.",
     "arStoryTitle": "قليل من لبنان\nعلى مائدتك.",
-    "story": "The creative direction takes its cues from limestone, olive leaves and the generous act of sharing bread. This fictional collection turns those references into a restrained packaging system and a clear product-led website.",
-    "arStory": "يستلهم الاتجاه الإبداعي الحجر وأوراق الزيتون ومشاركة الخبز. يحوّل هذا التصوّر تلك التفاصيل إلى نظام تغليف هادئ وموقع واضح يضع المنتج أولاً.",
+    "story": "A drizzle over warm bread. A finishing touch on a shared plate. Riwa Grove makes a place for olive oil at the centre of the table, with clear labels and an uncomplicated collection.",
+    "arStory": "قطرات فوق خبز دافئ، ولمسة أخيرة على طبق للمشاركة. تضع ريوا غروف زيت الزيتون في قلب المائدة، بعبوات واضحة ومجموعة بسيطة.",
     "campaignTitle": "Pour a little Lebanon.",
     "arCampaignTitle": "قطرة من لبنان.",
     "campaignIdea": "An editorial launch connecting the bottle to the occasion: product-led introduction, a serving ritual and a giftable table pair. A welcome email and a focused collection page continue the same story.",
@@ -240,9 +240,9 @@
         "arDescription": "زيت زيتون بكر ممتاز / ٥٠٠ مل. للمائدة اليومية.",
         "price": 24,
         "category": "bottle",
-        "image": "hero.webp",
+        "image": "bottle-single.webp",
         "position": "45% 50%",
-        "detail": "A fictional 500 ml product that demonstrates clear product hierarchy, label design and a simple shopping flow. Origin, product descriptions and prices form part of the concept brief."
+        "detail": "Extra virgin olive oil / 500 ml. Made for the table. Explore the bottle or choose a pair for sharing. Product details and prices belong to this independent brand concept."
       },
       {
         "id": "table-pair",
@@ -252,9 +252,9 @@
         "arDescription": "عبوتان بحجم ٥٠٠ مل. واحدة لك، وأخرى للمشاركة.",
         "price": 44,
         "category": "pair",
-        "image": "hero.webp",
+        "image": "bottle-pair.webp",
         "position": "15% 50%",
-        "detail": "A two-bottle bundle illustrates a giftable product option without invented discounts, reviews or sales results. This demonstration does not process purchases."
+        "detail": "Two 500 ml bottles. One to keep, one to share. Explore the bottle or choose a pair for sharing. Product details and prices belong to this independent brand concept."
       },
       {
         "id": "tasting",
@@ -264,9 +264,9 @@
         "arDescription": "عبوة ٥٠٠ مل مع دليل للحظة التقديم الأولى.",
         "price": 24,
         "category": "bottle",
-        "image": "pour.webp",
+        "image": "bottle-single.webp",
         "position": "50% 50%",
-        "detail": "An editorial product presentation shows how an olive-oil brand can explain an occasion and guide selection. All imagery was created for this concept."
+        "detail": "One 500 ml bottle, with a guide to the first pour. Explore the bottle or choose a pair for sharing. Product details and prices belong to this independent brand concept."
       }
     ],
     "posts": [
@@ -365,8 +365,8 @@
     "categories": [],
     "headline": "Make room\nfor a slower day.",
     "arHeadline": "مساحة\nلتأخذ وقتك.",
-    "intro": "Stone, sunlight and a little space to yourself. A guesthouse concept inspired by the quieter side of Lebanon.",
-    "arIntro": "حجر وشمس ومساحة لك. تصوّر لدار ضيافة مستوحاة من الجانب الهادئ للبنان.",
+    "intro": "Room to arrive. Time to settle in. An imagined guesthouse for a slower kind of stay.",
+    "arIntro": "مساحة للوصول ووقت للاستراحة. تصوّر لدار ضيافة بإيقاع أهدأ.",
     "brief": "Build a small hospitality brand around the feeling of arriving somewhere unhurried. Connect the courtyard-inspired identity, guest stationery, room discovery and a simple stay-planning journey.",
     "arBrief": "تصميم علامة ضيافة صغيرة حول شعور الوصول إلى مكان هادئ. تربط الهوية المستوحاة من الساحة بين مطبوعات الضيوف، واكتشاف الغرف، وتجربة بسيطة لتخطيط الإقامة.",
     "audience": "Weekend travellers, couples and Lebanese visitors looking for a thoughtful short escape.",
@@ -375,8 +375,8 @@
     "arStrategy": "ساحة مفتوحة وباب مقوّس يصنعان الرمز. يستوحي الأزرق لونه من المصاريع والبلاط، ويضيف الأبيض الحجري والرملي دفئاً. تمنح الحروف الرحبة الدار صوتاً هادئاً ومرحباً.",
     "storyTitle": "A stay with\nspace around it.",
     "arStoryTitle": "إقامة\nتتّسع للهدوء.",
-    "story": "The idea starts with a shaded courtyard, a long breakfast and a view worth leaving your phone for. Dar Saha turns those moments into a considered guest experience, from first discovery to a stay plan.",
-    "arStory": "تبدأ الفكرة من ساحة مظلّلة، وفطور بلا استعجال، وإطلالة تستحق أن تترك هاتفك لأجلها. تحوّل دار ساحة هذه اللحظات إلى تجربة ضيافة مدروسة، من الاكتشاف إلى تخطيط الإقامة.",
+    "story": "A quiet room, a shaded terrace and a morning without a schedule. The guesthouse concept brings these small pleasures into one considered experience, from the first welcome to the room key.",
+    "arStory": "غرفة هادئة وشرفة مظلّلة وصباح بلا جدول. يجمع تصوّر الدار هذه التفاصيل في تجربة مدروسة، من الترحيب الأول إلى مفتاح الغرفة.",
     "campaignTitle": "Stay for the slower part.",
     "arCampaignTitle": "ابقَ للوقت الأهدأ.",
     "campaignIdea": "A hospitality launch that introduces a feeling before a room: the courtyard, the morning light and the small rituals of a weekend away. Room discovery and a welcome email provide the next step.",
@@ -510,8 +510,8 @@
     "categories": [],
     "headline": "Find\nyour pace.",
     "arHeadline": "حركتك،\nعلى إيقاعك.",
-    "intro": "Strength, mobility and a rhythm that fits your week. A movement studio concept built around showing up.",
-    "arIntro": "قوة ومرونة وإيقاع يناسب أسبوعك. تصوّر لاستوديو حركة يشجّعك على البدء والاستمرار.",
+    "intro": "Strength. Mobility. Reformer. Find a class that fits your week, and start where you are.",
+    "arIntro": "قوة ومرونة وريفورمر. اختر حصة تناسب أسبوعك وابدأ من حيث أنت.",
     "brief": "Create an approachable fitness identity that feels energetic without intimidation. Connect a clear class language, an adaptable graphic system and an easy weekly timetable.",
     "arBrief": "تصميم هوية رياضية حيوية وقريبة من الناس. تربط بين أسماء حصص واضحة، ونظام بصري مرن، وجدول أسبوعي سهل الاستخدام.",
     "audience": "Busy adults, first-time studio visitors and people building a regular movement habit.",
@@ -520,8 +520,8 @@
     "arStrategy": "شكلان متتابعان يتجهان إلى الأمام، في إشارة إلى إيقاعك الخاص ضمن حركة مشتركة. الأزرق الواضح والمساحة البيضاء والحروف القوية تجعل الجداول ورسائل الحملة سهلة التمييز.",
     "storyTitle": "A rhythm\nyou can return to.",
     "arStoryTitle": "إيقاع\nتعود إليه.",
-    "story": "The studio concept puts useful information before pressure: what the class involves, how long it takes and where it fits into your week. The identity makes room for different starting points and a shared sense of momentum.",
-    "arStory": "يضع التصوّر المعلومات المفيدة أولاً: طبيعة الحصة، ومدّتها، ومكانها ضمن أسبوعك. تتّسع الهوية لبدايات مختلفة وشعور مشترك بالتقدّم.",
+    "story": "Clear sessions. Useful information. Space for different starting points. Choose the movement and the time that fit your day, then make a little room to return.",
+    "arStory": "حصص واضحة ومعلومات مفيدة ومساحة لبدايات مختلفة. اختر الحركة والوقت المناسبين ليومك، واترك مساحة للعودة.",
     "campaignTitle": "Make space for your pace.",
     "arCampaignTitle": "امنح إيقاعك مساحة.",
     "campaignIdea": "A launch focused on the first useful decision: find a class that fits. Clear movement categories, short timetable-led creative and a welcome email turn a strong graphic identity into a practical weekly habit.",

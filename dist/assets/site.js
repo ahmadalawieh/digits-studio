@@ -19,37 +19,14 @@
     dialog.querySelector('[data-close]').addEventListener('click',()=>dialog.close());
     dialog.addEventListener('click',event=>{if(event.target===dialog){const r=dialog.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)dialog.close();}});
   });
-  const heroPreview=document.querySelector('.hero-preview');
-  const previewImage=heroPreview?.querySelector('.preview-image');
-  const previewPicks=[...document.querySelectorAll('[data-preview]')];
-  const previewContext=document.querySelector('.preview-context');
-  const defaultPreviewContext=previewContext?.textContent;
-  let previewRequest=0;
-  previewPicks.forEach(pick=>pick.addEventListener('click',async()=>{
-    if(!heroPreview||!previewImage||pick.getAttribute('aria-pressed')==='true')return;
-    const request=++previewRequest;
-    previewPicks.forEach(item=>item.setAttribute('aria-pressed',String(item===pick)));
-    const ar=document.documentElement.lang==='ar';
-    heroPreview.disabled=true;heroPreview.setAttribute('aria-busy','true');
-    try{
-      const nextImage=new Image();nextImage.src=pick.dataset.image;await nextImage.decode();
-      if(request!==previewRequest)return;
-      heroPreview.dataset.open='project-'+pick.dataset.preview;
-      heroPreview.setAttribute('aria-label',(ar?'عرض المشروع: ':'View project: ')+pick.dataset.name);
-      heroPreview.querySelector('.preview-name').textContent=pick.dataset.name;
-      previewImage.src=pick.dataset.image;
-      previewImage.alt=pick.dataset.name+(ar?' معاينة الموقع':' website preview');
-      previewContext.textContent=defaultPreviewContext;
-      previewImage.getAnimations().forEach(animation=>animation.cancel());
-      if(!reducedMotion.matches)previewImage.animate([{opacity:.25,transform:'translateY(6px)'},{opacity:1,transform:'none'}],{duration:270,easing:'ease-out'});
-    }catch{
-      if(request!==previewRequest)return;
-      previewPicks.forEach(item=>item.setAttribute('aria-pressed',String('project-'+item.dataset.preview===heroPreview.dataset.open)));
-      previewContext.textContent=ar?'تعذّر تحميل المعاينة. يمكنك استكشاف المشاريع أدناه.':'This preview could not load. Explore the projects below.';
-    }finally{
-      if(request===previewRequest){heroPreview.disabled=false;heroPreview.removeAttribute('aria-busy');}
-    }
-  }));
+  const reel=document.querySelector('.studio-reel');
+  if(reel){
+    const ar=document.documentElement.lang==='ar',prefix=ar?'/ar':'',items=[['fornaya','Fornaya'],['riwa-grove','Riwa Grove'],['dar-saha','Dar Saha'],['paceform','Paceform']];let index=0,request=0,timer=null,playing=!reducedMotion.matches;
+    const img=reel.querySelector('.reel-image'),link=reel.querySelector('.reel-link'),toggle=reel.querySelector('.reel-toggle');
+    async function show(next){const token=++request;const n=(next+items.length)%items.length;const [slug,name]=items[n];const candidate=new Image();candidate.src='/assets/concepts/'+slug+'/project-cover.webp';try{await candidate.decode();if(token!==request)return;index=n;img.src=candidate.src;img.alt=name+(ar?' / الهوية وتطبيقاتها':' / identity and applications');link.href=prefix+'/projects/'+slug+'/';reel.querySelector('.reel-name').textContent=name;if(!reducedMotion.matches)img.animate([{opacity:.25,transform:'scale(1.025)'},{opacity:1,transform:'scale(1)'}],{duration:450,easing:'ease-out'});}catch{playing=false;sync();}}
+    function sync(){clearInterval(timer);timer=null;toggle.setAttribute('aria-pressed',String(playing));toggle.textContent=ar?(playing?'إيقاف':'تشغيل'):(playing?'Pause':'Play');if(playing&&!document.hidden)timer=setInterval(()=>show(index+1),6500);}
+    reel.querySelector('.reel-prev').addEventListener('click',()=>{playing=false;sync();show(index-1);});reel.querySelector('.reel-next').addEventListener('click',()=>{playing=false;sync();show(index+1);});toggle.addEventListener('click',()=>{playing=!playing;sync();});document.addEventListener('visibilitychange',sync);reducedMotion.addEventListener('change',()=>{if(reducedMotion.matches){playing=false;sync();}});reel.addEventListener('focusin',event=>{if(event.target===toggle)return;playing=false;sync();});sync();
+  }
   // Native details retains semantics and keyboard activation; animate only its content.
   const detailAnimations=new Map();
   document.querySelectorAll('.service').forEach(detail=>{
@@ -79,10 +56,11 @@
       detail.querySelector('.service-content').style.overflow='';
     });
     detailAnimations.clear();
-    previewImage?.getAnimations().forEach(animation=>animation.cancel());
+
   });
   const projectCards=[...document.querySelectorAll('[data-project-card]')];
   document.querySelectorAll('[data-project-filter]').forEach(button=>button.addEventListener('click',()=>{
+    const before=new Map(projectCards.filter(c=>!c.hidden).map(c=>[c,c.getBoundingClientRect()]));
     const category=button.dataset.projectFilter,ar=document.documentElement.lang==='ar';let count=0;
     document.querySelectorAll('[data-project-filter]').forEach(other=>other.setAttribute('aria-pressed',String(other===button)));
     projectCards.forEach(card=>{
@@ -93,6 +71,7 @@
       image.src=src;image.alt=card.querySelector('h3').textContent+' / '+(ar?{all:'معاينة المشروع',branding:'الهوية',website:'الموقع',marketing:'الحملة'}:{all:'project preview',branding:'brand identity',website:'website',marketing:'campaign'})[category];
       card.dataset.preview=category;
     });
+    if(!reducedMotion.matches)projectCards.filter(c=>!c.hidden).forEach(card=>{const prior=before.get(card),now=card.getBoundingClientRect();card.animate(prior?[{transform:`translate(${prior.x-now.x}px,${prior.y-now.y}px)`,opacity:.6},{transform:'none',opacity:1}]:[{opacity:.25},{opacity:1}],{duration:280,easing:'ease-out'});});
     document.querySelector('#project-filter-status').textContent=ar?`عرض ${count} من المشاريع — ${{all:'كل المشاريع',branding:'الهوية',website:'المواقع',marketing:'التسويق'}[category]}`:`Showing ${count} projects — ${{all:'all projects',branding:'branding',website:'websites',marketing:'marketing'}[category]}.`;
   }));
   const form=document.getElementById('inquiry-form');

@@ -12,8 +12,8 @@
   "logoWeight": 850,
   "headline": "Good mornings.\nMade slowly.",
   "arHeadline": "صباحنا\nمن الفرن.",
-  "intro": "Warm manoushe, flaky layers, coffee worth sitting down for. A little time for the good part of your day.",
-  "arIntro": "مناقيش ساخنة، معجّنات هشّة، وقهوة تستحق أن تتمهّل من أجلها. وقت صغير لأجمل ما في يومك.",
+  "intro": "Manoushe, croissants and coffee. A morning menu made for taking your time.",
+  "arIntro": "مناقيش وكرواسون وقهوة. قائمة صباحية تستحق أن تتمهّل من أجلها.",
   "brief": "Create a neighbourhood bakery that feels unmistakably Lebanese and comfortably contemporary. Make the morning menu easy to understand, the packaging recognisable, and pickup quick to explore.",
   "arBrief": "تصوّر مخبز حيّ بروح لبنانية واضحة وحضور معاصر. المطلوب قائمة صباحية سهلة، وتغليف مميّز، وتجربة واضحة لاختيار الطلبات.",
   "audience": "Neighbourhood regulars, office mornings and friends sharing breakfast.",
@@ -22,8 +22,8 @@
   "arStrategy": "ينطلق الرمز من شقوق سطح الخبز الثلاثة. يمنح العنّابي أكياس الورق بصمة واضحة، ويضيف الأصفر الزبدي دفئاً وترحاباً. حروف قوية تقرأها على كوب صغير أو واجهة كاملة.",
   "storyTitle": "A morning ritual,\nwith room for everyone.",
   "arStoryTitle": "طقس صباحي\nيتّسع للجميع.",
-  "story": "The concept starts with a familiar Lebanese morning: zaatar, warm bread and a coffee shared without rushing. We translated that feeling into a short menu, practical packaging and a digital experience that gets out of the way.",
-  "arStory": "يبدأ التصوّر من صباح لبناني مألوف: زعتر وخبز ساخن وقهوة بلا استعجال. ترجمنا هذا الشعور إلى قائمة مختصرة، وتغليف عملي، وتجربة رقمية بسيطة وواضحة.",
+  "story": "Start with zaatar while the coffee brews. Take a croissant for the road, or make room at the table for two. Familiar favourites, with a little more care in the everyday.",
+  "arStory": "ابدأ بالزعتر ريثما تجهز القهوة. خذ كرواسون للطريق، أو اترك مكاناً على المائدة لشخصين. نكهات مألوفة واهتمام أكبر بتفاصيل كل يوم.",
   "campaignTitle": "Your morning has a place.",
   "arCampaignTitle": "لصباحك مكان.",
   "campaignIdea": "A neighbourhood launch built around the daily ritual: a warm product introduction, a menu people can save, and a gentle invitation to build a breakfast basket.",
@@ -61,9 +61,9 @@
       "arDescription": "سمسم محمّص وسماق منعش وعجينة طرية ذهبية.",
       "price": 4.5,
       "category": "oven",
-      "image": "hero.webp",
+      "image": "manoushe.webp",
       "position": "25% 60%",
-      "detail": "The familiar morning favourite, made the centre of a simple menu. This is an illustrative menu item in a fictional bakery concept."
+      "detail": "Toasted sesame, tangy sumac and a soft, golden base. Choose a single favourite or put together breakfast for the table. Menu and prices are illustrative."
     },
     {
       "id": "croissant",
@@ -75,7 +75,7 @@
       "category": "oven",
       "image": "croissant.webp",
       "position": "50% 50%",
-      "detail": "An everyday pastry presented with clear photography, an uncomplicated description and a direct add-to-basket action."
+      "detail": "Golden, crisp layers. A slow start done well. Choose a single favourite or put together breakfast for the table. Menu and prices are illustrative."
     },
     {
       "id": "flat-white",
@@ -87,7 +87,7 @@
       "category": "coffee",
       "image": "coffee.webp",
       "position": "50% 50%",
-      "detail": "Coffee completes the morning occasion. Basket quantities and totals work locally in this demonstration."
+      "detail": "A double espresso, silky milk and a little pause. Choose a single favourite or put together breakfast for the table. Menu and prices are illustrative."
     },
     {
       "id": "breakfast-pair",
@@ -97,9 +97,9 @@
       "arDescription": "منقوشتان وقهوتان لصباح مشترك.",
       "price": 16,
       "category": "table",
-      "image": "hero.webp",
+      "image": "manoushe.webp",
       "position": "65% 35%",
-      "detail": "A simple bundle illustrates how a bakery can make the next decision easier. All prices are sample USD values."
+      "detail": "Two manoushe and two coffees, for a shared table. Choose a single favourite or put together breakfast for the table. Menu and prices are illustrative."
     }
   ],
   "posts": [

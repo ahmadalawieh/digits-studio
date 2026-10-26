@@ -12,8 +12,8 @@
   "logoWeight": 500,
   "headline": "From grove\nto gathering.",
   "arHeadline": "من الزيتون\nإلى المائدة.",
-  "intro": "A considered olive-oil collection inspired by the Lebanese table. For the everyday pour and the meals that bring us together.",
-  "arIntro": "مجموعة مدروسة من زيت الزيتون مستوحاة من المائدة اللبنانية. للتفاصيل اليومية والوجبات التي تجمعنا.",
+  "intro": "Extra virgin olive oil. For the everyday pour and the meals worth gathering for.",
+  "arIntro": "زيت زيتون بكر ممتاز. للتفاصيل اليومية والوجبات التي تستحق أن نجتمع حولها.",
   "brief": "Imagine a Lebanese olive-oil label with the clarity to travel. Give the bottle a strong shelf presence, explain the collection without inflated claims, and build a shopping journey that feels as thoughtful as the product.",
   "arBrief": "تصوّر علامة لزيت زيتون لبناني بهوية واضحة قادرة على الوصول إلى جمهور عالمي. حضور قوي للعبوة، وشرح بسيط للمجموعة، وتجربة تسوّق مدروسة.",
   "audience": "Design-conscious home cooks, gift buyers and the Lebanese diaspora.",
@@ -22,8 +22,8 @@
   "arStrategy": "حبّة زيتون وبذرة تشبه الحجر تصنعان رمزاً هادئاً ومميّزاً. يربط الأخضر الهوية بالبستان، ويمنح لون الحجر والحرف الواضح حضوراً ملموساً. تبقى فئة المنتج وحجمه سهلَي القراءة.",
   "storyTitle": "A little Lebanon,\nat your table.",
   "arStoryTitle": "قليل من لبنان\nعلى مائدتك.",
-  "story": "The creative direction takes its cues from limestone, olive leaves and the generous act of sharing bread. This fictional collection turns those references into a restrained packaging system and a clear product-led website.",
-  "arStory": "يستلهم الاتجاه الإبداعي الحجر وأوراق الزيتون ومشاركة الخبز. يحوّل هذا التصوّر تلك التفاصيل إلى نظام تغليف هادئ وموقع واضح يضع المنتج أولاً.",
+  "story": "A drizzle over warm bread. A finishing touch on a shared plate. Riwa Grove makes a place for olive oil at the centre of the table, with clear labels and an uncomplicated collection.",
+  "arStory": "قطرات فوق خبز دافئ، ولمسة أخيرة على طبق للمشاركة. تضع ريوا غروف زيت الزيتون في قلب المائدة، بعبوات واضحة ومجموعة بسيطة.",
   "campaignTitle": "Pour a little Lebanon.",
   "arCampaignTitle": "قطرة من لبنان.",
   "campaignIdea": "An editorial launch connecting the bottle to the occasion: product-led introduction, a serving ritual and a giftable table pair. A welcome email and a focused collection page continue the same story.",
@@ -56,9 +56,9 @@
       "arDescription": "زيت زيتون بكر ممتاز / ٥٠٠ مل. للمائدة اليومية.",
       "price": 24,
       "category": "bottle",
-      "image": "hero.webp",
+      "image": "bottle-single.webp",
       "position": "45% 50%",
-      "detail": "A fictional 500 ml product that demonstrates clear product hierarchy, label design and a simple shopping flow. Origin, product descriptions and prices form part of the concept brief."
+      "detail": "Extra virgin olive oil / 500 ml. Made for the table. Explore the bottle or choose a pair for sharing. Product details and prices belong to this independent brand concept."
     },
     {
       "id": "table-pair",
@@ -68,9 +68,9 @@
       "arDescription": "عبوتان بحجم ٥٠٠ مل. واحدة لك، وأخرى للمشاركة.",
       "price": 44,
       "category": "pair",
-      "image": "hero.webp",
+      "image": "bottle-pair.webp",
       "position": "15% 50%",
-      "detail": "A two-bottle bundle illustrates a giftable product option without invented discounts, reviews or sales results. This demonstration does not process purchases."
+      "detail": "Two 500 ml bottles. One to keep, one to share. Explore the bottle or choose a pair for sharing. Product details and prices belong to this independent brand concept."
     },
     {
       "id": "tasting",
@@ -80,9 +80,9 @@
       "arDescription": "عبوة ٥٠٠ مل مع دليل للحظة التقديم الأولى.",
       "price": 24,
       "category": "bottle",
-      "image": "pour.webp",
+      "image": "bottle-single.webp",
       "position": "50% 50%",
-      "detail": "An editorial product presentation shows how an olive-oil brand can explain an occasion and guide selection. All imagery was created for this concept."
+      "detail": "One 500 ml bottle, with a guide to the first pour. Explore the bottle or choose a pair for sharing. Product details and prices belong to this independent brand concept."
     }
   ],
   "posts": [

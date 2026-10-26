@@ -1,0 +1,87 @@
+[
+  {
+    "brand": "fornaya",
+    "asset": "dist/assets/concepts/fornaya/croissant.webp",
+    "source": "https://commons.wikimedia.org/wiki/File:Croissants_au_beurre_(18953292873).jpg",
+    "authorHtml": "Herry Wibisono (<a rel=\"nofollow\" class=\"external text\" href=\"https://pixabay.com/en/users/herryway-29985/\">herryway</a>)",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "changes": "Resized and converted to WebP"
+  },
+  {
+    "brand": "fornaya",
+    "asset": "dist/assets/concepts/fornaya/coffee.webp",
+    "source": "https://commons.wikimedia.org/wiki/File:Cappuccino_at_ARS_Cafe.jpg",
+    "authorHtml": "Robert Smith",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "changes": "Resized and converted to WebP"
+  },
+  {
+    "brand": "paceform",
+    "asset": "dist/assets/concepts/paceform/studio.webp",
+    "source": "https://commons.wikimedia.org/wiki/File:Pilates_reformer.jpg",
+    "authorHtml": "Maddi Bazzocco",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "changes": "Resized and converted to WebP"
+  },
+  {
+    "brand": "dar-saha",
+    "asset": "dist/assets/concepts/dar-saha/room.webp",
+    "source": "https://commons.wikimedia.org/wiki/File:Canopy_bed_of_Amantaka_Suite_in_Amantaka_luxury_Resort_%26_Hotel_in_Luang_Prabang_Laos.jpg",
+    "authorHtml": "<a href=\"//commons.wikimedia.org/wiki/User:Basile_Morin\" title=\"User:Basile Morin\">Basile Morin</a>",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "changes": "Resized and converted to WebP"
+  },
+  {
+    "brand": "fornaya",
+    "asset": "dist/assets/concepts/fornaya/manoushe.webp",
+    "source": "https://commons.wikimedia.org/wiki/File:Manakish_Za%27atar.jpg",
+    "author": "myahya",
+    "license": "CC BY-SA 2.0",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/70/Manakish_Za%27atar.jpg",
+    "changes": "Resized and converted to WebP",
+    "size": [
+      1800,
+      1350
+    ]
+  },
+  {
+    "brand": "fornaya",
+    "asset": "dist/assets/concepts/fornaya/hero.webp",
+    "source": "https://commons.wikimedia.org/wiki/File:Croissants_au_beurre_(18953292873).jpg",
+    "authorHtml": "Herry Wibisono (<a rel=\"nofollow\" class=\"external text\" href=\"https://pixabay.com/en/users/herryway-29985/\">herryway</a>)",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "changes": "Resized and converted to WebP"
+  },
+  {
+    "brand": "paceform",
+    "asset": "dist/assets/concepts/paceform/hero.webp",
+    "source": "https://commons.wikimedia.org/wiki/File:Pilates_reformer.jpg",
+    "authorHtml": "Maddi Bazzocco",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "changes": "Resized and converted to WebP"
+  },
+  {
+    "brand": "dar-saha",
+    "asset": "dist/assets/concepts/dar-saha/hero.webp",
+    "source": "https://commons.wikimedia.org/wiki/File:Swimming_pool_and_terrasse_of_Amantaka_luxury_Resort_%26_Hotel_in_Luang_Prabang_Laos.jpg",
+    "authorHtml": "<a href=\"//commons.wikimedia.org/wiki/User:Basile_Morin\" title=\"User:Basile Morin\">Basile Morin</a>",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "changes": "Resized and converted to WebP"
+  },
+  {
+    "brand": "riwa-grove",
+    "asset": "dist/assets/concepts/riwa-grove/pour.webp",
+    "source": "https://commons.wikimedia.org/wiki/File:Olive_tree_(Olea_europaea)_branch_with_immature_olives,_Pra%C3%A7a_Jo%C3%A3o_do_Rio,_Lisbon,_Portugal_julesvernex2.jpg",
+    "authorHtml": "<a href=\"//commons.wikimedia.org/wiki/User:Julesvernex2\" title=\"User:Julesvernex2\">Jules Verne Times Two</a>",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "changes": "Resized and converted to WebP"
+  }
+]

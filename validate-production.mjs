@@ -24,3 +24,7 @@ for(const slug of ['fornaya','riwa-grove','dar-saha','paceform']){
  }
 }
 console.log('All four bilingual concepts, demo pages, previews and downloadable kits verified.');
+
+for(const slug of ['b1-ventures','kaizen-firm','umbrella500'])for(const prefix of ['', 'ar/']){const html=await readFile(new URL(`./dist/${prefix}projects/${slug}/index.html`,import.meta.url),'utf8');if(!html.includes(`rel="canonical" href="${origin}/${prefix}projects/${slug}/"`))throw Error('Incorrect client case canonical');}
+for(const file of ['dist/assets/professional.css','dist/assets/case-editorial.css','dist/assets/concepts/brand-experiences.css','dist/photography-credits.html'])if(!(await stat(new URL('./'+file,import.meta.url))).size)throw Error('Missing professional portfolio asset: '+file);
+console.log('Seven project case studies and professional portfolio assets verified.');

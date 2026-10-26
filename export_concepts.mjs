@@ -9,6 +9,6 @@ for(const slug of ['fornaya','riwa-grove','dar-saha','paceform']){
   if(size)renderer.resize({width:size});
   await renderer.png().toFile(new URL(file.replace('.svg','.png'),folder).pathname.replace(/^\/([A-Za-z]:)/,'$1'));
  }
- for(const name of ['brand-board','post-01','post-02','post-03','story-01','story-02','campaign-ad'])await sharp(new URL(name+'.png',folder).pathname.replace(/^\/([A-Za-z]:)/,'$1')).webp({quality:85}).toFile(new URL(name+'.webp',folder).pathname.replace(/^\/([A-Za-z]:)/,'$1'));
+ for(const name of ['project-cover','brand-applications',...(slug==='riwa-grove'?['bottle-single','bottle-pair']:[]),'brand-board','post-01','post-02','post-03','story-01','story-02','campaign-ad'])await sharp(new URL(name+'.png',folder).pathname.replace(/^\/([A-Za-z]:)/,'$1')).webp({quality:85}).toFile(new URL(name+'.webp',folder).pathname.replace(/^\/([A-Za-z]:)/,'$1'));
  console.log(slug+' SVGs exported to PNG.');
 }

@@ -3,21 +3,21 @@ Self-initiated fictional concept. No campaign has been run.
 
 ## Post 1
 Good mornings. Made slowly.
-Warm manoushe, flaky layers, coffee worth sitting down for. A little time for the good part of your day.
+Manoushe, croissants and coffee. A morning menu made for taking your time.
 
 صباحنا من الفرن.
-مناقيش ساخنة، معجّنات هشّة، وقهوة تستحق أن تتمهّل من أجلها. وقت صغير لأجمل ما في يومك.
+مناقيش وكرواسون وقهوة. قائمة صباحية تستحق أن تتمهّل من أجلها.
 
 ## Post 2
 Layers worth slowing for.
-Warm manoushe, flaky layers, coffee worth sitting down for. A little time for the good part of your day.
+Manoushe, croissants and coffee. A morning menu made for taking your time.
 
 لصباحك مكان.
-مناقيش ساخنة، معجّنات هشّة، وقهوة تستحق أن تتمهّل من أجلها. وقت صغير لأجمل ما في يومك.
+مناقيش وكرواسون وقهوة. قائمة صباحية تستحق أن تتمهّل من أجلها.
 
 ## Post 3
 Meet your morning ritual.
-Warm manoushe, flaky layers, coffee worth sitting down for. A little time for the good part of your day.
+Manoushe, croissants and coffee. A morning menu made for taking your time.
 
 صباحنا من الفرن.
-مناقيش ساخنة، معجّنات هشّة، وقهوة تستحق أن تتمهّل من أجلها. وقت صغير لأجمل ما في يومك.
+مناقيش وكرواسون وقهوة. قائمة صباحية تستحق أن تتمهّل من أجلها.

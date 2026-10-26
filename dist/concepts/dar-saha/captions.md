@@ -3,21 +3,21 @@ Self-initiated fictional concept. No campaign has been run.
 
 ## Post 1
 Make room for a slower day.
-Stone, sunlight and a little space to yourself. A guesthouse concept inspired by the quieter side of Lebanon.
+Room to arrive. Time to settle in. An imagined guesthouse for a slower kind of stay.
 
 مساحة لتأخذ وقتك.
-حجر وشمس ومساحة لك. تصوّر لدار ضيافة مستوحاة من الجانب الهادئ للبنان.
+مساحة للوصول ووقت للاستراحة. تصوّر لدار ضيافة بإيقاع أهدأ.
 
 ## Post 2
 A softer start to the day.
-Stone, sunlight and a little space to yourself. A guesthouse concept inspired by the quieter side of Lebanon.
+Room to arrive. Time to settle in. An imagined guesthouse for a slower kind of stay.
 
 ابقَ للوقت الأهدأ.
-حجر وشمس ومساحة لك. تصوّر لدار ضيافة مستوحاة من الجانب الهادئ للبنان.
+مساحة للوصول ووقت للاستراحة. تصوّر لدار ضيافة بإيقاع أهدأ.
 
 ## Post 3
 Leave a little room for quiet.
-Stone, sunlight and a little space to yourself. A guesthouse concept inspired by the quieter side of Lebanon.
+Room to arrive. Time to settle in. An imagined guesthouse for a slower kind of stay.
 
 مساحة لتأخذ وقتك.
-حجر وشمس ومساحة لك. تصوّر لدار ضيافة مستوحاة من الجانب الهادئ للبنان.
+مساحة للوصول ووقت للاستراحة. تصوّر لدار ضيافة بإيقاع أهدأ.

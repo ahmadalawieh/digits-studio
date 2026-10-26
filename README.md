@@ -68,3 +68,12 @@ Research and design rationale: `professional-direction.md`. The homepage now pre
 Rebuild with `python build_professional.py`. This runs the page generators, original vector applications, PNG/WebP exports and final editorial pass in the required order. It requires the existing Python packages plus BeautifulSoup (`beautifulsoup4`). Reference photos are supplied locally, with attribution and licence details in `photography-credits.json`, the public photography-credits page and each concept kit. Source photographs retain their stated licences; original brand drawings are separate. No new image generation is required for a normal rebuild.
 
 Check locally with `node check_professional.mjs` (agency, motion controls, inquiry and six client case pages), `node check_projects.mjs` (categories and service-business demos), `node check_concepts.mjs` (retail demos, cases and guides) and `node check_extras.mjs` (auxiliary pages, downloads and internal links). The tests also regenerate actual demo website screenshots. Finish with `node build_public_kit.mjs && node validate-production.mjs`. Vercel continues to publish the committed static distribution and generate download ZIPs at build time.
+
+
+## GSAP opening — 26 October 2026
+
+The homepage now opens on the brand yellow with an oversized bilingual headline and a layered project stack. `hero_template.py` owns the shared English/Arabic markup; `dist/assets/hero-motion.css` owns the responsive composition; `dist/assets/hero-motion.js` owns the GSAP entrance, fine-pointer response and desktop scroll exit. The four-project reel remains in `dist/assets/site.js` and supports pause, previous/next and rapid navigation.
+
+GSAP 3.15.0 core and ScrollTrigger are committed under `dist/assets/vendor/`, retaining their copyright notices and licence link. They are loaded locally before the homepage scripts. The pinned npm dev dependency supports reproducible vendor updates; production does not depend on an external animation CDN or installing development packages. Reduced motion skips the entrance, pointer and scroll effects and starts the reel paused. The content and anchor links remain usable if JavaScript or the library is unavailable.
+
+Run `node check_hero_motion.mjs` against the local server for responsive, RTL, reduced-motion changes, pointer/scroll response, rapid reel navigation, library failure and no-JavaScript checks. See `hero-motion-plan.md` for art direction and `QA_REPORT.md` for results.

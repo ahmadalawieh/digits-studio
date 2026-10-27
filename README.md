@@ -70,10 +70,19 @@ Rebuild with `python build_professional.py`. This runs the page generators, orig
 Check locally with `node check_professional.mjs` (agency, motion controls, inquiry and six client case pages), `node check_projects.mjs` (categories and service-business demos), `node check_concepts.mjs` (retail demos, cases and guides) and `node check_extras.mjs` (auxiliary pages, downloads and internal links). The tests also regenerate actual demo website screenshots. Finish with `node build_public_kit.mjs && node validate-production.mjs`. Vercel continues to publish the committed static distribution and generate download ZIPs at build time.
 
 
-## GSAP opening — 26 October 2026
+## Previous GSAP opening — 26 October 2026 (superseded)
 
 The homepage now opens on the brand yellow with an oversized bilingual headline and a layered project stack. `hero_template.py` owns the shared English/Arabic markup; `dist/assets/hero-motion.css` owns the responsive composition; `dist/assets/hero-motion.js` owns the GSAP entrance, fine-pointer response and desktop scroll exit. The four-project reel remains in `dist/assets/site.js` and supports pause, previous/next and rapid navigation.
 
 GSAP 3.15.0 core and ScrollTrigger are committed under `dist/assets/vendor/`, retaining their copyright notices and licence link. They are loaded locally before the homepage scripts. The pinned npm dev dependency supports reproducible vendor updates; production does not depend on an external animation CDN or installing development packages. Reduced motion skips the entrance, pointer and scroll effects and starts the reel paused. The content and anchor links remain usable if JavaScript or the library is unavailable.
 
 Run `node check_hero_motion.mjs` against the local server for responsive, RTL, reduced-motion changes, pointer/scroll response, rapid reel navigation, library failure and no-JavaScript checks. See `hero-motion-plan.md` for art direction and `QA_REPORT.md` for results.
+
+
+## Editorial refactor — 27 October 2026
+
+Current hero/navigation/filter direction follows `DESIGN.md`, mirrored unchanged from the workspace root. The homepage uses #06070B and #FDFDFD, locally hosted Inter and Playfair Display, and the existing connected IBM Plex Sans Arabic. Google Fonts source families and their SIL OFL licences are bundled under `dist/assets/fonts/`.
+
+`src/components/HeroHeading.jsx`, `Navigation.jsx` and `ProjectFilters.jsx` are small, server-rendered React entry points hydrated by `src/editorial-entry.jsx`. Heading lines have nested overflow masks. The active filter uses Framer Motion's `layoutId="active-project-filter"`. All springs share stiffness 190, damping 24 and mass 1 from `src/motion-system.js`. The existing native controller still owns menu actions, project classification, image/anchor selection and inquiry composition. Its filter click handler is delegated to the stable filter group; motion hooks subscribe to that same selection. The motion bridge adds springs to existing preview/filter interactions without changing the data model. HTML headings, navigation and category controls remain present when the bundle is blocked; native filtering and contact composition still work.
+
+Edit components in `src/` and styles in `dist/assets/editorial.css`, then run `npm run build:editorial`. This produces both bilingual `motion-fragments.json` and the locally bundled `dist/assets/editorial-motion.js`, then regenerates static pages. For copy-only changes outside the entry points, run `python build_site.py`. Both fragments and bundle are committed, so Vercel continues to publish static assets and does not need a React server. GSAP files remain available for the previous design but are no longer loaded by the homepages. Earlier GSAP-specific QA is historical; run `node check_editorial.mjs` for this implementation, followed by `node check_professional.mjs`. Finish with `node build_public_kit.mjs && node validate-production.mjs`.

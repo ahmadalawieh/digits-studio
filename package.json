@@ -5,12 +5,20 @@
   "description": "Digits Studio brand identity and bilingual agency website",
   "scripts": {
     "dev": "python -m http.server 4173 --bind 127.0.0.1 --directory dist",
-    "qa": "node check_site.mjs"
+    "qa": "node check_site.mjs",
+    "build:editorial": "node build_editorial.mjs && python build_site.py",
+    "qa:editorial": "node check_editorial.mjs"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.11.0",
+    "esbuild": "0.28.2",
     "gsap": "3.15.0",
     "playwright": "^1.63.0",
     "sharp": "^0.35.5"
+  },
+  "dependencies": {
+    "framer-motion": "14.7.0",
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
   }
 }

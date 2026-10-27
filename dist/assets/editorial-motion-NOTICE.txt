@@ -1,0 +1,3 @@
+Framer Motion, React and React DOM are locally bundled for the editorial UI.
+Original notices are retained in editorial-motion.js.LEGAL.txt; full licence texts are in editorial-motion-LICENSES.txt.
+Sources: https://github.com/motiondivision/motion and https://github.com/facebook/react

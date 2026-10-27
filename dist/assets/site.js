@@ -19,13 +19,15 @@
     dialog.querySelector('[data-close]').addEventListener('click',()=>dialog.close());
     dialog.addEventListener('click',event=>{if(event.target===dialog){const r=dialog.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)dialog.close();}});
   });
+  const hero=document.querySelector('.launch-hero');
+  if(hero)hero.dataset.motionState='fallback';
   const reel=document.querySelector('.studio-reel');
   if(reel){
     const ar=document.documentElement.lang==='ar',prefix=ar?'/ar':'',items=[['fornaya','Fornaya'],['riwa-grove','Riwa Grove'],['dar-saha','Dar Saha'],['paceform','Paceform']];let index=0,desiredIndex=0,request=0,timer=null,playing=!reducedMotion.matches;
     const img=reel.querySelector('.reel-image'),link=reel.querySelector('.reel-link'),toggle=reel.querySelector('.reel-toggle');
-    async function show(next){const token=++request;const n=(next+items.length)%items.length;desiredIndex=n;const [slug,name]=items[n];const candidate=new Image();candidate.src='/assets/concepts/'+slug+'/project-cover.webp';try{await candidate.decode();if(token!==request)return;index=n;img.src=candidate.src;img.alt=name+(ar?' / الهوية وتطبيقاتها':' / identity and applications');link.href=prefix+'/projects/'+slug+'/';reel.querySelector('.reel-name').textContent=name;reel.querySelectorAll('.reel-back img').forEach((back,i)=>{back.src='/assets/concepts/'+items[(n+i+1)%items.length][0]+'/project-cover.webp';});if(!reducedMotion.matches){if(window.gsap){window.gsap.killTweensOf(img);window.gsap.fromTo(img,{opacity:.35,xPercent:5,scale:1.04},{opacity:1,xPercent:0,scale:1,duration:.65,ease:'power3.out',clearProps:'transform,opacity'});}else img.animate([{opacity:.25,transform:'scale(1.025)'},{opacity:1,transform:'scale(1)'}],{duration:450,easing:'ease-out'});}}catch{playing=false;sync();}}
+    async function show(next){const token=++request;const n=(next+items.length)%items.length;desiredIndex=n;const [slug,name]=items[n];const candidate=new Image();candidate.src='/assets/concepts/'+slug+'/project-cover.webp';try{await candidate.decode();if(token!==request)return;index=n;img.src=candidate.src;img.alt=name+(ar?' / الهوية وتطبيقاتها':' / identity and applications');link.href=prefix+'/projects/'+slug+'/';reel.querySelector('.reel-name').textContent=name;reel.querySelectorAll('.reel-back img').forEach((back,i)=>{back.src='/assets/concepts/'+items[(n+i+1)%items.length][0]+'/project-cover.webp';});if(!reducedMotion.matches){if(window.digitsMotion){window.digitsMotion.projectImage(img);}else if(window.gsap){window.gsap.killTweensOf(img);window.gsap.fromTo(img,{opacity:.35,xPercent:5,scale:1.04},{opacity:1,xPercent:0,scale:1,duration:.65,ease:'power3.out',clearProps:'transform,opacity'});}else img.animate([{opacity:.25,transform:'scale(1.025)'},{opacity:1,transform:'scale(1)'}],{duration:450,easing:'ease-out'});}}catch{playing=false;sync();}}
     function sync(){clearInterval(timer);timer=null;toggle.setAttribute('aria-pressed',String(playing));toggle.textContent=ar?(playing?'إيقاف':'تشغيل'):(playing?'Pause':'Play');if(playing&&!document.hidden)timer=setInterval(()=>show(index+1),6500);}
-    reel.querySelector('.reel-prev').addEventListener('click',()=>{playing=false;sync();show(desiredIndex-1);});reel.querySelector('.reel-next').addEventListener('click',()=>{playing=false;sync();show(desiredIndex+1);});toggle.addEventListener('click',()=>{playing=!playing;sync();});document.addEventListener('visibilitychange',sync);reducedMotion.addEventListener('change',()=>{if(reducedMotion.matches){playing=false;sync();if(window.gsap){window.gsap.killTweensOf(img);window.gsap.set(img,{clearProps:'transform,opacity'});}}});reel.addEventListener('focusin',event=>{if(event.target===toggle)return;playing=false;sync();});sync();
+    reel.querySelector('.reel-prev').addEventListener('click',()=>{playing=false;sync();show(desiredIndex-1);});reel.querySelector('.reel-next').addEventListener('click',()=>{playing=false;sync();show(desiredIndex+1);});toggle.addEventListener('click',()=>{playing=!playing;sync();});document.addEventListener('visibilitychange',sync);reducedMotion.addEventListener('change',()=>{if(reducedMotion.matches){playing=false;sync();if(window.digitsMotion)window.digitsMotion.resetImage(img);if(window.gsap){window.gsap.killTweensOf(img);window.gsap.set(img,{clearProps:'transform,opacity'});}}});reel.addEventListener('focusin',event=>{if(event.target===toggle)return;playing=false;sync();});sync();
   }
   // Native details retains semantics and keyboard activation; animate only its content.
   const detailAnimations=new Map();
@@ -59,7 +61,9 @@
 
   });
   const projectCards=[...document.querySelectorAll('[data-project-card]')];
-  document.querySelectorAll('[data-project-filter]').forEach(button=>button.addEventListener('click',()=>{
+  const filterGroup=document.querySelector('.project-filters');
+  filterGroup?.addEventListener('click',event=>{
+    const button=event.target.closest('[data-project-filter]');if(!button||!filterGroup.contains(button))return;
     const before=new Map(projectCards.filter(c=>!c.hidden).map(c=>[c,c.getBoundingClientRect()]));
     const category=button.dataset.projectFilter,ar=document.documentElement.lang==='ar';let count=0;
     document.querySelectorAll('[data-project-filter]').forEach(other=>other.setAttribute('aria-pressed',String(other===button)));
@@ -71,9 +75,10 @@
       image.src=src;image.alt=card.querySelector('h3').textContent+' / '+(ar?{all:'معاينة المشروع',branding:'الهوية',website:'الموقع',marketing:'الحملة'}:{all:'project preview',branding:'brand identity',website:'website',marketing:'campaign'})[category];
       card.dataset.preview=category;
     });
-    if(!reducedMotion.matches)projectCards.filter(c=>!c.hidden).forEach(card=>{const prior=before.get(card),now=card.getBoundingClientRect();card.animate(prior?[{transform:`translate(${prior.x-now.x}px,${prior.y-now.y}px)`,opacity:.6},{transform:'none',opacity:1}]:[{opacity:.25},{opacity:1}],{duration:280,easing:'ease-out'});});
+    if(!reducedMotion.matches)projectCards.filter(c=>!c.hidden).forEach(card=>{const prior=before.get(card),now=card.getBoundingClientRect();if(window.digitsMotion){window.digitsMotion.projectCard(card,{x:prior?prior.x-now.x:0,y:prior?prior.y-now.y:0});return;}card.animate(prior?[{transform:`translate(${prior.x-now.x}px,${prior.y-now.y}px)`,opacity:.6},{transform:'none',opacity:1}]:[{opacity:.25},{opacity:1}],{duration:280,easing:'ease-out'});});
     document.querySelector('#project-filter-status').textContent=ar?`عرض ${count} من المشاريع — ${{all:'كل المشاريع',branding:'الهوية',website:'المواقع',marketing:'التسويق'}[category]}`:`Showing ${count} projects — ${{all:'all projects',branding:'branding',website:'websites',marketing:'marketing'}[category]}.`;
-  }));
+    filterGroup.dispatchEvent(new CustomEvent('digits:filter-change',{detail:{category}}));
+  });
   const form=document.getElementById('inquiry-form');
   form?.querySelectorAll('input[required],textarea[required]').forEach(input=>{
     input.addEventListener('input',()=>input.setCustomValidity(''));

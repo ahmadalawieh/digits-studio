@@ -4,9 +4,15 @@ output/
 *.tar.gz
 *.tsbuildinfo
 node_modules/
+.env
+.env.*
+.agents/
+skills-lock.json
 .sites-runtime/
 __pycache__/
 .vercel/
 .publish/
 archive/
 .openai/
+.vercel
+.env*

@@ -1,0 +1,26 @@
+{
+  "b1-ventures": {
+    "source": "b1-ventures.png",
+    "type": "supplied archive design overview",
+    "duration": 12,
+    "width": 1280,
+    "height": 800,
+    "bytes": 2194128
+  },
+  "kaizen-firm": {
+    "source": "kaizen-firm.png",
+    "type": "supplied archive design overview",
+    "duration": 12,
+    "width": 1280,
+    "height": 800,
+    "bytes": 986232
+  },
+  "umbrella500": {
+    "source": "umbrella500.png",
+    "type": "supplied archive design overview",
+    "duration": 12,
+    "width": 1280,
+    "height": 800,
+    "bytes": 1839166
+  }
+}

@@ -1,0 +1,40 @@
+import assert from 'node:assert/strict';
+import {createInquiryHandler} from './lib/inquiry-handler.mjs';
+
+const now=Date.now(),calls=[];
+const valid={name:'Website review',email:'review@example.com',business:'Example business',message:'A bilingual website. <script>literal text</script>',services:['Website'],budget:'$1,000–$3,000',timing:'1–3 months',website_url:'',language:'en',startedAt:now-5000,requestId:'00000000-0000-4000-8000-000000000001'};
+const options={enabled:true,from:'Digits Studio <hello@digitsstudio.online>',to:'ahmad.alawieh77@gmail.com',now:()=>now,sendEmail:async(payload,options)=>{calls.push({payload,options});return {data:{id:'verified-reference'},error:null};}};
+async function run(handler,body=valid,{method='POST',origin='https://digitsstudio.online',type='application/json',ip='127.0.0.1'}={}){
+ const req={method,body,headers:{origin,'content-type':type},socket:{remoteAddress:ip}};
+ const res={statusCode:200,headers:{},setHeader(key,value){this.headers[key]=value;},status(code){this.statusCode=code;return this;},json(body){this.body=body;return this;}};
+ await handler(req,res);return res;
+}
+const handler=createInquiryHandler(options);
+assert.equal((await run(handler,{}, {method:'GET'})).body.available,true);
+assert.equal((await run(handler,valid,{method:'PUT'})).statusCode,405);
+assert.equal((await run(handler,valid,{origin:'https://another.example'})).statusCode,403);
+assert.equal((await run(handler,valid,{type:'text/plain'})).statusCode,415);
+assert.equal((await run(handler,{...valid,website_url:'https://spam.example'})).statusCode,400);
+assert.equal((await run(handler,{...valid,email:'invalid'})).statusCode,400);
+assert.equal((await run(handler,{...valid,name:'Name\r\nBcc: another@example.com'})).statusCode,400);
+assert.equal((await run(handler,{...valid,startedAt:now})).statusCode,400);
+assert.equal((await run(handler,{...valid,budget:'unlisted budget'})).statusCode,400);
+assert.equal((await run(handler,{...valid,requestId:''})).statusCode,400);
+assert.equal((await run(handler,'broken JSON')).statusCode,400);
+assert.equal(calls.length,0,'Rejected briefs never contact the provider');
+const success=await run(handler,{...valid,to:['attacker@example.com']});
+assert.equal(success.statusCode,200);assert.equal(success.body.sent,true);
+assert.deepEqual(calls[0].payload.to,['ahmad.alawieh77@gmail.com'],'Recipient is fixed on the server');
+assert.equal(calls[0].payload.replyTo,'review@example.com');assert.ok(calls[0].payload.text.includes('<script>literal text</script>'));
+assert.equal(calls[0].payload.html,undefined,'Inquiry content is plain text');
+assert.ok(calls[0].payload.text.includes('Budget: $1,000–$3,000'));assert.ok(calls[0].payload.text.includes('Timing: 1–3 months'));
+await run(handler,valid);assert.equal(calls[0].options.idempotencyKey,calls[1].options.idempotencyKey,'Retries preserve the provider key');
+const disabled=createInquiryHandler({...options,enabled:false});
+assert.equal((await run(disabled,{}, {method:'GET'})).body.available,false);assert.equal((await run(disabled)).statusCode,503);
+const rejected=createInquiryHandler({...options,sendEmail:async()=>({data:null,error:{name:'provider_failure'}})});
+assert.equal((await run(rejected)).statusCode,502,'Provider rejection is not reported as success');
+const disconnected=createInquiryHandler({...options,sendEmail:async()=>{throw Error('offline');}});
+assert.equal((await run(disconnected)).statusCode,502,'Connection failure is not reported as success');
+const limited=createInquiryHandler(options);for(let i=0;i<5;i++)assert.equal((await run(limited)).statusCode,200);
+assert.equal((await run(limited)).statusCode,429);
+console.log('Inquiry validation, origin, recipient, idempotency, availability, provider failure and burst-limit checks passed. No real email was sent.');

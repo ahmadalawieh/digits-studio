@@ -90,12 +90,14 @@
     });
     if(!form.reportValidity())return;
     const d=new FormData(form);const ar=document.documentElement.lang==='ar';
+    const budget=d.get('budget')||'',timing=d.get('timing')||'';
+    const briefContext=ar?`الميزانية التقريبية: ${budget||'نحددها معاً'}\nالوقت المناسب: ${timing||'مرن / نتفق عليه'}`:`Approximate budget: ${budget||'To discuss'}\nIdeal timing: ${timing||'Flexible / to discuss'}`;
     const message=ar
-      ? `مرحباً أحمد، أود مناقشة مشروع مع ديجيتس ستوديو.\n\nالاسم: ${d.get('name').trim()}\nالبريد: ${d.get('email').trim()}\nالشركة: ${d.get('business').trim()||'لم يُحدد'}\nالخدمات: ${d.getAll('service').join('، ')||'نحددها معاً'}\n\n${d.get('message').trim()}`
-      : `Hi Ahmad, I'd like to discuss a project with Digits Studio.\n\nName: ${d.get('name').trim()}\nEmail: ${d.get('email').trim()}\nBusiness: ${d.get('business').trim()||'Not specified'}\nServices: ${d.getAll('service').join(', ')||'Let’s define it together'}\n\n${d.get('message').trim()}`;
+      ? `مرحباً أحمد، أود مناقشة مشروع مع ديجيتس ستوديو.\n\nالاسم: ${d.get('name').trim()}\nالبريد: ${d.get('email').trim()}\nالشركة: ${d.get('business').trim()||'لم يُحدد'}\nالخدمات: ${d.getAll('service').join('، ')||'نحددها معاً'}\n\n${briefContext}\n\n${d.get('message').trim()}`
+      : `Hi Ahmad, I'd like to discuss a project with Digits Studio.\n\nName: ${d.get('name').trim()}\nEmail: ${d.get('email').trim()}\nBusiness: ${d.get('business').trim()||'Not specified'}\nServices: ${d.getAll('service').join(', ')||'Let’s define it together'}\n\n${briefContext}\n\n${d.get('message').trim()}`;
     document.getElementById('inquiry-preview').textContent=message;
     document.getElementById('inquiry-whatsapp').href='https://wa.me/96170332361?text='+encodeURIComponent(message);
-    document.getElementById('inquiry-email').href='mailto:ahmad.alawieh77@gmail.com?subject='+encodeURIComponent('Digits Studio / Project inquiry')+'&body='+encodeURIComponent(message);
+    document.getElementById('inquiry-email').href='mailto:hello@digitsstudio.online?subject='+encodeURIComponent('Digits Studio / Project inquiry')+'&body='+encodeURIComponent(message);
     const result=document.getElementById('inquiry-result');result.hidden=false;result.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'nearest'});
   });
 })();

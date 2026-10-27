@@ -4,10 +4,12 @@
   "private": true,
   "description": "Digits Studio brand identity and bilingual agency website",
   "scripts": {
-    "dev": "python -m http.server 4173 --bind 127.0.0.1 --directory dist",
+    "dev": "node --env-file-if-exists=.env.local dev_server.mjs",
     "qa": "node check_site.mjs",
     "build:editorial": "node build_editorial.mjs && python build_site.py",
-    "qa:editorial": "node check_editorial.mjs"
+    "qa:editorial": "node check_editorial.mjs",
+    "build": "node build_public_kit.mjs && node validate-production.mjs",
+    "qa:enhancements": "node check_inquiry.mjs && node check_enhancements.mjs"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.11.0",
@@ -17,8 +19,15 @@
     "sharp": "^0.35.5"
   },
   "dependencies": {
+    "@vercel/analytics": "2.0.1",
+    "@vercel/speed-insights": "2.0.0",
     "framer-motion": "14.7.0",
     "react": "19.3.1",
-    "react-dom": "19.3.1"
-  }
+    "react-dom": "19.3.1",
+    "resend": "6.34.1"
+  },
+  "engines": {
+    "node": "22.x"
+  },
+  "type": "module"
 }

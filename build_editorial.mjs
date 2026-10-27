@@ -18,7 +18,7 @@ await writeFile('dist/assets/editorial-motion-NOTICE.txt',
   'Original notices are retained in editorial-motion.js.LEGAL.txt; full licence texts are in editorial-motion-LICENSES.txt.\n' +
   'Sources: https://github.com/motiondivision/motion and https://github.com/facebook/react\n');
 let licences='';
-for(const dependency of ['react','react-dom','scheduler','framer-motion','motion-dom','motion-utils']){
+for(const dependency of ['react','react-dom','scheduler','framer-motion','motion-dom','motion-utils','@vercel/analytics','@vercel/speed-insights']){
   const directory='node_modules/'+dependency;
   const filename=(await readdir(directory)).find(name=>/^licen[cs]e(\.|$)/i.test(name));
   if(!filename)throw Error('Missing dependency licence: '+dependency);

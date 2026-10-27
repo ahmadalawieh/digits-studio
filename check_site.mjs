@@ -22,7 +22,7 @@ for(const lang of ['en','ar']){
     await page.locator('.client-project-link').first().click();if(!page.url().includes('/projects/b1-ventures/'))errors.push('Client case did not open');await page.goBack();
     await page.locator('input[name="name"]').fill('Test Visitor');await page.locator('input[name="email"]').fill('visitor@example.com');await page.locator('input[value="Website"]').check({force:true});await page.locator('textarea[name="message"]').fill('A bilingual website & brand project. <script>alert(1)</script>');await page.locator('button[type="submit"]').click();
     const preview=await page.locator('#inquiry-preview').textContent();const whatsapp=await page.locator('#inquiry-whatsapp').getAttribute('href');const email=await page.locator('#inquiry-email').getAttribute('href');
-    if(!preview.includes('<script>')||!decodeURIComponent(whatsapp).includes('visitor@example.com')||!email.startsWith('mailto:ahmad.alawieh77@gmail.com?'))errors.push('Inquiry composition failed');
+    if(!preview.includes('<script>')||!decodeURIComponent(whatsapp).includes('visitor@example.com')||!email.startsWith('mailto:hello@digitsstudio.online?'))errors.push('Inquiry composition failed');
     report.push({lang,width,overflow,errors,violations:axe.violations.map(v=>({id:v.id,impact:v.impact,nodes:v.nodes.map(n=>n.target)}))});await context.close();
   }
 }

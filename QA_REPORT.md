@@ -13,7 +13,7 @@ Verified locally on 22 October 2026.
 - QR decoded successfully from the standalone PNG, the exported card PNG and the rendered card PDF. All three decoded to https://wa.me/96170332361.
 - True black/white logo masters and transparent PNG exports are supplied. Font licenses are bundled.
 
-Limits: automated accessibility checks do not establish complete WCAG conformance. Print PDFs are RGB proofs, not printer-certified CMYK production files. Ahmad has purchased digitsstudio.online. Trademark clearance and social-handle registration remain separate from domain ownership. No live analytics, backend form delivery, social publishing or advertising service is configured. Contact works by a visitor opening WhatsApp or email and sending the message themselves.
+Limits: automated accessibility checks do not establish complete WCAG conformance. Print PDFs are RGB proofs, not printer-certified CMYK production files. Ahmad has purchased digitsstudio.online. Trademark clearance and social-handle registration remain separate from domain ownership. That initial launch had no analytics or backend delivery; the 27 October studio-enhancements section below supersedes the initial contact configuration. Social publishing and advertising services remain outside this website implementation.
 
 Browser outputs and machine reports are stored in qa/ and excluded from the hosted source and ZIP.
 
@@ -57,3 +57,18 @@ Story: a visitor opens the bilingual agency page, sees the masked headline revea
 Visual review covered both languages on phone, tablet and desktop. Corrections included single-row phone filters, an inherited filter-label opacity, bounded category transitions within the project canvas and resetting the motion engine's cached transforms on preference changes. Framer Motion 14 snapshots the initial reduced-motion preference, so `useMotionPreference` uses React's external-store subscription to respond to live OS/browser changes. The final navigation deliberately stays stable on page load; its links and mobile panel use the shared spring. Hero stage and category transitions use the same stiffness 190, damping 24, mass 1. Source and diagnostic captures: `src/`, `qa/editorial/`, `qa/editorial-report.json` and `qa/professional-report.json`.
 
 Build checks: server fragments and browser bundle are generated from the same components, local font/OFL and dependency licences are included, and Node syntax/Python compilation checks pass. Earlier GSAP-specific test results describe the superseded opening; homepages now load the Framer bundle and retain the older assets without running a second hero engine.
+
+
+## Studio enhancements — 27 October 2026
+
+The actual supplied founder portrait replaces the generic studio illustration. Services, founder, process, FAQ, contact and footer use the editorial palette and responsive typography. Two sample quotes are prominently marked illustrative, with no actual client attribution or Review/AggregateRating structured data. Organization, Person and WebSite data use verified business details.
+
+`check_enhancements.mjs` passed 14 combinations: EN/AR at 360/1440 px with both motion preferences and six EN/AR client film pages. It verified dock visibility/context/menu behavior, the real portrait and identity link, structured data, review of services/budget/timing, literal text safety, branded mailto, failed-delivery retry, stable idempotency, send success only after a successful response, and fresh review after edits. Browser POSTs were intercepted; no email was sent to a person. All three local video files played and supported byte ranges, with native controls, no autoplay and EN/AR caption tracks.
+
+`check_inquiry.mjs` passed handler validation, allowed origin/method/content type, fixed recipient, invalid input/honeypot/time checks, safe text-only bodies, retry idempotency, provider rejection/network failures, unavailable configuration and the burst guard. Domain sending/receiving records and the real hello inbox were verified through Resend. An independent provider send to delivered@resend.dev was accepted; this verifies provider acceptance rather than human inbox delivery.
+
+The final accessibility pass identified a higher-specificity text color overriding the dark process section; the rule was corrected before the release checks. Automated checks do not establish full accessibility conformance. Vercel's included Hobby Web Analytics was enabled and the production SDKs are installed for traffic and Speed Insights. No inquiry fields, custom conversion events, query parameters or hashes are sent to analytics by our integration.
+
+Final regression results: all 20 editorial motion/fallback combinations and all 19 professional-page combinations passed after the contrast fix, with no reported accessibility violations, overflow, browser/hydration errors or failed assets. `npm run build` validated bilingual routes, schema, assets, video captions and source packaging. A tablet-width portrait heading was subsequently tightened without changing logic or contrast.
+
+Local Vercel CLI build could not complete on this Windows host: after dependency installation it reported `spawn cmd.exe ENOENT`, including after setting a canonical ComSpec. The independent packaging build passed; release validation must also confirm the hosted Vercel build and the actual production /api/inquiry route before declaring deployment complete.

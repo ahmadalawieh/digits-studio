@@ -1,0 +1,12 @@
+# Studio enhancements / 27 October 2026
+
+Follow DESIGN.md: ink #06070B, off-chalk #FDFDFD, primary #0E1015, secondary #6A6E79, structural #111111 and inverse #FFFFFF. Retain Inter/Playfair editorial roles and connected IBM Plex Sans Arabic. Continue the shared 190/24/1 spring. Preserve English/Arabic routes, seven projects and category-specific destinations, inquiry review and existing contact channels.
+
+1. Complete services, founder, process, questions, contact and footer styling with distinct spacious compositions. The Studio features Ahmad's supplied portrait, without generated identity changes. Use an editorial image/copy pairing rather than another branded illustration.
+2. Add three short project films from the supplied project archive, labelled accurately as archive/design previews. Do not represent changed current external sites as the historical commission. Videos are locally hosted, user initiated, captioned in surrounding bilingual text and do not autoplay.
+3. Add a spring-animated mobile contact dock after the hero, hiding it when contact/footer or the menu is visible. Respect reduced motion, safe areas and the software keyboard. Keep keyboard focus and actual anchor/WhatsApp destinations.
+4. Extend the existing inquiry composer with guided service, goal, budget and timing fields. Keep an accessible all-fields fallback and the existing manual WhatsApp/email review actions. Resend has been provisioned on the free plan, the domain is verified for sending/receiving, and hello@digitsstudio.online is an actual inbox. Direct submissions deliver to the existing owner address, with a safe retry and manual fallback.
+5. Add Organization, WebSite and Person structured data from verified business details and social URLs, without review/rating markup for sample feedback. Vercel Web Analytics and Speed Insights are enabled on the included plan. Measure production traffic/vitals without contact fields, query/hash data or custom paid conversion events.
+6. Ahmad authorized demo testimonials. Any sample quotes must be visibly labelled as illustrative demo content, with no real client attribution, headshots, star ratings or performance claims.
+
+Critique: the existing work and hero already establish the visual statement. Finish the lower page with an image-led founder section, restrained open service rows, an ink process section and a clean off-chalk brief. Avoid more floating decorative elements, uniform card collections and endless scroll reveals. Keep the persistent contact control compact and show it only where useful.

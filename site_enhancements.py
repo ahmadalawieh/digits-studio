@@ -1,0 +1,50 @@
+"""Bilingual, progressively enhanced studio content; no client endorsements implied."""
+import html,json
+
+def schema_markup():
+    origin='https://digitsstudio.online'
+    data={'@context':'https://schema.org','@graph':[
+        {'@type':'Organization','@id':origin+'/#studio','name':'Digits Studio','url':origin+'/',
+         'logo':origin+'/brand/logo-primary.svg','description':'Branding, websites and marketing from Beirut, Lebanon, for businesses worldwide.',
+         'email':'hello@digitsstudio.online','telephone':'+96170332361',
+         'address':{'@type':'PostalAddress','addressLocality':'Beirut','addressCountry':'LB'},
+         'founder':{'@id':origin+'/#ahmad'},'sameAs':['https://www.instagram.com/digitsstudio/','https://www.facebook.com/profile.php?id=61595628515916'],
+         'contactPoint':{'@type':'ContactPoint','contactType':'project inquiries','telephone':'+96170332361','availableLanguage':['English','Arabic']}},
+        {'@type':'Person','@id':origin+'/#ahmad','name':'Ahmad Alawieh','jobTitle':'Founder','worksFor':{'@id':origin+'/#studio'},'image':origin+'/assets/studio/ahmad-alawieh.webp'},
+        {'@type':'WebSite','@id':origin+'/#website','url':origin+'/','name':'Digits Studio','inLanguage':['en','ar'],'publisher':{'@id':origin+'/#studio'}}]}
+    return '<script type="application/ld+json">'+json.dumps(data,ensure_ascii=False).replace('<','\\u003c')+'</script>'
+
+def founder_portrait(ar=False):
+    t=lambda en,arabic:arabic if ar else en
+    return f'''<figure class="studio-portrait"><img src="/assets/studio/ahmad-alawieh.webp" alt="{t('Ahmad Alawieh, founder of Digits Studio','أحمد علاويه، مؤسس ديجيتس ستوديو')}" width="960" height="960" loading="lazy"><figcaption><div><strong>{t('Ahmad Alawieh','أحمد علاويه')}</strong><span>{t('Founder / designer & developer','المؤسس / التصميم والتطوير')}</span></div><span>{t('Beirut, Lebanon','بيروت، لبنان')}</span><a class="portrait-identity" href="/brand-kit.html">{t('Explore the studio identity','اكتشف هوية الاستوديو')} ↗</a></figcaption></figure>'''
+
+def feedback_preview(ar=False):
+    t=lambda en,arabic:arabic if ar else en
+    quotes=[
+      (t('The identity finally feels like one business, from the first impression to the smallest detail.','أصبحت الهوية تعبّر عن شركة واحدة، من الانطباع الأول حتى أصغر التفاصيل.'),t('Illustrative branding project','مثال توضيحي لمشروع هوية')),
+      (t('A clear process, thoughtful design and a website that is easy to understand and use.','خطوات واضحة وتصميم مدروس وموقع يسهل فهمه واستخدامه.'),t('Illustrative website project','مثال توضيحي لمشروع موقع'))]
+    cards=''.join(f'<figure><blockquote><p>“{quote}”</p></blockquote><figcaption>{label}</figcaption></figure>' for quote,label in quotes)
+    return f'''<section class="feedback-preview section" id="feedback"><div class="feedback-intro"><p class="demo-feedback-label">{t('Sample testimonials / demo content','آراء توضيحية / محتوى تجريبي')}</p><h2>{t('An idea of<br>the experience.','لمحة عن<br>تجربة التعاون.')}</h2><p>{t('These illustrative quotes preview the section. They are not endorsements from actual clients.','هذه اقتباسات توضيحية لمعاينة القسم، وليست آراء أو توصيات من عملاء حقيقيين.')}</p></div><div class="feedback-quotes">{cards}</div></section>'''
+
+def inquiry_form(ar=False):
+    t=lambda en,arabic:arabic if ar else en
+    choices=''.join(f'<label><input type="checkbox" name="service" value="{value}"><span>{label}</span></label>' for value,label in [('Branding',t('Branding','الهوية')),('Website',t('Website','موقع')),('Marketing',t('Marketing','التسويق'))])
+    budgets=[('',t('Let’s define it together','نحددها معاً')),('Under $1,000',t('Under $1,000 USD','أقل من 1,000 دولار')),('$1,000–$3,000',t('$1,000–$3,000 USD','1,000–3,000 دولار')),('$3,000–$7,000',t('$3,000–$7,000 USD','3,000–7,000 دولار')),('$7,000+',t('$7,000+ USD','أكثر من 7,000 دولار'))]
+    timings=[('',t('Flexible / to discuss','مرن / نتفق عليه')),('Within a month',t('Within a month','خلال شهر')),('1–3 months',t('In 1–3 months','خلال 1–3 أشهر')),('Planning ahead',t('Planning ahead','أخطط للمستقبل'))]
+    options=lambda rows:''.join(f'<option value="{html.escape(v,quote=True)}">{label}</option>' for v,label in rows)
+    return f'''<form id="inquiry-form" class="guided-inquiry"><fieldset class="brief-group"><legend><span aria-hidden="true">1</span>{t('Choose your starting point','اختر نقطة البداية')}</legend><p class="brief-help">{t('One service or a connected project. Select what you have in mind.','خدمة واحدة أو مشروع متكامل. اختر ما تفكر فيه.')}</p><div class="service-choices">{choices}</div></fieldset><fieldset class="brief-group"><legend><span aria-hidden="true">2</span>{t('Tell us about the brief','أخبرنا عن المشروع')}</legend><label>{t('Tell us a little about the project','أخبرنا قليلاً عن المشروع')}<textarea name="message" rows="4" maxlength="2000" required placeholder="{t('What are you building, and what should it achieve?','ما الذي تريد بناءه، وما الهدف منه؟')}"></textarea></label><div class="form-row"><label>{t('Approximate budget','الميزانية التقريبية')}<select name="budget">{options(budgets)}</select></label><label>{t('Ideal timing','الوقت المناسب')}<select name="timing">{options(timings)}</select></label></div></fieldset><fieldset class="brief-group"><legend><span aria-hidden="true">3</span>{t('How can we reach you?','كيف نتواصل معك؟')}</legend><div class="form-row"><label>{t('Your name','اسمك')}<input name="name" autocomplete="name" maxlength="100" required></label><label>{t('Email','البريد الإلكتروني')}<input name="email" type="email" autocomplete="email" maxlength="180" required dir="ltr"></label></div><label>{t('Business name','اسم الشركة')}<input name="business" autocomplete="organization" maxlength="150"></label></fieldset><div class="form-honeypot" aria-hidden="true"><label>Website URL<input name="website_url" tabindex="-1" autocomplete="off"></label></div><button class="button" type="submit">{t('Prepare my inquiry','جهّز رسالتي')}<span aria-hidden="true">↗</span></button><p class="form-note">{t('Review your brief, then choose how to send it. Nothing is sent automatically.','راجع طلبك ثم اختر طريقة الإرسال. لا تُرسل أي رسالة تلقائياً.')}</p><div id="inquiry-result" role="status" aria-live="polite" hidden><p>{t('Your message is ready. Choose how to send it:','رسالتك جاهزة. اختر طريقة الإرسال:')}</p><pre id="inquiry-preview" dir="auto"></pre><div class="result-actions"><button id="inquiry-send-direct" type="button" class="button" hidden>{t('Send to Digits Studio','أرسل إلى ديجيتس ستوديو')}</button><a id="inquiry-whatsapp" class="button" href="https://wa.me/96170332361" target="_blank" rel="noopener noreferrer">WhatsApp</a><a id="inquiry-email" class="simple-link" href="mailto:ahmad.alawieh77@gmail.com">{t('Open email','افتح البريد')}</a></div><p id="inquiry-delivery-status" role="status" aria-live="polite"></p></div><p class="inquiry-assurance">{t('A useful first conversation: your goals, the right scope, and a clear quote.','حديث أول مفيد: أهدافك، ونطاق العمل المناسب، وعرض سعر واضح.')}</p></form>'''
+
+def film_markup(client,ar=False):
+    t=lambda en,arabic:arabic if ar else en;slug=client['slug']
+    return f'''<section class="project-film" id="film"><div class="film-intro"><h2>{t('A closer look.','نظرة أقرب.')}</h2><p>{t('A short design film from the project archive. The original capture and scope are shown; the current external website may have changed.','فيلم قصير من أرشيف المشروع، يعرض اللقطة الأصلية ونطاق العمل. قد يكون الموقع الخارجي الحالي قد تغيّر.')}</p></div><video controls playsinline preload="none" poster="/assets/projects/films/{slug}-poster.webp" aria-label="{html.escape(client['name'],quote=True)} / {t('silent archive design film','فيلم تصميم صامت من الأرشيف')}"><source src="/assets/projects/films/{slug}.webm" type="video/webm"><track kind="captions" src="/assets/projects/films/{slug}-en.vtt" srclang="en" label="English" {'default' if not ar else ''}><track kind="captions" src="/assets/projects/films/{slug}-ar.vtt" srclang="ar" label="العربية" {'default' if ar else ''}><p>{t('Your browser cannot play this film. The website capture is shown above.','متصفحك لا يدعم هذا الفيديو. لقطة الموقع معروضة أعلاه.')}</p></video><p class="film-transcript">{html.escape(client['name'])} / {client['arRole'] if ar else client['role']}. {t('Silent design overview using the supplied archived website image.','عرض صامت للتصميم باستخدام لقطة الموقع الأصلية من الأرشيف.')}</p></section>'''
+
+def enhance_home(page,ar,fragments):
+    a=page.index('<div class="studio-art">');b=page.index('<div class="studio-copy">',a)
+    page=page[:a]+founder_portrait(ar)+page[b:]
+    a=page.index('<form id="inquiry-form">');b=page.index('</form>',a)+len('</form>')
+    page=page[:a]+inquiry_form(ar)+page[b:]
+    page=page.replace('<section class="questions section">',feedback_preview(ar)+'<section class="questions section">')
+    page=page.replace('ahmad.alawieh77@gmail.com','hello@digitsstudio.online')
+    page=page.replace('</head>',schema_markup()+'</head>',1)
+    page=page.replace('</body>','<div class="mobile-contact-root" data-motion-dock>'+fragments['dock']['ar' if ar else 'en']+'</div></body>')
+    return page

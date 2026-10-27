@@ -56,5 +56,10 @@
       "destination": "/ar/#contact",
       "permanent": true
     }
-  ]
+  ],
+  "functions": {
+    "api/inquiry.js": {
+      "maxDuration": 15
+    }
+  }
 }

@@ -12,7 +12,7 @@ Complete identity and English/Arabic agency website prepared for Ahmad Alawieh, 
 - `dist/brand/digits-studio-brand-kit.zip`: downloadable identity package.
 - `strategy.md`: positioning, offer and name-clearance status.
 
-For local preview, run `python -m http.server 4173 --bind 127.0.0.1 --directory dist` in this folder and open `http://127.0.0.1:4173/brand-kit.html`. Use HTTP for reliable canvas/font loading in the editor. The website is buildless static HTML/CSS/JS; production is live on Vercel at https://digitsstudio.online. See DEPLOYMENT.md for hosting, DNS and the archived earlier work.
+For local preview, run `npm ci` and `npm run dev` in this folder, then open `http://127.0.0.1:4173/`. Without a local environment file, direct sending remains hidden and the reviewed WhatsApp/email actions still work. Use HTTP for reliable canvas/font loading. The website uses static bilingual pages with a Node.js inquiry function; production is live on Vercel at https://digitsstudio.online. See DEPLOYMENT.md for hosting, DNS and the archived earlier work.
 
 ## Contents
 
@@ -22,13 +22,13 @@ Social: six 1080 x 1350 portrait feed posts, 1080 x 1080 square launch post, thr
 
 Print: card front and back, 85 x 55 mm trim with 3 mm bleed (91 x 61 mm PDF pages), blank A4 letterhead, A4 proposal cover and vector PDF proofs. Contact card includes a verified WhatsApp QR. Print PDFs are RGB review proofs. A printer should confirm CMYK conversion, stock and colour before production. The proposal cover and letterhead are reusable blank stationery, not completed contracts or proposals.
 
-Contact: HTML email signature, vCard, scannable QR, real phone and existing email. The official digitsstudio.online domain is printed. No new email mailbox or social handle is implied.
+Contact: HTML email signature, vCard, scannable QR, real phone and existing email. The official digitsstudio.online domain is printed. The website now publishes the verified hello@digitsstudio.online inbox. Older print stationery retains the existing owner address; social account links are present in the footer.
 
-Website: responsive English and Arabic pages, accessible native project dialogs, service details, FAQ, founder context, mobile menu, privacy page and local inquiry composer. Visitors review a message and choose WhatsApp or their email client. The website does not submit or store inquiry details. No backend form service, analytics, advertising pixels or social account integration is configured.
+Website: responsive English and Arabic pages, seven categorized projects and case studies, service details, FAQ, real founder portrait, mobile menu/contact dock and guided inquiry review. After reviewing, visitors can explicitly send through the server-side Resend connection, WhatsApp or email. Vercel Web Analytics and Speed Insights measure production traffic and vitals; inquiry fields are not included in measurement events. There are no advertising pixels.
 
 ## Content accuracy
 
-Portfolio work is previous website work by Ahmad before Digits Studio's launch. The project data comes from Ahmad's previous portfolio. No invented testimonials, outcomes, pricing or staff numbers are used. Branding and marketing are the user-authorized current offer, not a claim of historical campaign results. Confirm client portfolio permissions before a public commercial launch.
+Portfolio work is previous website work by Ahmad before Digits Studio's launch. The project data comes from Ahmad's previous portfolio. Sample testimonial copy is visibly marked as illustrative demo content, with no real client attribution or review schema. No invented outcomes or staff numbers are used. Branding and marketing are the user-authorized current offer, not a claim of historical campaign results. Confirm client portfolio permissions before a public commercial launch.
 
 User approved Digits Studio, singular. The name is not legally cleared; similar Digits businesses exist. Ahmad has purchased digitsstudio.online and authorized public production deployment to Vercel. Social handles remain unreserved. See strategy.md for research sources and launch checks.
 
@@ -86,3 +86,16 @@ Current hero/navigation/filter direction follows `DESIGN.md`, mirrored unchanged
 `src/components/HeroHeading.jsx`, `Navigation.jsx` and `ProjectFilters.jsx` are small, server-rendered React entry points hydrated by `src/editorial-entry.jsx`. Heading lines have nested overflow masks. The active filter uses Framer Motion's `layoutId="active-project-filter"`. All springs share stiffness 190, damping 24 and mass 1 from `src/motion-system.js`. The existing native controller still owns menu actions, project classification, image/anchor selection and inquiry composition. Its filter click handler is delegated to the stable filter group; motion hooks subscribe to that same selection. The motion bridge adds springs to existing preview/filter interactions without changing the data model. HTML headings, navigation and category controls remain present when the bundle is blocked; native filtering and contact composition still work.
 
 Edit components in `src/` and styles in `dist/assets/editorial.css`, then run `npm run build:editorial`. This produces both bilingual `motion-fragments.json` and the locally bundled `dist/assets/editorial-motion.js`, then regenerates static pages. For copy-only changes outside the entry points, run `python build_site.py`. Both fragments and bundle are committed, so Vercel continues to publish static assets and does not need a React server. GSAP files remain available for the previous design but are no longer loaded by the homepages. Earlier GSAP-specific QA is historical; run `node check_editorial.mjs` for this implementation, followed by `node check_professional.mjs`. Finish with `node build_public_kit.mjs && node validate-production.mjs`.
+
+
+## Studio enhancements — 27 October 2026
+
+`site_enhancements.py` adds the supplied Ahmad portrait, clearly disclosed sample feedback, guided budget/timing fields and Organization/Person/WebSite schema. `dist/assets/studio-enhancements.css` finishes the services, founder, process, questions, contact and footer compositions. `MobileContactDock.jsx` uses the shared spring, hides in the hero/contact/footer and while the menu or keyboard is active, and respects reduced motion.
+
+Three 12-second, silent archive design films are generated by `node build_project_films.mjs` from the supplied original client captures. They are labelled archive previews, use native user-initiated video controls and bilingual captions, and do not imply that a changed external site is our current work. `project-films.json` records their sources. Generating films requires the local Playwright FFmpeg binary (or FFMPEG_PATH); normal site builds use committed films.
+
+The verified hello@digitsstudio.online inbox is available in the connected Resend resource, reached from Vercel Storage. Direct website inquiries are sent from this address to Ahmad's existing Gmail with the visitor as Reply-To. Ordinary mail addressed to hello is read and answered in Resend Inboxes; it is not automatically forwarded to Gmail. No autonomous email agent is enabled. See DEPLOYMENT.md for configuration.
+
+`api/inquiry.js` delegates validation and delivery to `lib/inquiry-handler.mjs`. Enable real production delivery with RESEND_API_KEY, RESEND_EMAIL_DOMAIN and INQUIRY_EMAIL_ENABLED=true. Keys belong only in the environment; none are included in source or downloadable kits. GET /api/inquiry only exposes availability. Preview deployments intentionally keep direct delivery disabled. The sender/recipient are server-controlled, with origin checks, a honeypot, a per-instance burst guard and provider idempotency. The burst guard is not a distributed rate limiter. Error responses retain the reviewed brief and manual alternatives.
+
+After source edits: `node build_editorial.mjs`, `python build_site.py`, and `python build_client_cases.py`. Verify with `node check_inquiry.mjs`, `node check_enhancements.mjs`, `node check_editorial.mjs` and `node check_professional.mjs`, then `npm run build`. UI sending tests intercept POSTs rather than emailing a person. The provider connection was independently accepted using Resend's delivered@resend.dev test address. The included Hobby analytics plan supports traffic; custom inquiry events are not configured.

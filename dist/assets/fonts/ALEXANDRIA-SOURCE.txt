@@ -1,0 +1,5 @@
+Alexandria / Mohamed Gaber and Julieta Ulanovsky
+Official source: https://github.com/google/fonts/tree/main/ofl/alexandria
+Upstream: https://github.com/Gue3bara/Alexandria
+Variable wght axis 100–900. WOFF2 converted losslessly from the supplied variable TTF using fontTools.
+SIL Open Font License 1.1 is included in Alexandria-OFL.txt.

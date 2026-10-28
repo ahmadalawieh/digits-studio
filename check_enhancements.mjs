@@ -22,7 +22,7 @@ try{
   const schema=await page.locator('script[type="application/ld+json"]').textContent();
   const graph=JSON.parse(schema)['@graph'];
   assert(graph.some(node=>node['@type']==='Organization'&&node.email==='hello@digitsstudio.online'),'Verified business structured data');
-  assert(graph.some(node=>node['@type']==='Person'&&node.image.endsWith('/ahmad-alawieh.webp')),'Actual founder portrait in structured data');
+  assert(graph.some(node=>node['@type']==='Person'&&!node.image),'Founder structured data has no removed portrait');
   assert(!graph.some(node=>['Review','AggregateRating'].includes(node['@type'])),'Sample feedback is not represented as real reviews');
   assert(await page.locator('.demo-feedback-label').isVisible(),'Sample feedback disclosure visible');
   const dock=page.locator('.mobile-contact-dock');
@@ -38,8 +38,9 @@ try{
    await page.keyboard.press('Escape');
    await page.waitForFunction(()=>document.querySelector('.mobile-contact-dock').getAttribute('aria-hidden')==='false');
   }
-  await page.locator('#studio').scrollIntoViewIfNeeded();await page.locator('.studio-portrait img').evaluate(i=>i.decode());
-  assert(await page.locator('.portrait-identity').getAttribute('href')==='/brand-kit.html','Existing identity review route retained');
+  await page.locator('#studio').scrollIntoViewIfNeeded();
+  assert(await page.locator('#studio img').count()===0,'Studio remains text-only until replacement imagery is selected');
+  assert(await page.locator('.studio-identity').getAttribute('href')==='/brand-kit.html','Existing identity review route retained');
   await page.locator('#studio').screenshot({path:`qa/enhancements/verified-studio-${width}-${ar?'ar':'en'}-${reduced?'reduced':'motion'}.png`});
   await page.locator('#contact').scrollIntoViewIfNeeded();
   if(width===360)await page.waitForFunction(()=>document.querySelector('.mobile-contact-dock').getAttribute('aria-hidden')==='true');

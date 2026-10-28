@@ -10,3 +10,8 @@ Follow DESIGN.md: ink #06070B, off-chalk #FDFDFD, primary #0E1015, secondary #6A
 6. Ahmad authorized demo testimonials. Any sample quotes must be visibly labelled as illustrative demo content, with no real client attribution, headshots, star ratings or performance claims.
 
 Critique: the existing work and hero already establish the visual statement. Finish the lower page with an image-led founder section, restrained open service rows, an ink process section and a clean off-chalk brief. Avoid more floating decorative elements, uniform card collections and endless scroll reveals. Keep the persistent contact control compact and show it only where useful.
+
+
+28 October refinement: remove the founder photograph and its public asset/schema image reference. Use a text-only studio section: large founder statement on the left, existing explanation and contact/identity links on the right; stack these on mobile. Retain the same ink/off-chalk palette, Inter/Playfair/IBM Plex Arabic roles and existing routing.
+
+Process refinement: the sequence uses plain 01/02/03, with no circle, halo or connector. Fixed-width number column, balanced heading column and a readable description column, with each row separated by one hairline. On mobile, the description sits under its heading. Reset legacy box shadow and border radius explicitly. This is a real three-step sequence, so numbering helps comprehension; additional decoration does not. Review both LTR/RTL at phone, tablet and desktop sizes, including the full CSS cascade.

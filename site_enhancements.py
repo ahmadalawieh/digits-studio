@@ -10,13 +10,13 @@ def schema_markup():
          'address':{'@type':'PostalAddress','addressLocality':'Beirut','addressCountry':'LB'},
          'founder':{'@id':origin+'/#ahmad'},'sameAs':['https://www.instagram.com/digitsstudio/','https://www.facebook.com/profile.php?id=61595628515916'],
          'contactPoint':{'@type':'ContactPoint','contactType':'project inquiries','telephone':'+96170332361','availableLanguage':['English','Arabic']}},
-        {'@type':'Person','@id':origin+'/#ahmad','name':'Ahmad Alawieh','jobTitle':'Founder','worksFor':{'@id':origin+'/#studio'},'image':origin+'/assets/studio/ahmad-alawieh.webp'},
+        {'@type':'Person','@id':origin+'/#ahmad','name':'Ahmad Alawieh','jobTitle':'Founder','worksFor':{'@id':origin+'/#studio'}},
         {'@type':'WebSite','@id':origin+'/#website','url':origin+'/','name':'Digits Studio','inLanguage':['en','ar'],'publisher':{'@id':origin+'/#studio'}}]}
     return '<script type="application/ld+json">'+json.dumps(data,ensure_ascii=False).replace('<','\\u003c')+'</script>'
 
-def founder_portrait(ar=False):
+def studio_section(ar=False):
     t=lambda en,arabic:arabic if ar else en
-    return f'''<figure class="studio-portrait"><img src="/assets/studio/ahmad-alawieh.webp" alt="{t('Ahmad Alawieh, founder of Digits Studio','أحمد علاويه، مؤسس ديجيتس ستوديو')}" width="960" height="960" loading="lazy"><figcaption><div><strong>{t('Ahmad Alawieh','أحمد علاويه')}</strong><span>{t('Founder / designer & developer','المؤسس / التصميم والتطوير')}</span></div><span>{t('Beirut, Lebanon','بيروت، لبنان')}</span><a class="portrait-identity" href="/brand-kit.html">{t('Explore the studio identity','اكتشف هوية الاستوديو')} ↗</a></figcaption></figure>'''
+    return f'''<section class="studio section studio-text-only" id="studio"><h2>{t('The person you talk to<br>does the work.','تواصل مباشرة<br>مع من يصنع العمل.')}</h2><div class="studio-copy"><p>{t('Digits Studio is led by Ahmad Alawieh in Beirut. You work directly with the person shaping your project, from the first conversation through the handover.','ديجيتس ستوديو بإدارة أحمد علاويه من بيروت. تتواصل مباشرة مع الشخص الذي يعمل على مشروعك، من الحديث الأول حتى التسليم.')}</p><p>{t('The approach is simple: understand the business, make the work clear, and build something you can actually use. In English, Arabic or both.','النهج بسيط: نفهم شركتك، نوضّح الرسالة، ونصنع عملاً تستطيع استخدامه فعلاً. بالعربية أو الإنجليزية أو باللغتين.')}</p><div class="studio-links"><a class="simple-link" href="https://wa.me/96170332361" target="_blank" rel="noopener noreferrer">{t('Talk to Ahmad on WhatsApp','تحدث مع أحمد على واتساب')}</a><a class="simple-link studio-identity" href="/brand-kit.html">{t('Explore the studio identity','اكتشف هوية الاستوديو')}</a></div></div></section>'''
 
 def feedback_preview(ar=False):
     t=lambda en,arabic:arabic if ar else en
@@ -39,8 +39,8 @@ def film_markup(client,ar=False):
     return f'''<section class="project-film" id="film"><div class="film-intro"><h2>{t('A closer look.','نظرة أقرب.')}</h2><p>{t('A short design film from the project archive. The original capture and scope are shown; the current external website may have changed.','فيلم قصير من أرشيف المشروع، يعرض اللقطة الأصلية ونطاق العمل. قد يكون الموقع الخارجي الحالي قد تغيّر.')}</p></div><video controls playsinline preload="none" poster="/assets/projects/films/{slug}-poster.webp" aria-label="{html.escape(client['name'],quote=True)} / {t('silent archive design film','فيلم تصميم صامت من الأرشيف')}"><source src="/assets/projects/films/{slug}.webm" type="video/webm"><track kind="captions" src="/assets/projects/films/{slug}-en.vtt" srclang="en" label="English" {'default' if not ar else ''}><track kind="captions" src="/assets/projects/films/{slug}-ar.vtt" srclang="ar" label="العربية" {'default' if ar else ''}><p>{t('Your browser cannot play this film. The website capture is shown above.','متصفحك لا يدعم هذا الفيديو. لقطة الموقع معروضة أعلاه.')}</p></video><p class="film-transcript">{html.escape(client['name'])} / {client['arRole'] if ar else client['role']}. {t('Silent design overview using the supplied archived website image.','عرض صامت للتصميم باستخدام لقطة الموقع الأصلية من الأرشيف.')}</p></section>'''
 
 def enhance_home(page,ar,fragments):
-    a=page.index('<div class="studio-art">');b=page.index('<div class="studio-copy">',a)
-    page=page[:a]+founder_portrait(ar)+page[b:]
+    a=page.index('<section class="studio section"');b=page.index('</section>',a)+len('</section>')
+    page=page[:a]+studio_section(ar)+page[b:]
     a=page.index('<form id="inquiry-form">');b=page.index('</form>',a)+len('</form>')
     page=page[:a]+inquiry_form(ar)+page[b:]
     page=page.replace('<section class="questions section">',feedback_preview(ar)+'<section class="questions section">')

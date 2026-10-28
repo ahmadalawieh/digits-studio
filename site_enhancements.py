@@ -18,14 +18,6 @@ def studio_section(ar=False):
     t=lambda en,arabic:arabic if ar else en
     return f'''<section class="studio section studio-text-only" id="studio"><h2>{t('The person you talk to<br>does the work.','تواصل مباشرة<br>مع من يصنع العمل.')}</h2><div class="studio-copy"><p>{t('Digits Studio is led by Ahmad Alawieh in Beirut. You work directly with the person shaping your project, from the first conversation through the handover.','ديجيتس ستوديو بإدارة أحمد علاويه من بيروت. تتواصل مباشرة مع الشخص الذي يعمل على مشروعك، من الحديث الأول حتى التسليم.')}</p><p>{t('The approach is simple: understand the business, make the work clear, and build something you can actually use. In English, Arabic or both.','النهج بسيط: نفهم شركتك، نوضّح الرسالة، ونصنع عملاً تستطيع استخدامه فعلاً. بالعربية أو الإنجليزية أو باللغتين.')}</p><div class="studio-links"><a class="simple-link" href="https://wa.me/96170332361" target="_blank" rel="noopener noreferrer">{t('Talk to Ahmad on WhatsApp','تحدث مع أحمد على واتساب')}</a><a class="simple-link studio-identity" href="/brand-kit.html">{t('Explore the studio identity','اكتشف هوية الاستوديو')}</a></div></div></section>'''
 
-def feedback_preview(ar=False):
-    t=lambda en,arabic:arabic if ar else en
-    quotes=[
-      (t('The identity finally feels like one business, from the first impression to the smallest detail.','أصبحت الهوية تعبّر عن شركة واحدة، من الانطباع الأول حتى أصغر التفاصيل.'),t('Illustrative branding project','مثال توضيحي لمشروع هوية')),
-      (t('A clear process, thoughtful design and a website that is easy to understand and use.','خطوات واضحة وتصميم مدروس وموقع يسهل فهمه واستخدامه.'),t('Illustrative website project','مثال توضيحي لمشروع موقع'))]
-    cards=''.join(f'<figure><blockquote><p>“{quote}”</p></blockquote><figcaption>{label}</figcaption></figure>' for quote,label in quotes)
-    return f'''<section class="feedback-preview section" id="feedback"><div class="feedback-intro"><p class="demo-feedback-label">{t('Sample testimonials / demo content','آراء توضيحية / محتوى تجريبي')}</p><h2>{t('An idea of<br>the experience.','لمحة عن<br>تجربة التعاون.')}</h2><p>{t('These illustrative quotes preview the section. They are not endorsements from actual clients.','هذه اقتباسات توضيحية لمعاينة القسم، وليست آراء أو توصيات من عملاء حقيقيين.')}</p></div><div class="feedback-quotes">{cards}</div></section>'''
-
 def inquiry_form(ar=False):
     t=lambda en,arabic:arabic if ar else en
     choices=''.join(f'<label><input type="checkbox" name="service" value="{value}"><span>{label}</span></label>' for value,label in [('Branding',t('Branding','الهوية')),('Website',t('Website','موقع')),('Marketing',t('Marketing','التسويق'))])
@@ -43,7 +35,7 @@ def enhance_home(page,ar,fragments):
     page=page[:a]+studio_section(ar)+page[b:]
     a=page.index('<form id="inquiry-form">');b=page.index('</form>',a)+len('</form>')
     page=page[:a]+inquiry_form(ar)+page[b:]
-    page=page.replace('<section class="questions section">',feedback_preview(ar)+'<section class="questions section">')
+    page=page.replace('<section class="questions section">','<div data-motion-dee-lab>'+fragments['deeLab']['ar' if ar else 'en']+'</div><section class="questions section">')
     page=page.replace('ahmad.alawieh77@gmail.com','hello@digitsstudio.online')
     page=page.replace('</head>',schema_markup()+'</head>',1)
     page=page.replace('</body>','<div class="mobile-contact-root" data-motion-dock>'+fragments['dock']['ar' if ar else 'en']+'</div></body>')

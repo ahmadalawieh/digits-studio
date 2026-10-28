@@ -24,7 +24,8 @@ try{
   assert(graph.some(node=>node['@type']==='Organization'&&node.email==='hello@digitsstudio.online'),'Verified business structured data');
   assert(graph.some(node=>node['@type']==='Person'&&!node.image),'Founder structured data has no removed portrait');
   assert(!graph.some(node=>['Review','AggregateRating'].includes(node['@type'])),'Sample feedback is not represented as real reviews');
-  assert(await page.locator('.demo-feedback-label').isVisible(),'Sample feedback disclosure visible');
+  assert(await page.locator('#dee-lab').isVisible(),'DEE design demonstration replaces sample feedback');
+  assert(await page.locator('.demo-feedback-label').count()===0,'Sample testimonials retired');
   const dock=page.locator('.mobile-contact-dock');
   if(width===360){
    assert(await dock.getAttribute('aria-hidden')==='true','Dock hidden in hero');

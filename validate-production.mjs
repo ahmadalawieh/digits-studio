@@ -7,7 +7,8 @@ for(const [file,canonical] of [['index.html',origin+'/'],['ar/index.html',origin
   if(!html.includes('data-motion-heading')||!html.includes('data-motion-navigation')||!html.includes('data-motion-filters')||!html.includes('assets/editorial.css')||!html.includes('assets/editorial-motion.js'))throw Error('Editorial entry points missing: '+file);
   if(html.includes('src="'+(file.startsWith('ar/')?'../':'')+'assets/hero-motion.js'))throw Error('Conflicting legacy hero engine: '+file);
   if(!html.includes('assets/motion.css'))throw new Error('Motion stylesheet missing: '+file);
-  for(const marker of ['data-motion-dock','assets/studio-enhancements.css','studio-text-only','inquiry-send-direct','name="budget"','name="timing"','application/ld+json','hello@digitsstudio.online','demo-feedback-label'])if(!html.includes(marker))throw Error('Studio enhancement missing: '+marker+' in '+file);
+  for(const marker of ['data-motion-dock','assets/studio-enhancements.css','studio-text-only','inquiry-send-direct','name="budget"','name="timing"','application/ld+json','hello@digitsstudio.online','data-motion-dee-hero','data-motion-dee-lab','assets/dee.css'])if(!html.includes(marker))throw Error('Studio enhancement missing: '+marker+' in '+file);
+  if(html.includes('demo-feedback-label')||html.includes('feedback-quotes'))throw Error('Retired sample testimonials still referenced: '+file);
   if(html.includes('ahmad-alawieh.webp')||html.includes('studio-portrait'))throw Error('Removed founder portrait still referenced: '+file);
   if(file.startsWith('ar/')&&!html.includes('fonts/Alexandria.woff2'))throw Error('Alexandria preload missing from Arabic homepage');
   const graph=JSON.parse(html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1])['@graph'];
@@ -44,3 +45,6 @@ for(const slug of ['b1-ventures','kaizen-firm','umbrella500']){
  }
 }
 console.log('Text-only studio, structured data, reviewed inquiry and three captioned archive films verified.');
+for(const name of ['dee-pointing.webp','dee-curious.webp','dee-pointing.png','dee-curious.png'])if(!(await stat(new URL('./dist/assets/dee/'+name,import.meta.url))).size)throw Error('Missing DEE pose: '+name);
+if(!(await stat(new URL('./dist/assets/dee.css',import.meta.url))).size)throw Error('Missing DEE interaction stylesheet');
+console.log('DEE hero cameo and bilingual design demonstration assets verified.');

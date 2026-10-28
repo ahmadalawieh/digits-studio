@@ -7,15 +7,16 @@ export function MobileContactDock({ar=false}) {
   const [visible,setVisible]=useState(false),reduced=useMotionPreference();
   useEffect(()=>{
     const hero=document.querySelector('.launch-hero'),contact=document.querySelector('#contact');
-    const footer=document.querySelector('.footer'),menu=document.querySelector('#mobile-menu');
+    const footer=document.querySelector('.footer'),menu=document.querySelector('#mobile-menu'),demo=document.querySelector('#dee-lab');
     const mobile=matchMedia('(max-width:750px)');let frame;
     const measure=()=>{
       const editing=document.activeElement?.matches('input,textarea,select,[contenteditable="true"]');
-      setVisible(mobile.matches&&hero.getBoundingClientRect().bottom<=0&&contact.getBoundingClientRect().top>innerHeight&&footer.getBoundingClientRect().top>innerHeight&&menu.hidden&&!editing);
+      const demoVisible=demo&&demo.getBoundingClientRect().top<innerHeight&&demo.getBoundingClientRect().bottom>0;
+      setVisible(mobile.matches&&hero.getBoundingClientRect().bottom<=0&&contact.getBoundingClientRect().top>innerHeight&&footer.getBoundingClientRect().top>innerHeight&&menu.hidden&&!editing&&!demoVisible);
     };
     const defer=()=>{cancelAnimationFrame(frame);frame=requestAnimationFrame(measure);};
     const observer=new IntersectionObserver(measure);
-    for(const element of [hero,contact,footer])observer.observe(element);
+    for(const element of [hero,contact,footer,demo].filter(Boolean))observer.observe(element);
     const menuObserver=new MutationObserver(measure);menuObserver.observe(menu,{attributes:true,attributeFilter:['hidden']});
     mobile.addEventListener('change',measure);window.addEventListener('resize',defer,{passive:true});
     document.addEventListener('focusin',defer);document.addEventListener('focusout',defer);measure();

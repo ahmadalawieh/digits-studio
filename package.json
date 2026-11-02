@@ -24,7 +24,8 @@
     "framer-motion": "14.7.0",
     "react": "19.3.1",
     "react-dom": "19.3.1",
-    "resend": "6.34.1"
+    "resend": "6.34.1",
+    "three": "0.187.0"
   },
   "engines": {
     "node": "22.x"

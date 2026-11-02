@@ -1,0 +1,248 @@
+/* Approved DEE opening; all rules isolated from the existing portfolio. */
+.dee-journey *{box-sizing:border-box}
+.dee-journey button,.dee-journey a{-webkit-tap-highlight-color:transparent}
+.dee-journey button{font:inherit;color:inherit;cursor:pointer}
+.dee-journey a{color:inherit;text-decoration:none}
+.dee-journey button:focus-visible,.dee-journey a:focus-visible{outline:2px solid currentColor;outline-offset:7px}
+.dee-journey button{border:0;background:none}
+.dee-journey p,.dee-journey .journey-heading,.dee-journey h2{margin:0}
+.dee-journey button[aria-current=step]{font-weight:600}
+.dee-journey{color:#FDFDFD;min-height:100vh}
+.dee-journey .live-link{display:flex;gap:16px;align-items:center}
+.dee-journey .language{min-height:42px;min-width:44px;font-family:Alexandria,EditorialInter,sans-serif}
+.dee-journey .journey{height:500svh;position:relative}
+.dee-journey .stage{position:sticky;top:0;height:100svh;overflow:hidden;isolation:isolate}
+.dee-journey .stage-art,.dee-journey .chapter-stack,.dee-journey .three-layer{position:absolute;inset:0}
+.dee-journey .stage-art{z-index:1;pointer-events:none;perspective:1500px}
+.dee-journey .three-layer{z-index:2}
+.dee-journey .three-layer canvas{display:block;width:100%;height:100%}
+.dee-journey .chapter-stack{z-index:4;pointer-events:none}
+.dee-journey .chapter{position:absolute;top:23%;inset-inline-start:5.7%;width:44%;pointer-events:auto}
+.dee-journey .chapter[aria-hidden=true]{pointer-events:none}
+.dee-journey .chapter-1,.dee-journey .chapter-3{inset-inline-start:auto;inset-inline-end:6.5%;width:39%}
+.dee-journey .chapter-kicker{font-size:12px;margin-bottom:30px}
+.dee-journey .chapter .journey-heading{font:500 clamp(72px,7.8vw,132px)/.98 EditorialSerif,Georgia,serif;letter-spacing:-.055em;max-width:8.8ch}
+.dee-journey .chapter .journey-heading span{display:block;white-space:nowrap}
+.dee-journey .chapter-1 .journey-heading,.dee-journey .chapter-3 .journey-heading{font-size:clamp(64px,6.6vw,112px)}
+.dee-journey .chapter-description{font-size:15px;line-height:1.9;max-width:330px;margin-top:30px;opacity:.8}
+.dee-journey .primary-link{display:inline-flex;align-items:center;gap:34px;min-height:48px;border:1px solid currentColor;border-radius:999px;padding:12px 21px;font-size:12px;margin-top:32px}
+.dee-journey .primary-link span{font-size:17px}
+.dee-journey .chapter-navigation{position:absolute;z-index:10;inset-inline-end:30px;top:45%;display:flex;flex-direction:column;gap:17px}
+.dee-journey .chapter-navigation button{display:flex;align-items:center;gap:12px;padding:6px 0;position:relative;min-width:28px;min-height:32px;font-size:10px}
+.dee-journey .chapter-number{opacity:.65}
+.dee-journey .chapter-name{position:absolute;inset-inline-end:34px;white-space:nowrap;opacity:0;transform:translateX(-6px);transition:none}
+.dee-journey .chapter-navigation button:is(:hover,:focus-visible) .chapter-name{opacity:1;transform:none}
+.dee-journey .chapter-track{position:absolute;width:2px;inset-block:3px;inset-inline-end:-10px;background:currentColor}
+.dee-journey .stage-bottom{position:absolute;z-index:5;bottom:32px;inset-inline:42px;display:flex;align-items:center;justify-content:space-between;gap:25px;font-size:10px;opacity:.65}
+.dee-journey .scroll-track{height:2px;position:absolute;bottom:0;inset-inline:0;z-index:20;background:#84848b30}
+.dee-journey .scroll-track>div{height:100%;background:currentColor;transform-origin:left}
+.dee-journey .artifact{position:absolute;z-index:3;width:32%;height:33%;top:60%;left:60%;transform-style:preserve-3d;perspective:1200px}
+.dee-journey .identity-world{position:relative;width:100%;height:100%}
+.dee-journey .identity-card{position:absolute;inset:9% 2% 6% 12%;background:#17191e;border:1px solid #ffffff25;box-shadow:0 32px 65px #06070b24;padding:27px;display:flex;flex-direction:column;justify-content:space-between;color:white;transform:rotate(-8deg) rotateY(-13deg)}
+.dee-journey .identity-card img{width:50%;height:auto}
+.dee-journey .identity-card span{font:500 clamp(20px,2vw,33px)/1.1 EditorialSerif,serif;letter-spacing:-.035em}
+.dee-journey .identity-card small{font-size:9px}
+.dee-journey .identity-swatch{position:absolute;inset:-14% 38% 24% -2%;background:#FFDA46;transform:rotate(10deg);box-shadow:0 20px 45px #06070b14;padding:20px;display:flex;flex-direction:column;justify-content:space-between}
+.dee-journey .identity-swatch img{height:65%;max-width:65%;object-fit:contain}
+.dee-journey .identity-swatch span{font-size:9px;color:#292A32}
+.dee-journey .identity-stamp{position:absolute;width:95px;height:95px;border-radius:50%;display:grid;place-items:center;background:#282a31;bottom:0;left:-20px;box-shadow:0 16px 28px #06070b20;transform:rotate(-12deg)}
+.dee-journey .identity-stamp img{width:60%}
+.dee-journey .artifact-2{width:38%;height:31%;left:55%;top:63%}
+.dee-journey .site-world{position:relative;width:100%;height:100%;background:#f6f5f2;border:1px solid #1a1c2225;border-radius:12px;box-shadow:0 30px 70px #06070b35;transform:rotate(-8deg) rotateY(-12deg)}
+.dee-journey .window-head{height:24px;background:#ececef;display:flex;gap:4px;align-items:center;padding:0 10px;border-radius:12px 12px 0 0;color:#555b66}
+.dee-journey .window-head span{display:block;width:4px;height:4px;border-radius:50%;background:#9d9fa7}
+.dee-journey .window-head b{font-size:8px;font-weight:400;margin-left:13px}
+.dee-journey .website-capture{width:100%;height:calc(100% - 24px);display:block;object-fit:cover;object-position:top;border-radius:0 0 12px 12px}
+.dee-journey .phone-frame{position:absolute;right:-27px;bottom:-12px;width:23%;height:85%;background:#13151a;border:5px solid #13151a;border-radius:20px;box-shadow:0 20px 40px #06070b30;overflow:hidden;transform:rotate(13deg) translateZ(40px)}
+.dee-journey .phone-frame img{width:100%;height:100%;object-fit:cover;object-position:top}
+.dee-journey .artifact-3{height:33%;top:59%;left:61%;width:32%}
+.dee-journey .campaign-world{position:relative;width:100%;height:100%;color:white}
+.dee-journey .campaign-print{position:absolute;background:#FFDA46;color:#181a20;inset:-9% 35% 0 -5%;transform:rotate(-12deg);padding:25px;box-shadow:0 25px 60px #0003;display:flex;flex-direction:column;justify-content:space-between}
+.dee-journey .campaign-print img{width:40px}
+.dee-journey .campaign-print strong{font:500 clamp(27px,2.5vw,40px)/1.03 EditorialSerif,Georgia,serif;letter-spacing:-.04em;white-space:pre-line}
+.dee-journey .campaign-print small{font-size:9px}
+.dee-journey .campaign-dark{position:absolute;inset:7% 0 -3% 34%;padding:25px;background:#24262e;transform:rotate(8deg) translateZ(20px);box-shadow:0 30px 60px #0006;display:flex;flex-direction:column;justify-content:space-between;border:1px solid #ffffff15}
+.dee-journey .campaign-dark img{width:80px}
+.dee-journey .campaign-dark strong{font:500 clamp(27px,2.8vw,43px)/1.05 EditorialInter,sans-serif;letter-spacing:-.06em;white-space:pre-line}
+.dee-journey .campaign-dark span{font-size:7px;line-height:1.8}
+html[dir=rtl] .dee-journey .chapter :is(.journey-heading,.chapter-description){font-family:Alexandria,sans-serif;letter-spacing:0}
+html[dir=rtl] .dee-journey .chapter .journey-heading{font-size:clamp(62px,6.4vw,101px);line-height:1.4}
+html[dir=rtl] .dee-journey .chapter-1 .journey-heading,html[dir=rtl] .dee-journey .chapter-3 .journey-heading{font-size:clamp(45px,4.8vw,77px)}
+html[dir=rtl] .dee-journey .primary-link{font-family:Alexandria,sans-serif}
+html[dir=rtl] .dee-journey .chapter-description{font-size:14px}
+html[dir=rtl] .dee-journey .campaign-print strong,html[dir=rtl] .dee-journey .campaign-dark strong{font-family:Alexandria,sans-serif;font-size:clamp(22px,2vw,32px);letter-spacing:0;line-height:1.4}
+html[dir=rtl] .dee-journey .chapter{inset-inline-start:auto;inset-inline-end:5.7%}
+html[dir=rtl] .dee-journey .chapter-1,html[dir=rtl] .dee-journey .chapter-3{inset-inline-end:auto;inset-inline-start:6.5%}
+@media (max-width:1050px) and (min-width:751px){.dee-journey .chapter{top:23%;width:43%}
+.dee-journey .chapter .journey-heading{font-size:9vw}
+.dee-journey .chapter-1 .journey-heading,.dee-journey .chapter-3 .journey-heading{font-size:7.7vw}
+.dee-journey .chapter-description{font-size:13px;max-width:300px}
+.dee-journey .artifact-1,.dee-journey .artifact-3{width:35%;left:59%;height:29%;top:64%}
+.dee-journey .artifact-2{width:39%;left:53%;top:64%;height:26%}
+.dee-journey .identity-stamp{width:65px;height:65px}
+.dee-journey .identity-card,.dee-journey .campaign-print,.dee-journey .campaign-dark{padding:20px}
+.dee-journey .stage-bottom{inset-inline:28px}
+.dee-journey .chapter-navigation{inset-inline-end:18px}}
+@media (max-width:750px){.dee-journey .live-link{gap:9px}
+.dee-journey .journey{height:440svh}
+.dee-journey .chapter{top:17%;inset-inline:24px;width:auto}
+.dee-journey .chapter-1,.dee-journey .chapter-3{inset-inline:24px;width:auto}
+.dee-journey .chapter .journey-heading{font-size:clamp(60px,15vw,90px);line-height:1.02;max-width:none}
+.dee-journey .chapter-1 .journey-heading,.dee-journey .chapter-3 .journey-heading{font-size:clamp(47px,12vw,68px)}
+.dee-journey .chapter-kicker{font-size:10px;margin-bottom:19px}
+.dee-journey .chapter-description{font-size:12px;line-height:1.85;margin-top:22px;max-width:280px}
+.dee-journey .primary-link{min-height:44px;font-size:10px;padding:10px 17px;gap:25px;margin-top:22px}
+.dee-journey .three-layer{top:42%;height:56%;bottom:auto}
+.dee-journey .artifact{width:43%;left:52%;height:19%;top:69%}
+.dee-journey .identity-card{padding:14px;inset:5% -3% 5% 9%}
+.dee-journey .identity-card img{width:70%}
+.dee-journey .identity-card span{font-size:19px}
+.dee-journey .identity-card small{font-size:6px}
+.dee-journey .identity-swatch{inset:-17% 32% 24% -15%;padding:12px}
+.dee-journey .identity-swatch span{font-size:7px}
+.dee-journey .identity-stamp{height:44px;width:44px;left:-14px;bottom:0}
+.dee-journey .artifact-2{width:57%;left:35%;height:18%;top:69%}
+.dee-journey .window-head{height:17px;padding-inline:7px}
+.dee-journey .window-head b{font-size:6px;margin-left:5px}
+.dee-journey .window-head span{width:3px;height:3px}
+.dee-journey .website-capture{height:calc(100% - 17px)}
+.dee-journey .phone-frame{border-width:3px;right:-13px;width:25%;border-radius:10px}
+.dee-journey .artifact-3{left:51%;width:42%;height:20%;top:68%}
+.dee-journey .campaign-print,.dee-journey .campaign-dark{padding:12px}
+.dee-journey .campaign-print img{width:23px}
+.dee-journey .campaign-print strong{font-size:23px}
+.dee-journey .campaign-print small{font-size:6px}
+.dee-journey .campaign-dark strong{font-size:22px}
+.dee-journey .campaign-dark img{width:46px}
+.dee-journey .campaign-dark span{font-size:5px}
+.dee-journey .chapter-navigation{inset-inline:22px;top:auto;bottom:50px;flex-direction:row;justify-content:space-between;gap:5px}
+.dee-journey .chapter-navigation button{min-width:38px;min-height:32px;justify-content:center;font-size:9px}
+.dee-journey .chapter-name{display:none}
+.dee-journey .chapter-track{height:2px;width:auto;inset-inline:4px;inset-block:auto -3px}
+.dee-journey .stage-bottom{bottom:15px;inset-inline:24px;font-size:8px}
+.dee-journey .stage-bottom>span{display:none}
+html[dir=rtl] .dee-journey .chapter{inset-inline:24px}
+html[dir=rtl] .dee-journey .chapter .journey-heading{font-size:clamp(52px,13vw,76px);line-height:1.35}
+html[dir=rtl] .dee-journey .chapter-1 .journey-heading,html[dir=rtl] .dee-journey .chapter-3 .journey-heading{font-size:clamp(37px,10vw,56px)}
+html[dir=rtl] .dee-journey .chapter-description{font-size:11px;line-height:1.9}
+html[dir=rtl] .dee-journey .campaign-print strong,html[dir=rtl] .dee-journey .campaign-dark strong{font-size:17px}}
+@media (prefers-reduced-motion:reduce){.dee-journey *{animation:none!important;transition:none!important}}
+.dee-journey .chapter-1,.dee-journey .chapter-3{top:18%}
+.dee-journey .artifact-1{top:65%;height:28%}
+.dee-journey .artifact-3{top:72%;height:25%}
+@media (min-width:751px) and (max-width:1050px){.dee-journey .chapter .journey-heading{font-size:8vw}
+.dee-journey .chapter-1 .journey-heading,.dee-journey .chapter-3 .journey-heading{font-size:6.3vw}
+.dee-journey .artifact-1{top:67%;height:25%}
+.dee-journey .artifact-3{top:73%;height:23%}}
+@media (max-width:750px){.dee-journey .chapter-1,.dee-journey .chapter-3{top:17%}
+.dee-journey .chapter-1 .journey-heading,.dee-journey .chapter-2 .journey-heading,.dee-journey .chapter-3 .journey-heading{font-size:clamp(43px,11.7vw,65px)}
+.dee-journey .artifact-1{top:70%;height:18%}
+.dee-journey .artifact-3{top:70%;height:18%}}
+@media (max-width:750px){.dee-journey .three-layer{top:var(--dee-top,45%);height:calc(100% - var(--dee-top,45%) - 88px);bottom:auto}
+.dee-journey .artifact-1,.dee-journey .artifact-2,.dee-journey .artifact-3{top:calc(var(--dee-top,45%) + (100% - var(--dee-top,45%) - 88px)*.58);height:calc((100% - var(--dee-top,45%) - 88px)*.35)}}
+@media (max-width:750px) and (max-height:740px){.dee-journey .chapter{top:16%}
+.dee-journey .chapter-1,.dee-journey .chapter-3{top:16%}
+.dee-journey .chapter-kicker{margin-bottom:12px}
+.dee-journey .chapter .journey-heading{font-size:clamp(43px,12.5vw,64px)}
+.dee-journey .chapter-1 .journey-heading,.dee-journey .chapter-2 .journey-heading,.dee-journey .chapter-3 .journey-heading{font-size:clamp(36px,10.4vw,56px)}
+.dee-journey .chapter-description{font-size:11px;line-height:1.7;margin-top:14px;max-width:290px}
+.dee-journey .primary-link{margin-top:14px;min-height:42px;padding-block:9px}
+html[dir=rtl] .dee-journey .chapter .journey-heading{font-size:clamp(38px,11vw,58px);line-height:1.27}
+html[dir=rtl] .dee-journey .chapter-1 .journey-heading,html[dir=rtl] .dee-journey .chapter-3 .journey-heading{font-size:clamp(32px,9.5vw,48px)}
+html[dir=rtl] .dee-journey .chapter-description{font-size:10px;line-height:1.7}
+.dee-journey .identity-stamp{display:none}
+.dee-journey .identity-card,.dee-journey .identity-swatch,.dee-journey .campaign-print,.dee-journey .campaign-dark{padding:9px}
+.dee-journey .identity-card span,.dee-journey .campaign-print strong,.dee-journey .campaign-dark strong{font-size:18px}
+html[dir=rtl] .dee-journey .campaign-print strong,html[dir=rtl] .dee-journey .campaign-dark strong{font-size:14px}}
+@media (min-width:751px) and (max-height:650px){.dee-journey .chapter,.dee-journey .chapter-1,.dee-journey .chapter-3{top:23%}
+.dee-journey .chapter-kicker{margin-bottom:14px;font-size:10px}
+.dee-journey .chapter .journey-heading,.dee-journey .chapter-1 .journey-heading,.dee-journey .chapter-3 .journey-heading{font-size:clamp(36px,11svh,68px)}
+.dee-journey .chapter-description{margin-top:16px;font-size:12px;line-height:1.7;max-width:310px}
+.dee-journey .primary-link{margin-top:14px;min-height:40px;padding-block:8px}
+html[dir=rtl] .dee-journey .chapter .journey-heading,html[dir=rtl] .dee-journey .chapter-1 .journey-heading,html[dir=rtl] .dee-journey .chapter-3 .journey-heading{font-size:clamp(32px,9svh,56px);line-height:1.3}
+html[dir=rtl] .dee-journey .chapter-description{font-size:11px}
+.dee-journey .artifact-1,.dee-journey .artifact-2,.dee-journey .artifact-3{top:75%;height:18%}
+.dee-journey .stage-bottom{bottom:18px}}
+@media (min-width:751px) and (max-height:480px){.dee-journey .artifact{display:none}
+.dee-journey .chapter-description{max-width:340px}
+.dee-journey .stage-bottom{font-size:8px;bottom:12px}
+.dee-journey .chapter-navigation{top:30%}}
+@media (max-width:750px) and (orientation:landscape) and (max-height:500px){.dee-journey .language{min-height:34px}
+.dee-journey .three-layer{inset:0;height:100%;bottom:0}
+.dee-journey .chapter,.dee-journey .chapter-1,.dee-journey .chapter-3{top:24%;inset-inline-start:4%;inset-inline-end:auto;width:44%}
+.dee-journey .chapter-1,.dee-journey .chapter-3{inset-inline-start:auto;inset-inline-end:8%;width:42%}
+.dee-journey .chapter-kicker{font-size:9px;margin-bottom:10px}
+.dee-journey .chapter .journey-heading,.dee-journey .chapter-1 .journey-heading,.dee-journey .chapter-2 .journey-heading,.dee-journey .chapter-3 .journey-heading{font-size:clamp(26px,8.1svh,36px);line-height:1.04}
+.dee-journey .chapter-description{font-size:10px;line-height:1.6;margin-top:12px;max-width:260px}
+.dee-journey .primary-link{min-height:36px;font-size:9px;padding:6px 12px;margin-top:12px;gap:20px}
+.dee-journey .artifact{display:none}
+.dee-journey .chapter-navigation{inset-inline-start:auto;inset-inline-end:12px;top:31%;bottom:auto;flex-direction:column;gap:1px}
+.dee-journey .chapter-navigation button{min-width:24px;min-height:29px;font-size:8px}
+.dee-journey .chapter-track{width:2px;height:auto;inset-inline:auto -4px;inset-block:3px}
+.dee-journey .stage-bottom{inset-inline:16px;bottom:10px;font-size:8px}
+html[dir=rtl] .dee-journey .chapter{inset-inline-start:auto;inset-inline-end:4%}
+html[dir=rtl] .dee-journey .chapter-1,html[dir=rtl] .dee-journey .chapter-3{inset-inline-start:8%;inset-inline-end:auto}
+html[dir=rtl] .dee-journey .chapter .journey-heading,html[dir=rtl] .dee-journey .chapter-1 .journey-heading,html[dir=rtl] .dee-journey .chapter-3 .journey-heading{font-size:clamp(23px,7.6svh,32px);line-height:1.27}
+html[dir=rtl] .dee-journey .chapter-description{font-size:9px;line-height:1.6}}
+/* Integration with the existing site; approved composition above stays scoped. */
+.editorial-page .hero.dee-journey{display:block;position:relative;width:100%;max-width:none;min-height:0;margin:0;padding:0;overflow:visible;isolation:isolate;background:#06070B;color:#FDFDFD;font:400 15px/1.65 EditorialInter,Arial,sans-serif}
+html[dir=rtl] .editorial-page .hero.dee-journey{font-family:Alexandria,EditorialInter,sans-serif}
+.dee-journey .journey{margin:0;width:100%}
+.dee-journey .journey-heading{color:inherit;margin:0;font-weight:500}
+.dee-journey .journey-title-line,.dee-journey .journey-title-mask,.dee-journey .impact-word{display:block}
+.dee-journey .journey-title-mask{overflow:hidden;padding-bottom:.14em;margin-bottom:-.14em}
+.dee-journey .impact-word{will-change:transform}
+.dee-journey .journey-actions{display:flex;flex-wrap:wrap;align-items:center;gap:24px;margin-top:32px}
+.dee-journey .journey-actions .primary-link{margin:0;white-space:nowrap}
+.dee-journey .story-link{display:inline-flex;align-items:center;gap:12px;min-height:44px;padding:8px 0;font-size:11px}
+.dee-journey .primary-link:hover,.dee-journey .story-link:hover{color:inherit}
+.dee-journey .journey-static-visual{display:none}
+.dee-journey .journey-poster,.dee-journey .journey-poster img{display:block;width:100%;height:100%;object-fit:contain}
+.dee-journey .journey-model-fallback{position:absolute;top:12%;right:4%;width:46%;height:76%}
+.dee-journey .journey-model-fallback.fallback-left{right:auto;left:3%}
+.dee-journey .journey-utilities{display:flex;align-items:center;gap:24px}
+.dee-journey .journey-utilities a{display:inline-flex;align-items:center;gap:12px;min-height:36px}
+.dee-journey .dee-pause{font-size:10px;min-height:36px;padding:6px 0;color:inherit}
+.dee-journey .chapter-navigation button{min-width:44px;min-height:44px}
+.dee-journey .is-hidden{display:none}
+/* Server-rendered scenes reserve the same total height before hydration.
+   Unavailable JS/3D and reduced motion retain the whole story and native links. */
+.dee-journey.is-static .stage{position:relative;height:100%;overflow:visible}
+.dee-journey.is-static .chapter-stack{position:relative;height:100%;pointer-events:auto}
+.dee-journey.is-static .chapter{position:relative;inset:auto;width:100%;height:125svh;padding:23svh 5.7% 0;min-height:0;color:#FDFDFD;background:#06070B;pointer-events:auto}
+.dee-journey.is-static .chapter-1,.dee-journey.is-static .chapter-2{color:#0E1015;background:#FDFDFD}
+.dee-journey.is-static .chapter-1,.dee-journey.is-static .chapter-3{padding-top:18svh}
+.dee-journey.is-static .chapter-copy{width:44%;position:relative;z-index:2}
+.dee-journey.is-static .chapter-1 .chapter-copy,.dee-journey.is-static .chapter-3 .chapter-copy{margin-left:54%;width:42%}
+.dee-journey.is-static .journey-static-visual{display:block;position:absolute;right:4%;top:12svh;width:46%;height:76svh;pointer-events:none}
+.dee-journey.is-static .chapter-1 .journey-static-visual,.dee-journey.is-static .chapter-3 .journey-static-visual{right:auto;left:3%}
+@media(max-width:750px){
+ .dee-journey .journey-actions{gap:18px;margin-top:22px}.dee-journey .story-link{font-size:10px;gap:9px}
+ .dee-journey .chapter-navigation{bottom:38px}.dee-journey .chapter-navigation button{min-width:44px;min-height:44px}
+ .dee-journey .stage-bottom{font-size:8px}.dee-journey .journey-utilities{gap:14px}.dee-journey .dee-pause{font-size:8px}
+ .dee-journey .journey-model-fallback,.dee-journey .journey-model-fallback.fallback-left{left:8%;right:auto;top:var(--dee-top,51%);width:84%;height:calc(100% - var(--dee-top,51%) - 88px)}
+ .dee-journey.is-static .chapter{height:110svh;padding:17svh 24px 0}
+ .dee-journey.is-static .chapter-copy,.dee-journey.is-static .chapter-1 .chapter-copy,.dee-journey.is-static .chapter-3 .chapter-copy{width:100%;margin:0}
+ .dee-journey.is-static .journey-static-visual,.dee-journey.is-static .chapter-1 .journey-static-visual,.dee-journey.is-static .chapter-3 .journey-static-visual{left:8%;right:auto;top:55svh;width:84%;height:35svh}
+}
+@media(max-width:750px) and (max-height:740px){
+ .dee-journey .journey-actions{margin-top:14px;gap:15px}.dee-journey.is-static .chapter{padding-top:16svh}
+ .dee-journey.is-static .journey-static-visual,.dee-journey.is-static .chapter-1 .journey-static-visual,.dee-journey.is-static .chapter-3 .journey-static-visual{top:60svh;height:30svh}
+}
+@media(min-width:751px) and (max-height:650px){.dee-journey .journey-actions{margin-top:14px;gap:20px}}
+@media(max-width:750px) and (orientation:landscape) and (max-height:500px){
+ .dee-journey .journey-actions{margin-top:12px;gap:14px}.dee-journey .story-link{font-size:9px;min-height:36px}
+ .dee-journey .chapter-navigation{bottom:auto}.dee-journey .chapter-navigation button{min-width:24px;min-height:32px}
+ .dee-journey .journey-model-fallback,.dee-journey .journey-model-fallback.fallback-left{top:12%;right:4%;left:auto;width:46%;height:76%}.dee-journey .journey-model-fallback.fallback-left{right:auto;left:3%}
+ .dee-journey.is-static .chapter{padding:24svh 4% 0}
+ .dee-journey.is-static .chapter-copy{width:44%}.dee-journey.is-static .chapter-1 .chapter-copy,.dee-journey.is-static .chapter-3 .chapter-copy{margin-left:54%;width:42%}
+ .dee-journey.is-static .journey-static-visual,.dee-journey.is-static .chapter-1 .journey-static-visual,.dee-journey.is-static .chapter-3 .journey-static-visual{top:12svh;right:4%;left:auto;width:46%;height:76svh}
+ .dee-journey.is-static .chapter-1 .journey-static-visual,.dee-journey.is-static .chapter-3 .journey-static-visual{right:auto;left:3%}
+}
+@media(prefers-reduced-motion:reduce){.dee-journey .impact-word{will-change:auto}}
+/* Clip the cinematic canvas without creating a second scroll container.
+   Focus/scroll anchoring must never shift the story behind the fixed navigation. */
+.dee-journey .stage{overflow:clip}
+html[dir=rtl] .dee-journey.is-static .chapter{inset:auto}
+/* Retire the old hero's ink overlay so the paper scenes retain their contrast. */
+.editorial-page .hero.dee-journey::before,.editorial-page .hero.dee-journey::after{content:none;display:none}

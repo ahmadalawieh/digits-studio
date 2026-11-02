@@ -38,6 +38,7 @@ export function installMotionBridge() {
 
 export function enhanceProjectStage() {
   const hero = document.querySelector('.launch-hero'), stack = hero.querySelector('.impact-stack');
+  if (!stack) return; // The shared DEE story owns the new opening's motion.
   const frame = stack.querySelector('.reel-link'), cta = hero.querySelector('.impact-cta');
   const preference = matchMedia('(prefers-reduced-motion: reduce)');
   const pointer = matchMedia('(hover: hover) and (pointer: fine)');

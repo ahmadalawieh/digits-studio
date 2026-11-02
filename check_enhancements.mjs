@@ -13,7 +13,7 @@ try{
   // Production uses the real Resend connection. These browser checks intercept
   // only delivery POSTs, exercising UI success/failure without emailing a person.
   await page.route('**/api/inquiry',async route=>{
-   if(route.request().method()==='GET')return route.continue();
+   if(route.request().method()==='GET')return route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({available:true})});
    requests.push(route.request().postDataJSON());sends++;
    await route.fulfill({status:sends===1?502:200,contentType:'application/json',body:JSON.stringify(sends===1?{error:'delivery_failed'}:{sent:true,reference:'browser-test-reference'})});
   });

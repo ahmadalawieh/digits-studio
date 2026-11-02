@@ -20,9 +20,9 @@ try{
   page.on('response',response=>{if(response.status()>=400)missing.push(response.url());});
   await page.goto(origin+(ar?'/ar/':''));await page.evaluate(()=>document.fonts.ready);
   await page.waitForFunction(state=>document.querySelector('.hero').dataset.motionState===state,reduced?'reduced':'ready');
-  await page.waitForFunction(()=>Number(getComputedStyle(document.querySelector('.hero-dee')).opacity)>.99);
+  assert.equal(await page.locator('.dee-journey').count(),1);
   assert.equal(await page.locator('.impact-cta').getAttribute('href'),'#contact');
-  assert.equal(await page.locator('.hero-dee img').getAttribute('alt'),'');
+  assert.equal(await page.locator('.chapter-0 .journey-poster img').getAttribute('alt'),'');
   assert.equal(await page.locator('.feedback-preview').count(),0);
   await page.screenshot({path:`qa/dee/hero-${width}-${ar?'ar':'en'}-${reduced?'reduced':'motion'}.jpg`,type:'jpeg',quality:86});
   const lab=page.locator('#dee-lab'),tabs=lab.getByRole('tab');await lab.scrollIntoViewIfNeeded();
@@ -47,11 +47,11 @@ try{
    await tabs.nth(1).click();await page.emulateMedia({reducedMotion:'reduce'});
    await page.waitForFunction(()=>document.querySelector('.hero').dataset.motionState==='reduced');
    await tabs.nth(2).click();await settledPill(page);
-   assert.equal(await page.locator('.hero-dee').evaluate(element=>getComputedStyle(element).transform),'none');
+   assert.equal(await page.locator('.dee-journey canvas').count(),0);
   }
   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
   if(reduced&&[360,1440].includes(width)){
-   const violations=(await new AxeBuilder({page}).include('#dee-lab').include('.hero-primary-action').withTags(['wcag2a','wcag2aa','wcag21aa']).analyze()).violations;
+   const violations=(await new AxeBuilder({page}).include('#dee-lab').include('.chapter-0 .chapter-copy').withTags(['wcag2a','wcag2aa','wcag21aa']).analyze()).violations;
    assert.deepEqual(violations.map(v=>({id:v.id,nodes:v.nodes.map(n=>n.target)})),[]);
    await lab.screenshot({path:`qa/dee/final-${width}-${ar?'ar':'en'}.jpg`,type:'jpeg',quality:87});
   }

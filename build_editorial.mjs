@@ -4,6 +4,10 @@ import {execFileSync} from 'node:child_process';
 
 await mkdir('qa/editorial-build', {recursive: true});
 await build({
+  entryPoints: ['src/dee-scene.js'], bundle: true, minify: true,
+  outfile: 'dist/assets/dee-scene.js', format: 'esm', target: ['es2020'], legalComments: 'linked',
+});
+await build({
   entryPoints: ['src/editorial-entry.jsx'], bundle: true, minify: true,
   outfile: 'dist/assets/editorial-motion.js', format: 'iife', target: ['es2020'],
   jsx: 'automatic', define: {'process.env.NODE_ENV': '"production"'}, legalComments: 'linked',
@@ -14,11 +18,11 @@ await build({
 });
 execFileSync(process.execPath, ['qa/editorial-build/render.cjs'], {stdio: 'inherit'});
 await writeFile('dist/assets/editorial-motion-NOTICE.txt',
-  'Framer Motion, React and React DOM are locally bundled for the editorial UI.\n' +
+  'Framer Motion, React and React DOM are locally bundled for the editorial UI; Three.js is a separate deferred renderer module.\n' +
   'Original notices are retained in editorial-motion.js.LEGAL.txt; full licence texts are in editorial-motion-LICENSES.txt.\n' +
   'Sources: https://github.com/motiondivision/motion and https://github.com/facebook/react\n');
 let licences='';
-for(const dependency of ['react','react-dom','scheduler','framer-motion','motion-dom','motion-utils','@vercel/analytics','@vercel/speed-insights']){
+for(const dependency of ['react','react-dom','scheduler','framer-motion','motion-dom','motion-utils','three','@vercel/analytics','@vercel/speed-insights']){
   const directory='node_modules/'+dependency;
   const filename=(await readdir(directory)).find(name=>/^licen[cs]e(\.|$)/i.test(name));
   if(!filename)throw Error('Missing dependency licence: '+dependency);

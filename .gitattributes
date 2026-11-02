@@ -6,3 +6,5 @@
 *.webp binary
 *.woff2 binary
 *.webm binary
+# Generated renderer includes upstream GLSL strings whose whitespace is intentional.
+dist/assets/dee-scene.js -whitespace linguist-generated=true

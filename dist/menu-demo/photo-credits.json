@@ -1,0 +1,17 @@
+{
+  "license": "Unsplash License",
+  "licenseUrl": "https://unsplash.com/license",
+  "verifiedOn": "2026-11-02",
+  "use": "Illustrative photography inside a fictional digital-menu design demonstration; not actual food sold by a named client.",
+  "sourceImagesAltered": false,
+  "presentation": "Original downloaded photographs; CSS crops for layout only. No AI-generated food images are used.",
+  "photos": [
+    {"file":"burger-classic.jpg","item":"Double cheeseburger","author":"Felippe Lopes","source":"https://unsplash.com/photos/a-hamburger-with-cheese-lettuce-tomato-and-onion-5lU7xz7d72w","image":"https://images.unsplash.com/photo-1700916536887-95b4742b6dd6?auto=format&fit=crop&fm=jpg&q=85&w=1400"},
+    {"file":"pizza-whole.jpg","item":"Margherita pizza","author":"Brelyn Bashrum","source":"https://unsplash.com/photos/a-freshly-baked-margherita-pizza-with-basil-GuhZ2lXdgGA","image":"https://images.unsplash.com/photo-1772494047889-4a7beb5dbad0?auto=format&fit=crop&fm=jpg&q=85&w=1400"},
+    {"file":"latte.jpg","item":"Iced latte","author":"Ichsan Chairul","source":"https://unsplash.com/photos/iced-coffee-with-milk-and-ice-in-a-glass-_gDPQLeHC-A","image":"https://images.unsplash.com/photo-1777878176922-130222ceb11f?auto=format&fit=crop&fm=jpg&q=85&w=1400"},
+    {"file":"lemonade.jpg","item":"Mint lemonade","author":"Pixzolo Photography","source":"https://unsplash.com/photos/lemon-juice-in-glass-with-mint-herb-cLmCH3aygHk","image":"https://images.unsplash.com/photo-1555949366-819808d99159?auto=format&fit=crop&fm=jpg&q=85&w=1400"},
+    {"file":"burger.jpg","item":"Coleslaw burger","author":"Nathan Dumlao","source":"https://unsplash.com/photos/burger-with-cheese-on-white-ceramic-tray-QWaG_m2fLzE","image":"https://images.unsplash.com/photo-1602192103201-d763907bc41b?auto=format&fit=crop&fm=jpg&q=85&w=1400"}
+  ],
+  "unusedCandidate": {"file":"pizza.jpg","author":"Edoardo Cuoghi","source":"https://unsplash.com/photos/a-pizza-with-basil-Z-vPhsDBYhI","reason":"Tight texture crop was less useful for recognising a complete menu item."},
+  "visualReview": "Selected photographs inspected for food/description match, unrelated logos, packaging and recognisable people. No unrelated logo or recognisable person observed in the used images."
+}

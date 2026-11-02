@@ -5,6 +5,12 @@
   "buildCommand": "node build_public_kit.mjs && node validate-production.mjs",
   "outputDirectory": "dist",
   "cleanUrls": true,
+  "headers": [
+    {
+      "source": "/menu-demo/:path*",
+      "headers": [{"key":"X-Robots-Tag","value":"noindex, nofollow"}]
+    }
+  ],
   "redirects": [
     {
       "source": "/work/:path*",

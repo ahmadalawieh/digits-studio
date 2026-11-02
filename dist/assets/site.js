@@ -29,37 +29,7 @@
     function sync(){clearInterval(timer);timer=null;toggle.setAttribute('aria-pressed',String(playing));toggle.textContent=ar?(playing?'إيقاف':'تشغيل'):(playing?'Pause':'Play');if(playing&&!document.hidden)timer=setInterval(()=>show(index+1),6500);}
     reel.querySelector('.reel-prev').addEventListener('click',()=>{playing=false;sync();show(desiredIndex-1);});reel.querySelector('.reel-next').addEventListener('click',()=>{playing=false;sync();show(desiredIndex+1);});toggle.addEventListener('click',()=>{playing=!playing;sync();});document.addEventListener('visibilitychange',sync);reducedMotion.addEventListener('change',()=>{if(reducedMotion.matches){playing=false;sync();if(window.digitsMotion)window.digitsMotion.resetImage(img);if(window.gsap){window.gsap.killTweensOf(img);window.gsap.set(img,{clearProps:'transform,opacity'});}}});reel.addEventListener('focusin',event=>{if(event.target===toggle)return;playing=false;sync();});sync();
   }
-  // Native details retains semantics and keyboard activation; animate only its content.
-  const detailAnimations=new Map();
-  document.querySelectorAll('.service').forEach(detail=>{
-    const summary=detail.querySelector('summary');
-    const content=detail.querySelector('.service-content');
-    summary.addEventListener('click',event=>{
-      if(reducedMotion.matches||!content.animate)return;
-      event.preventDefault();
-      const opening=detail.dataset.transition?detail.dataset.transition==='closing':!detail.open;
-      const from=detail.open?content.getBoundingClientRect().height:0;
-      detailAnimations.get(detail)?.cancel();
-      detail.open=true;
-      detail.dataset.transition=opening?'opening':'closing';
-      const to=opening?content.scrollHeight:0;
-      content.style.overflow='hidden';
-      const animation=content.animate([{height:from+'px',opacity:opening?.35:1},{height:to+'px',opacity:opening?1:0}],{duration:300,easing:'cubic-bezier(.2,.65,.2,1)'});
-      detailAnimations.set(detail,animation);
-      animation.onfinish=()=>{
-        detail.open=opening;delete detail.dataset.transition;content.style.overflow='';detailAnimations.delete(detail);
-      };
-    });
-  });
-  reducedMotion.addEventListener('change',()=>{
-    if(!reducedMotion.matches)return;
-    detailAnimations.forEach((animation,detail)=>{
-      animation.cancel();detail.open=detail.dataset.transition==='opening';delete detail.dataset.transition;
-      detail.querySelector('.service-content').style.overflow='';
-    });
-    detailAnimations.clear();
-
-  });
+  // Native details remain usable without the Framer enhancement.
   const projectCards=[...document.querySelectorAll('[data-project-card]')];
   const filterGroup=document.querySelector('.project-filters');
   filterGroup?.addEventListener('click',event=>{

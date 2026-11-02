@@ -1,0 +1,233 @@
+/* Digits Studio: a complete editorial continuation of the approved DEE opening. */
+.editorial-page.full-studio{--studio-ink:#06070B;--studio-paper:#FDFDFD;--studio-yellow:#FFDA46}
+.full-studio main>.section,.full-studio main>div>.section{scroll-margin-top:110px}
+.full-studio .studio-title-mask,.full-studio .studio-title-line{display:block}
+.full-studio .studio-title-mask{overflow:clip;padding-bottom:.15em;margin-bottom:-.15em}
+.editorial-page.full-studio .section-intro{display:grid;grid-template-columns:1.15fr .65fr;gap:15%;align-items:end;margin-bottom:72px}
+.editorial-page.full-studio .section-intro h2,.editorial-page.full-studio .questions>h2{font:500 clamp(52px,6.4vw,100px)/1.04 EditorialSerif,Georgia,serif;letter-spacing:-.055em;margin:0}
+.editorial-page.full-studio .section-intro p{font-size:14px;line-height:1.9;max-width:430px}
+.editorial-page.full-studio .section-intro .quiet{font-size:11px;line-height:1.8;margin-top:16px;color:#646975}
+/* A magazine sequence: widescreen stories, then unequal paired projects. */
+.full-studio #work{background:var(--studio-paper);padding:130px 6vw 150px;overflow:visible}
+.full-studio #work .section-intro{margin-bottom:56px}
+.full-studio #work .project-filters{display:flex;flex-wrap:wrap;gap:6px;padding:8px;background:#eeeff1;border:0;border-radius:99px;width:max-content;max-width:100%;margin:0 0 80px}
+.full-studio #work .project-filters button{min-height:46px;padding:12px 23px;font-size:12px;border:0;border-radius:99px}
+.full-studio #work .filter-count{font-size:9px;margin-inline-start:7px}
+.full-studio #work .unified-projects{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:94px 4%;align-items:start}
+.full-studio #work .unified-projects .work-card{display:block;grid-column:1/13;min-width:0;margin:0;padding:0;border:0;background:transparent;position:relative}
+.full-studio #work .work-card>:is(.work-image,.concept-work-image,.work-caption,p,.concept-work-links,.project-film-link){grid-column:auto;grid-row:auto;margin:0;padding:0;background:transparent;min-width:0;position:relative}
+.full-studio #work .work-card:nth-child(3n+2 of :not([hidden])){grid-column:1/8}
+.full-studio #work .work-card:nth-child(3n of :not([hidden])){grid-column:9/13;padding-top:150px}
+.full-studio #work .work-card>:is(.work-image,.concept-work-image){display:block;width:100%;aspect-ratio:1.72;overflow:hidden;border:0;border-radius:22px;clip-path:none;box-shadow:none;transform:none;transition:none;background:#e8e9ed}
+.full-studio #work .work-card:nth-child(3n+2 of :not([hidden]))>:is(.work-image,.concept-work-image){aspect-ratio:1.2}
+.full-studio #work .work-card:nth-child(3n of :not([hidden]))>:is(.work-image,.concept-work-image){aspect-ratio:.83}
+.full-studio #work .work-window{display:block;width:100%;height:100%;padding:0;border:0;border-radius:inherit;transform:none;box-shadow:none}
+.full-studio #work :is(.work-image,.concept-work-image) img{width:100%;height:100%;max-height:none;display:block;object-fit:cover;object-position:top;transform:none;clip-path:inset(0px round 0px 0px 0px 0px);transition:none}
+.full-studio #work .work-card .work-caption{display:flex;align-items:baseline;justify-content:space-between;gap:20px;margin-top:26px;width:100%}
+.full-studio #work .work-caption h3{font:500 clamp(26px,3vw,44px)/1.15 EditorialInter,sans-serif;letter-spacing:-.06em;margin:0}
+.full-studio #work .work-caption>span{font-size:10px;line-height:1.7;max-width:40%;text-align:end;color:#656a76}
+.full-studio #work .work-card>p:not(.project-status){font-size:14px;line-height:1.8;margin-top:13px;max-width:520px;color:#434954}
+.full-studio #work .work-card>p.project-status{font-size:10px;line-height:1.7;margin-top:15px;color:#6a6e79}
+.full-studio #work .work-card .concept-work-links{display:flex;flex-wrap:wrap;gap:14px;margin-top:18px;font-size:11px}
+.full-studio #work .project-film-link{display:inline-block;font-size:11px;margin-top:16px}
+.full-studio #work :is(.image-action,.concept-work-image>span){position:absolute;inset:auto 22px 22px auto;background:#FDFDFD;color:#0e1015;padding:12px 18px;font-size:11px;border-radius:99px;opacity:1;transform:none}
+.full-studio [data-project-card][hidden]{display:none!important}
+/* Services become a tactile presentation desk, rather than more portfolio rows. */
+.full-studio #services{background:var(--studio-ink);color:var(--studio-paper);padding:130px 6vw 100px;overflow:clip}
+.full-studio #services .section-intro{margin-bottom:70px}
+.full-studio #services .section-intro p{color:#bfc3ce}
+.full-studio #services .service{border:0;border-top:1px solid #ffffff30;background:none;border-radius:0;overflow:visible}
+.full-studio #services .service summary{display:grid;grid-template-columns:1.2fr .75fr 48px;gap:7%;align-items:center;padding:38px 0;list-style:none}
+.full-studio #services .service summary::-webkit-details-marker{display:none}
+.full-studio #services .service-title{font:500 clamp(52px,7.1vw,110px)/1.15 EditorialInter,sans-serif;letter-spacing:-.075em;color:#FDFDFD}
+.full-studio #services .service-promise{color:#bfc3ce;font-size:14px;line-height:1.8}
+.full-studio #services .service-toggle{display:grid;place-items:center;width:46px;height:46px;border:1px solid #ffffff50;border-radius:50%;font:300 28px/1 EditorialInter,sans-serif;color:#FDFDFD;background:none}
+.full-studio #services .service[open] .service-toggle{background:#FFDA46;color:#06070B;border-color:#FFDA46}
+.full-studio #services .service-content{display:block;padding:0 0 48px;overflow:visible}
+.full-studio #services .service-description{display:grid;grid-template-columns:1fr 1fr;gap:12%;padding:0 0 42px;max-width:1000px}
+.full-studio #services .service-description>p{max-width:450px;color:#e6e7ec;font-size:17px;line-height:1.9}
+.full-studio #services .service-description ul{display:flex;flex-wrap:wrap;gap:10px;align-content:start;padding:0;list-style:none;margin:0}
+.full-studio #services .service-description li{border:1px solid #ffffff30;border-radius:99px;padding:8px 14px;font-size:11px!important;color:#d7d9e1;line-height:1.7}
+.full-studio #services .service-projects{padding-top:30px;border-top:1px solid #ffffff1c}
+.full-studio #services .service-projects>h3{font-size:12px;font-weight:400;color:#bfc3ce;margin:0 0 26px}
+.full-studio #services .service-reel-viewport{overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;scrollbar-color:#7d818d #181a20;direction:inherit}
+.full-studio #services .service-reel-viewport.is-draggable{overflow:clip;touch-action:pan-y;cursor:grab}
+.full-studio #services .service-reel-viewport.is-dragging{cursor:grabbing;user-select:none}
+.full-studio #services .service-project-grid{display:flex;gap:26px;width:max-content;min-width:100%;overflow:visible;padding:0 0 12px;scroll-snap-type:none;will-change:transform}
+.full-studio #services .service-project-grid>article{width:clamp(270px,33vw,460px);flex:0 0 auto;min-width:0;scroll-snap-align:none}
+.full-studio #services .service-project-image{display:block;width:100%;aspect-ratio:1.42;border-radius:18px;overflow:hidden;background:#24262f}
+.full-studio #services .service-project-image img{display:block;width:100%;height:100%;object-fit:cover;object-position:top;transition:none;user-select:none;-webkit-user-drag:none}
+.full-studio #services .service-project-grid h4{font-size:22px;line-height:1.3;font-weight:500;margin:18px 0 10px;letter-spacing:-.04em}
+.full-studio #services .service-project-grid p{font-size:12px;line-height:1.7;color:#c0c4cf;margin:0}
+.full-studio #services .service-project-grid article>span{display:block;color:#999fac;font-size:10px;margin-top:8px}
+.full-studio #services .service-reel-controls{display:flex;align-items:center;gap:10px;margin-top:20px}
+.full-studio #services .service-reel-controls[hidden]{display:none!important}
+.full-studio #services .service-reel-controls p{margin-inline-end:auto;font-size:11px;color:#aeb4c1}
+.full-studio #services .service-reel-controls button{width:46px;height:46px;border:1px solid #ffffff50;border-radius:50%;background:none;color:#FDFDFD;font-size:20px;cursor:pointer}
+.full-studio #services .service-reel-controls button:disabled{opacity:.35;cursor:default}
+.full-studio #services .service-contact{border-top:1px solid #ffffff30;padding-top:34px;margin-top:26px;color:#FDFDFD}
+.full-studio #services .service-contact p{font-size:20px}.full-studio #services .service-contact a{font-size:13px;color:#FFDA46}
+/* A graphic studio portrait using the brand itself; no founder photo. */
+.full-studio #studio{display:grid;grid-template-columns:1.15fr .65fr;gap:62px 13%;position:relative;padding:130px 6vw;background:#FFDA46;color:#06070B;overflow:clip;min-height:700px}
+.full-studio #studio>h2{font:500 clamp(56px,6.3vw,98px)/1.06 EditorialSerif,Georgia,serif;letter-spacing:-.055em;max-width:13ch;margin:0;position:relative;z-index:2}
+.full-studio #studio .studio-copy{position:relative;z-index:2;padding-top:14px;max-width:430px}
+.full-studio #studio .studio-copy>p{font-size:15px;line-height:1.95;color:#292A32;margin:0 0 24px}
+.full-studio #studio .studio-links{display:flex;flex-direction:column;align-items:start;gap:15px;margin-top:32px;font-size:12px}
+.full-studio #studio .studio-links a{color:#06070B;border-bottom:1px solid #06070B60;padding-bottom:5px}
+.full-studio #studio .studio-sigil{grid-column:1/2;position:relative;width:240px;height:220px;margin-top:-100px;color:#06070B;pointer-events:none}
+.full-studio #studio .studio-sigil svg{width:170px;height:170px;position:absolute;top:23px;left:35px}
+.full-studio #studio .studio-sigil-ring{position:absolute;inset:0;border:1px solid #06070B45;border-radius:50%;transform:rotate(-20deg) scaleX(1.05)}
+/* An actual three-step sequence, laid out as a descending rhythm. */
+.editorial-page.full-studio .process{background:#FDFDFD;color:#0E1015;padding:130px 6vw 150px;position:relative;overflow:clip}
+.full-studio .process .section-intro{margin-bottom:75px}
+.full-studio .process .steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7%;padding:0;margin:0;list-style:none}
+.full-studio .process .steps li{display:block;border:0;padding:32px 0 0;position:relative;min-width:0;background:transparent}
+.full-studio .process .steps li:nth-child(2){margin-top:72px}.full-studio .process .steps li:nth-child(3){margin-top:144px}
+.full-studio .process .steps li>span{display:block;font:500 104px/1 EditorialSerif,Georgia,serif;color:#0E1015;margin:0 0 35px;width:auto;height:auto;border:0;border-radius:0;background:none;padding:0;box-shadow:none}
+.full-studio .process .steps h3{font:500 clamp(25px,2.4vw,38px)/1.2 EditorialInter,sans-serif;letter-spacing:-.045em;margin:0 0 20px;color:#0E1015}
+.full-studio .process .steps p{color:#555b66;font-size:14px;line-height:1.9;max-width:310px;margin:0}
+.full-studio .process-connector{height:2px;background:#0e10151f;width:100%;position:relative}
+.full-studio .process-connector span{display:block;width:100%;height:100%;background:#0e1015;transform-origin:left;transform:scaleX(.12)}
+html[dir=rtl] .full-studio .process-connector span{transform-origin:right}
+/* The demonstration belongs to the same ink/paper system. */
+.full-studio #dee-lab{background:#06070B;color:#FDFDFD;padding:110px 6vw;border-radius:0}
+.full-studio #dee-lab .dee-lab-intro h2{font:500 clamp(44px,5.2vw,82px)/1.08 EditorialSerif,Georgia,serif;letter-spacing:-.05em}
+.full-studio #dee-lab .dee-intro-line,.full-studio #dee-lab .dee-lab-lead>p{color:#bfc3ce}
+.full-studio #dee-lab .dee-tabs{border-color:#ffffff35}
+.full-studio #dee-lab .dee-tabs button{color:#FDFDFD}
+.full-studio #dee-lab .dee-tabs button[aria-selected=true]{color:#06070B}
+.full-studio #dee-lab .dee-tab-active{background:#FFDA46}
+.full-studio #dee-lab .dee-companion{background:#15171e;border:1px solid #ffffff1c;border-radius:28px}
+.full-studio #dee-lab .dee-comment h3{color:#FDFDFD}.full-studio #dee-lab .dee-comment p{color:#bfc3ce}
+.full-studio #dee-lab .dee-lab-footer{border-color:#ffffff25}.full-studio #dee-lab .dee-lab-footer p{color:#bfc3ce}
+.full-studio #dee-lab :is(.dee-next,.dee-contact){color:#06070B;background:#FFDA46;border-color:#FFDA46}
+/* Keep answers and the inquiry quiet, readable and directly usable. */
+.editorial-page.full-studio .questions{display:grid;grid-template-columns:1fr 1.1fr;gap:12%;background:#FDFDFD;color:#0E1015;padding:130px 6vw;align-items:start}
+.full-studio .questions>h2{max-width:12ch;position:sticky;top:135px}
+.full-studio .questions .faq{border:0;border-top:1px solid #0e101530;padding:0;background:none;border-radius:0}
+.full-studio .questions .faq:last-child{border-bottom:1px solid #0e101530}
+.full-studio .questions .faq summary{display:flex;justify-content:space-between;gap:24px;align-items:center;list-style:none;font-size:17px;line-height:1.6;padding:25px 0;font-weight:500}
+.full-studio .questions .faq summary::-webkit-details-marker{display:none}
+.full-studio .questions .faq summary span{font-size:25px;flex-shrink:0;width:32px;text-align:center}
+.full-studio .questions .faq>p{padding:0 40px 26px 0;margin:0;color:#555b66;font-size:14px;line-height:1.95}
+.full-studio #contact{background:#FFDA46;color:#06070B;display:grid;grid-template-columns:.9fr 1.1fr;gap:8%;padding:115px 6vw;position:relative;overflow:clip;align-items:start}
+.full-studio #contact .contact-mark{position:absolute;width:680px;height:680px;bottom:-220px;top:auto;left:-120px;opacity:.045;fill:#06070B;pointer-events:none}
+.full-studio #contact .contact-copy{position:relative;z-index:1;padding-top:20px;min-width:0}
+.full-studio #contact .contact-copy h2{font:500 clamp(56px,6.1vw,96px)/1.05 EditorialSerif,Georgia,serif;letter-spacing:-.055em;margin:0 0 35px;color:#06070B}
+.full-studio #contact .contact-copy>p{font-size:15px;line-height:1.9;max-width:390px;color:#292A32}
+.full-studio #contact .contact-email{display:block;font:500 clamp(16px,1.9vw,29px)/1.5 EditorialInter,sans-serif;letter-spacing:-.04em;color:#06070B;margin:40px 0 10px;overflow-wrap:anywhere}
+.full-studio #contact .contact-phone{color:#06070B;font-size:18px;line-height:1.8}
+.full-studio #contact .contact-copy .quiet{font-size:12px;margin-top:24px}
+.full-studio #inquiry-form{position:relative;z-index:1;background:#FDFDFD;border:0;border-radius:30px;padding:38px;color:#0E1015;box-shadow:none;min-width:0}
+.full-studio #inquiry-form .brief-group{padding:0 0 28px;margin:0 0 28px;border:0;border-bottom:1px solid #0e10151c;min-width:0}
+.full-studio #inquiry-form .brief-group legend{font-size:15px;line-height:1.7;font-weight:500;padding:0;margin-bottom:12px;color:#0E1015}
+.full-studio #inquiry-form .brief-group legend>span{display:inline-grid;place-items:center;background:#eeeff2;color:#0e1015;width:26px;height:26px;margin-inline-end:10px;border:0;border-radius:50%;font-size:11px}
+.full-studio #inquiry-form .brief-help{font-size:11px;line-height:1.8;color:#626874;margin:0 0 18px}
+.full-studio #inquiry-form label{display:block;font-size:11px;font-weight:400;color:#515762;line-height:1.7;min-width:0}
+.full-studio #inquiry-form :is(input:not([type=checkbox]),textarea,select){display:block;width:100%;min-width:0;border:0;border-bottom:1px solid #aeb2bc;border-radius:0;padding:12px 0;background:transparent;color:#0e1015;font:400 15px/1.7 EditorialInter,sans-serif;box-shadow:none}
+.full-studio #inquiry-form :is(input,textarea,select):focus-visible{outline:2px solid #0e1015;outline-offset:5px}
+.full-studio #inquiry-form textarea{resize:vertical;min-height:115px}
+.full-studio #inquiry-form .form-row{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:20px}
+.full-studio #inquiry-form .service-choices{display:flex;flex-wrap:wrap;gap:8px}
+.full-studio #inquiry-form .service-choices label{position:relative}
+.full-studio #inquiry-form .service-choices label span{display:block;border:1px solid #989faa;border-radius:99px;background:#FDFDFD;color:#0e1015;padding:9px 16px;font-size:11px}
+.full-studio #inquiry-form .service-choices input:checked+span{background:#FFDA46;border-color:#0e1015;color:#0e1015}
+.full-studio #inquiry-form .button{background:#06070B;color:#FDFDFD;border:1px solid #06070B;border-radius:99px;min-height:50px;padding:13px 22px;font-size:12px}
+.full-studio #inquiry-form button[type=submit]{display:flex;justify-content:space-between;align-items:center;width:100%}
+.full-studio #inquiry-form :is(.form-note,.inquiry-assurance){font-size:10px;line-height:1.9;color:#626874;margin-top:18px}
+.full-studio #inquiry-result{background:#f0f1f4;color:#0e1015;border:0;border-radius:18px;padding:24px;margin-top:24px}
+.full-studio #inquiry-preview{font:400 12px/1.8 EditorialInter,sans-serif;overflow-wrap:anywhere;white-space:pre-wrap}
+.full-studio #inquiry-form .result-actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.full-studio #inquiry-form .simple-link{color:#0e1015}
+/* Finish with the identity at architectural scale. */
+.editorial-page.full-studio .footer{padding:75px 6vw 26px;background:#06070B;color:#FDFDFD;overflow:clip}
+.full-studio .footer .footer-top{display:flex;flex-direction:column;align-items:start;gap:35px;position:relative;padding-bottom:70px;border:0}
+.full-studio .footer .footer-top .brand{display:block;width:100%;max-width:1280px;order:2;padding-top:22px}
+.full-studio .footer .footer-top .brand img{display:block;width:100%;height:auto;max-width:none}
+.full-studio .footer .footer-top>p{font:500 clamp(38px,4.2vw,66px)/1.12 EditorialSerif,Georgia,serif;letter-spacing:-.04em;order:0;margin:0}
+.full-studio .footer .footer-top>a:not(.brand){position:absolute;inset-inline-end:0;top:12px;font-size:11px;border-bottom:1px solid #ffffff60;padding:6px 0}
+.full-studio .footer .footer-socials{display:grid;grid-template-columns:1fr 2fr;align-items:start;gap:8%;padding:35px 0 50px;border-top:1px solid #ffffff30}
+.full-studio .footer .footer-socials>p{font-size:12px;margin:12px 0;color:#bfc3ce}
+.full-studio .footer .footer-social-links{display:flex;flex-direction:column;gap:0}
+.full-studio .footer .footer-social-link{display:flex;gap:16px;align-items:center;padding:14px 0;border:0;border-bottom:1px solid #ffffff25;border-radius:0;background:none;color:#FDFDFD;font-size:32px;line-height:1.5;transform:none;transition:none}
+.full-studio .footer .footer-social-link .social-arrow{margin-inline-start:auto;font-size:24px}
+.full-studio .footer .footer-social-link svg{width:22px;height:22px}
+.full-studio .footer .footer-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:18px;padding-top:22px;border-top:1px solid #ffffff25;font-size:10px;color:#aeb4c2;line-height:1.8}
+html[dir=rtl] .full-studio :is(.section-intro h2,.questions>h2),html[dir=rtl] .full-studio #studio>h2,html[dir=rtl] .full-studio #contact .contact-copy h2,html[dir=rtl] .full-studio #dee-lab .dee-lab-intro h2,html[dir=rtl] .full-studio .footer-top>p{font-family:Alexandria,sans-serif;font-weight:500;letter-spacing:0;line-height:1.45;font-size:clamp(44px,4.8vw,74px)}
+html[dir=rtl] .full-studio #services .service-title{font-family:Alexandria,sans-serif;letter-spacing:0;font-size:clamp(48px,5.6vw,86px);line-height:1.55}
+html[dir=rtl] .full-studio .process .steps h3{font-family:Alexandria,sans-serif;font-size:clamp(22px,2vw,30px);line-height:1.6;letter-spacing:0}
+html[dir=rtl] .full-studio #inquiry-form :is(input,textarea,select),html[dir=rtl] .full-studio #inquiry-preview{font-family:Alexandria,sans-serif}
+html[dir=rtl] .full-studio .questions .faq>p{padding:0 0 26px 40px}
+@media(max-width:1050px) and (min-width:751px){
+ .full-studio #work,.full-studio #services,.full-studio #studio,.editorial-page.full-studio .process,.editorial-page.full-studio .questions,.full-studio #contact{padding-inline:5vw;padding-block:90px}
+ .editorial-page.full-studio .section-intro{gap:8%;grid-template-columns:1.1fr .9fr}
+ .full-studio #work .work-card:nth-child(3n of :not([hidden])){padding-top:90px}
+ .full-studio #work .work-caption h3{font-size:27px}.full-studio #work .work-caption{flex-wrap:wrap}
+ .full-studio #work .work-caption>span{max-width:100%;text-align:start}
+ .full-studio #studio{gap:50px 8%}.full-studio #studio>h2{font-size:64px}.full-studio #studio .studio-sigil{margin-top:-50px;width:190px;height:180px}.full-studio #studio .studio-sigil svg{width:140px;height:140px;left:25px;top:20px}
+ .full-studio #contact{gap:6%;grid-template-columns:.85fr 1.15fr}.full-studio #inquiry-form{padding:28px}.full-studio #contact .contact-copy h2{font-size:58px}
+ .full-studio .process .steps h3{font-size:25px}.full-studio .process .steps li>span{font-size:84px}.full-studio .process .steps p{font-size:12px}
+ html[dir=rtl] .full-studio #studio>h2,html[dir=rtl] .full-studio #contact .contact-copy h2{font-size:44px}
+}
+@media(max-width:750px){
+ .full-studio #work,.full-studio #services,.full-studio #studio,.editorial-page.full-studio .process,.editorial-page.full-studio .questions,.full-studio #contact{padding:78px 24px}
+ .editorial-page.full-studio .section-intro{display:block;margin-bottom:38px}
+ .editorial-page.full-studio .section-intro h2,.editorial-page.full-studio .questions>h2{font-size:clamp(42px,11.8vw,65px);line-height:1.1;letter-spacing:-.05em}
+ .editorial-page.full-studio .section-intro>p,.editorial-page.full-studio .section-intro>div{margin-top:24px}
+ .editorial-page.full-studio .section-intro p{font-size:12px;line-height:1.9}.editorial-page.full-studio .section-intro .quiet{font-size:10px}
+ .full-studio #work .section-intro{margin-bottom:30px}
+ .full-studio #work .project-filters{padding:5px;gap:2px;width:100%;margin-bottom:42px;justify-content:space-between}
+ .full-studio #work .project-filters button{padding:10px 9px;font-size:10px;min-height:44px;white-space:nowrap}.full-studio #work .filter-count{font-size:8px;margin-inline-start:3px}
+ .full-studio #work .unified-projects{grid-template-columns:1fr;gap:50px}
+ .full-studio #work .unified-projects .work-card,.full-studio #work .work-card:nth-child(3n+2 of :not([hidden])),.full-studio #work .work-card:nth-child(3n of :not([hidden])){grid-column:1;padding:0}
+ .full-studio #work .work-card>:is(.work-image,.concept-work-image),.full-studio #work .work-card:nth-child(3n+2 of :not([hidden]))>:is(.work-image,.concept-work-image),.full-studio #work .work-card:nth-child(3n of :not([hidden]))>:is(.work-image,.concept-work-image){aspect-ratio:1.12;border-radius:17px}
+ .full-studio #work .work-card .work-caption{margin-top:20px;gap:12px;align-items:start}.full-studio #work .work-caption h3{font-size:28px;line-height:1.25}.full-studio #work .work-caption>span{font-size:9px;max-width:42%}
+ .full-studio #work .work-card>p:not(.project-status){font-size:12px;margin-top:10px}.full-studio #work .work-card>p.project-status{font-size:9px;margin-top:12px}
+ .full-studio #work :is(.image-action,.concept-work-image>span){inset:auto 14px 14px auto;font-size:9px;padding:9px 13px}
+ .full-studio #services .section-intro{margin-bottom:36px}
+ .full-studio #services .service summary{grid-template-columns:1fr 40px;gap:12px;padding:26px 0}.full-studio #services .service-title{font-size:clamp(41px,12vw,64px);letter-spacing:-.065em;grid-column:1;grid-row:1}.full-studio #services .service-promise{grid-column:1;grid-row:2;font-size:12px}.full-studio #services .service-toggle{grid-column:2;grid-row:1/3;width:38px;height:38px;font-size:25px}
+ .full-studio #services .service-description{grid-template-columns:1fr;gap:25px;padding-bottom:28px}.full-studio #services .service-description>p{font-size:14px}.full-studio #services .service-description li{font-size:10px!important;padding:6px 11px}
+ .full-studio #services .service-content{padding-bottom:30px}.full-studio #services .service-projects{padding-top:24px}
+ .full-studio #services .service-project-grid{gap:18px}.full-studio #services .service-project-grid>article{width:76vw;max-width:360px}.full-studio #services .service-project-grid h4{font-size:21px}.full-studio #services .service-project-grid p{font-size:11px}.full-studio #services .service-project-grid article>span{font-size:9px}
+ .full-studio #services .service-reel-controls p{font-size:10px}.full-studio #services .service-contact{align-items:start;flex-direction:column;gap:12px}.full-studio #services .service-contact p{font-size:16px}
+ .full-studio #studio{display:block;min-height:0}.full-studio #studio>h2{font-size:clamp(44px,12vw,66px);max-width:15ch}.full-studio #studio .studio-copy{margin-top:32px;padding:0;max-width:none}.full-studio #studio .studio-copy>p{font-size:13px}.full-studio #studio .studio-links{font-size:11px;gap:12px;margin-top:24px}.full-studio #studio .studio-sigil{margin:42px 0 0 auto;width:170px;height:160px}.full-studio #studio .studio-sigil svg{width:125px;height:125px;top:17px;left:23px}
+ .full-studio .process .section-intro{margin-bottom:38px}.full-studio .process .steps{display:block}.full-studio .process .steps li,.full-studio .process .steps li:nth-child(2),.full-studio .process .steps li:nth-child(3){margin:0;padding:28px 0;display:grid;grid-template-columns:64px 1fr;gap:12px 18px;border-bottom:1px solid #0e101525}
+ .full-studio .process .steps li>span{grid-column:1;grid-row:1/3;font-size:54px;line-height:1.1;margin:0}.full-studio .process .steps h3{font-size:25px;grid-column:2;margin:0}.full-studio .process .steps p{font-size:12px;grid-column:2;max-width:none}
+ .full-studio #dee-lab{padding:78px 24px}.full-studio #dee-lab .dee-lab-intro h2{font-size:43px}.full-studio #dee-lab .dee-companion{border-radius:22px}
+ .editorial-page.full-studio .questions{display:block}.full-studio .questions>h2{position:static;margin-bottom:35px}.full-studio .questions .faq summary{font-size:14px;padding:22px 0}.full-studio .questions .faq>p{font-size:12px;padding-inline:0 28px;line-height:1.9}
+ .full-studio #contact{display:block}.full-studio #contact .contact-copy{padding:0}.full-studio #contact .contact-copy h2{font-size:clamp(45px,12vw,65px);margin-bottom:25px}.full-studio #contact .contact-copy>p{font-size:13px}.full-studio #contact .contact-email{font-size:21px;letter-spacing:-.045em;margin-top:28px}.full-studio #contact .contact-phone{font-size:16px}.full-studio #inquiry-form{margin-top:42px;padding:25px 20px;border-radius:24px}
+ .full-studio #inquiry-form .form-row{gap:18px}.full-studio #inquiry-form .brief-group legend{font-size:13px}.full-studio #inquiry-form :is(input:not([type=checkbox]),textarea,select){font-size:16px}
+ .full-studio #inquiry-form .service-choices label span{font-size:10px;padding:8px 12px}.full-studio #inquiry-preview{font-size:11px}
+ .editorial-page.full-studio .footer{padding:55px 24px 25px}.full-studio .footer .footer-top{gap:32px;padding-bottom:44px}.full-studio .footer .footer-top>p{font-size:39px;max-width:6ch}.full-studio .footer .footer-top>a:not(.brand){top:7px;font-size:10px}.full-studio .footer .footer-top .brand{padding-top:0}.full-studio .footer .footer-socials{display:block;padding:28px 0 35px}.full-studio .footer .footer-socials>p{margin:0 0 18px;font-size:11px}.full-studio .footer .footer-social-link{font-size:28px;padding:12px 0}.full-studio .footer .footer-bottom{display:grid;grid-template-columns:1fr;gap:12px;font-size:9px}
+ html[dir=rtl] .full-studio :is(.section-intro h2,.questions>h2),html[dir=rtl] .full-studio #studio>h2,html[dir=rtl] .full-studio #contact .contact-copy h2,html[dir=rtl] .full-studio #dee-lab .dee-lab-intro h2{font-size:clamp(34px,9vw,48px);line-height:1.45;letter-spacing:0}
+ html[dir=rtl] .full-studio #services .service-title{font-size:clamp(35px,10vw,52px);line-height:1.55}
+ html[dir=rtl] .full-studio .process .steps h3{font-size:21px;line-height:1.6}
+ html[dir=rtl] .full-studio .footer-top>p{font-size:35px;line-height:1.5;max-width:8ch}
+ html[dir=rtl] .full-studio .questions .faq>p{padding-inline:0 28px}
+}
+@media(prefers-reduced-motion:reduce){.full-studio #services .service-project-grid{will-change:auto}.full-studio .studio-title-line{transform:none!important}}
+/* Results sit beside the controls; web captures retain a browser-like proportion. */
+.full-studio #work .work-toolbar{display:flex;align-items:center;justify-content:space-between;gap:28px;margin-bottom:64px}
+.full-studio #work .work-toolbar .project-filters{margin:0}
+.full-studio #project-filter-status{font-size:10px;line-height:1.8;color:#646975;margin:0;max-width:260px;text-align:end}
+.full-studio #work .work-card:nth-child(n of :not([hidden]))>.client-project-link{aspect-ratio:1.6}
+.full-studio .process .section-intro>p{color:#555b66}
+.full-studio #services .service[open] .service-toggle,.full-studio .questions .faq[open] summary>span{transform:rotate(45deg)}
+@media(max-width:750px){.full-studio #work .work-toolbar{display:flex;flex-direction:column;align-items:stretch;gap:16px;margin-bottom:34px}.full-studio #project-filter-status{max-width:none;font-size:9px}.full-studio #inquiry-form .form-row{grid-template-columns:1fr;gap:20px}}
+@media(max-width:360px){.full-studio #work .project-filters button{padding-inline:7px;font-size:9px}.full-studio #work .filter-count{display:none}}
+.full-studio #services .service-project-grid :is(h4,h4 a){color:#FDFDFD}
+.full-studio #inquiry-form :is(input:not([type=checkbox]),textarea,select){border-bottom-color:#858c99}
+.full-studio #inquiry-form .service-choices label span{border-color:#858c99}
+.full-studio #inquiry-form ::placeholder{color:#69707c;opacity:1}
+/* Explicit colours on formerly light components, including their text spans. */
+.full-studio #services .service-project-grid>article{background:transparent;color:#FDFDFD;border:0;box-shadow:none}
+.editorial-page.full-studio .process.section .section-intro>p{color:#555b66}
+.full-studio #dee-lab .dee-tabs button[aria-selected=false]>span:not(.dee-tab-active){color:#FDFDFD}
+.full-studio #dee-lab .dee-tabs button[aria-selected=true]>span:not(.dee-tab-active){color:#06070B}
+.full-studio #services .service-project-grid>article{background:#06070B}
+.full-studio #services .service-project-grid article>p,.full-studio #services .service-project-grid article>span,.full-studio #services .service-project-grid h4{background:#06070B}
+.full-studio #dee-lab .dee-tabs{background:#1b1d25}
+.full-studio #dee-lab .dee-tabs button{background:transparent}
+.full-studio #services :is(a,button,summary):focus-visible,.full-studio #dee-lab :is(a,button):focus-visible,.full-studio .footer a:focus-visible{outline:2px solid #FFDA46;outline-offset:4px}
+.full-studio #inquiry-form .service-choices input:focus-visible+span{outline:2px solid #06070B;outline-offset:3px}
+.full-studio .footer .footer-social-links,.full-studio .footer .footer-social-link{width:100%}

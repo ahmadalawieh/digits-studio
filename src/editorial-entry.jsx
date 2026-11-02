@@ -1,3 +1,4 @@
+import {initializeStudioMotion} from './studio-motion.js';
 import {hydrateRoot} from 'react-dom/client';
 import {Navigation} from './components/Navigation.jsx';
 import {ProjectFilters} from './components/ProjectFilters.jsx';
@@ -24,3 +25,5 @@ installMotionBridge();
 enhanceProjectStage();
 initializeInquiryDelivery();
 initializeSiteMeasurement();
+
+initializeStudioMotion();

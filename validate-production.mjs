@@ -50,3 +50,7 @@ if(!(await stat(new URL('./dist/assets/dee.css',import.meta.url))).size)throw Er
 console.log('DEE scroll opening and bilingual design demonstration assets verified.');
 
 for(const file of ['dee-journey.css','dee-scene.js','dee-scene.js.LEGAL.txt','dee/hero-right.webp','dee/hero-left.webp','dee/hero-up.webp'])if(!(await stat(new URL('./dist/assets/'+file,import.meta.url))).size)throw Error('Missing DEE opening asset: '+file);
+
+for(const file of ['index.html','ar/index.html']){const html=await readFile(new URL('./dist/'+file,import.meta.url),'utf8');if(!html.includes('full-studio')||!html.includes('assets/full-studio.css')||(html.match(/data-studio-section=/g)||[]).length!==7)throw Error('Incomplete full studio revamp: '+file);}
+if(!(await stat(new URL('./dist/assets/full-studio.css',import.meta.url))).size)throw Error('Missing full studio stylesheet');
+console.log('Complete bilingual studio sections and project reels verified.');

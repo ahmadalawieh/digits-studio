@@ -161,7 +161,7 @@ export function createScene(host,{onContextLost}={}){
     rect=host.getBoundingClientRect();mobile=innerWidth<=750&&!(innerWidth>innerHeight&&innerHeight<=500);
     renderer.setSize(Math.max(1,rect.width),Math.max(1,rect.height),false);
     camera.aspect=rect.width/Math.max(1,rect.height);
-    const distance=mobile?6.3:Math.max(8.4,9.1/(2*Math.tan(THREE.MathUtils.degToRad(37/2))*camera.aspect));
+    const distance=mobile?Math.max(6.3,4.4/(2*Math.tan(THREE.MathUtils.degToRad(37/2))*camera.aspect)):Math.max(8.4,9.1/(2*Math.tan(THREE.MathUtils.degToRad(37/2))*camera.aspect));
     camera.position.set(0,.15,distance);camera.lookAt(0,-.24,0);camera.updateProjectionMatrix();
   };
   const observer=new ResizeObserver(resize);observer.observe(host);resize();

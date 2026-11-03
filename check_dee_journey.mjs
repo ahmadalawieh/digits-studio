@@ -30,7 +30,7 @@ try{
    const geometry=await page.evaluate(i=>{
     const hero=document.querySelector('.dee-journey'),chapter=hero.querySelector(`.chapter-${i}`),canvas=hero.querySelector('.three-layer'),rect=chapter.getBoundingClientRect(),c=canvas.getBoundingClientRect(),nav=hero.querySelector('.chapter-navigation').getBoundingClientRect(),header=document.querySelector('.header').getBoundingClientRect();
     const range=document.createRange();range.selectNodeContents(chapter.querySelector('.journey-heading'));const title=range.getBoundingClientRect();
-    return {horizontal:canvas.querySelector('canvas').dataset.pointingX,gesture:canvas.querySelector('canvas').dataset.gesture,canvasTop:c.top,canvasBottom:c.bottom,copyTop:rect.top,copyBottom:rect.bottom,navTop:nav.top,headerBottom:header.bottom,titleLeft:title.left,titleRight:title.right,overflow:document.documentElement.scrollWidth>innerWidth};
+    return {horizontal:canvas.querySelector('canvas').dataset.pointingX,gesture:canvas.querySelector('canvas').dataset.gesture,canvasTop:c.top,canvasBottom:c.bottom,canvasHeight:c.height,copyTop:rect.top,copyBottom:rect.bottom,navTop:nav.top,headerBottom:header.bottom,titleLeft:title.left,titleRight:title.right,overflow:document.documentElement.scrollWidth>innerWidth};
    },index);
    assert.equal(portrait?geometry.gesture:geometry.horizontal,portrait?'up':index%2?'right':'left',`Wrong gesture ${width}/${ar}/${index}`);
    assert.equal(geometry.overflow,false);assert(geometry.titleLeft>=12&&geometry.titleRight<=width-12,`Clipped title ${JSON.stringify(geometry)}`);
@@ -49,7 +49,15 @@ try{
    }
    if(index===1||index===2){const pixel=await page.screenshot({clip:{x:3,y:Math.round(height*.35),width:2,height:2}}),stats=await sharp(pixel).removeAlpha().stats();assert(stats.channels.every(channel=>channel.mean>245),'Paper story scene obscured by an overlay');}
    assert(geometry.copyTop>geometry.headerBottom+4,`Copy behind header ${width}/${ar}/${index}: ${JSON.stringify(geometry)}`);
-   if(portrait){assert(geometry.canvasTop>=geometry.copyBottom+12);assert(geometry.navTop>=geometry.canvasBottom+5);canvasTop.push(geometry.canvasTop);}
+   if(portrait){
+    assert(geometry.canvasTop>=geometry.copyBottom+12);assert(geometry.navTop>=geometry.canvasBottom+5);canvasTop.push(geometry.canvasTop);
+    assert(geometry.canvasHeight>=height*.32,'Character was squeezed below the mobile copy');
+    assert.equal(await page.locator('.mobile-journey-cta').isVisible(),true);
+    assert.equal(await page.locator('.mobile-journey-cta').getAttribute('href'),'#contact');
+    assert.equal(await page.locator('.chapter-navigation .chapter-name:visible').count(),4);
+    const controls=await page.locator('.stage-bottom a,.stage-bottom button,.chapter-navigation button').evaluateAll(nodes=>nodes.filter(n=>n.getClientRects().length).map(n=>{const r=n.getBoundingClientRect();return{width:r.width,height:r.height,bottom:r.bottom};}));
+    assert(controls.every(r=>r.width>=44&&r.height>=44&&r.bottom<=height),'Mobile controls are clipped or too small');
+   }
    if([390,768,1440].includes(width))await page.screenshot({path:`${directory}/final-${width}-${ar?'ar':'en'}-${index}.jpg`,type:'jpeg',quality:87});
   }
   if(portrait)assert(Math.max(...canvasTop)-Math.min(...canvasTop)<2,'Camera jumps between chapters');

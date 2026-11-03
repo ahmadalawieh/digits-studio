@@ -20,7 +20,8 @@ for(const width of [360,768,1440])for(const ar of [false,true]){
   assert(await page.locator(`[data-project-filter="${key}"]`).getAttribute('aria-pressed')==='true','Pressed filter');
   for(const card of await page.locator('.concept-work-card').all()){
    const href=await card.locator('.project-route').getAttribute('href');assert(anchor?href.endsWith('#'+anchor):!href.includes('#'),'Scoped project destination');
-   const image=card.locator('[data-project-image]');await image.evaluate(img=>img.decode());assert(await image.evaluate(img=>img.naturalWidth>0),'Preview loaded');
+   // Decoding an offscreen lazy preview otherwise waits until someone scrolls.
+   const image=card.locator('[data-project-image]');await image.evaluate(img=>{img.loading='eager';return img.decode();});assert(await image.evaluate(img=>img.naturalWidth>0),'Preview loaded');
   }
  }
  for(const [i,count,anchor] of [[0,4,'identity'],[1,7,'website'],[2,4,'campaign']]){

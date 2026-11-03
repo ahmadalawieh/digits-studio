@@ -18,7 +18,7 @@ async function filter(page,key,count){
  assert.equal(await page.locator('[data-project-card]:visible').count(),count);
 }
 try{
- for(const [width,height] of [[320,568],[375,667],[390,844],[667,375],[768,950],[1440,950]])for(const ar of [false,true]){
+ for(const [width,height] of [[320,568],[375,667],[390,844],[667,375],[768,950],[1024,768],[1102,573],[1280,800],[1440,950],[1920,1080]])for(const ar of [false,true]){
   const portrait=width<=750&&!(width>height&&height<=500),context=await browser.newContext({viewport:{width,height},isMobile:width<751,hasTouch:width<751,reducedMotion:'no-preference'}),page=await context.newPage(),errors=[],missing=[];
   page.on('pageerror',e=>errors.push(e.message));page.on('console',m=>{if(m.type()==='error')errors.push(m.text());});page.on('response',r=>{if(r.status()>=400&&!r.url().includes('/_vercel/'))missing.push(r.url());});
   await page.addInitScript(()=>{window.layoutShifts=[];new PerformanceObserver(list=>{for(const entry of list.getEntries())if(!entry.hadRecentInput)window.layoutShifts.push(entry.value);}).observe({type:'layout-shift',buffered:true});});
@@ -34,6 +34,19 @@ try{
    },index);
    assert.equal(portrait?geometry.gesture:geometry.horizontal,portrait?'up':index%2?'right':'left',`Wrong gesture ${width}/${ar}/${index}`);
    assert.equal(geometry.overflow,false);assert(geometry.titleLeft>=12&&geometry.titleRight<=width-12,`Clipped title ${JSON.stringify(geometry)}`);
+   // Block-wrapper bounds can pass even when overflow:hidden cuts the letters.
+   // Compare the shaped text itself with its reveal mask and copy column.
+   const clipped=await page.locator(`.chapter-${index} .impact-word`).evaluateAll(words=>words.flatMap(word=>{
+    const range=document.createRange();range.selectNodeContents(word);
+    const text=range.getBoundingClientRect(),mask=word.closest('.journey-title-mask').getBoundingClientRect(),copy=word.closest('.chapter-copy').getBoundingClientRect();
+    return text.left<Math.max(mask.left,copy.left)-1||text.right>Math.min(mask.right,copy.right)+1?[{text:word.textContent,textWidth:text.width,maskWidth:mask.width,copyWidth:copy.width}]:[];
+   }));
+   assert.deepEqual(clipped,[],`Clipped letters ${width}/${ar}/${index}: ${JSON.stringify(clipped)}`);
+   if(width>750&&index===1){
+    const button=page.locator('.chapter-navigation button').nth(index);await button.hover();
+    const separated=await button.evaluate(button=>{const label=button.querySelector('.chapter-name').getBoundingClientRect(),number=button.querySelector('.chapter-number').getBoundingClientRect();return document.dir==='rtl'?label.left>=number.right+8:label.right<=number.left-8;});
+    assert(separated,'Chapter label overlaps its number');await page.mouse.move(0,0);
+   }
    if(index===1||index===2){const pixel=await page.screenshot({clip:{x:3,y:Math.round(height*.35),width:2,height:2}}),stats=await sharp(pixel).removeAlpha().stats();assert(stats.channels.every(channel=>channel.mean>245),'Paper story scene obscured by an overlay');}
    assert(geometry.copyTop>geometry.headerBottom+4,`Copy behind header ${width}/${ar}/${index}: ${JSON.stringify(geometry)}`);
    if(portrait){assert(geometry.canvasTop>=geometry.copyBottom+12);assert(geometry.navTop>=geometry.canvasBottom+5);canvasTop.push(geometry.canvasTop);}
@@ -61,13 +74,17 @@ try{
   const cls=await page.evaluate(()=>window.layoutShifts.reduce((a,b)=>a+b,0));
   report.push({width,height,language:ar?'ar':'en',scenes:4,cls,passed:true});console.log(`Passed ${width}×${height} ${ar?'AR':'EN'}`);await context.close();
  }
- for(const reduced of [false,true])for(const ar of [false,true]){
-  const context=await browser.newContext({viewport:{width:390,height:844},reducedMotion:reduced?'reduce':'no-preference',javaScriptEnabled:reduced}),page=await context.newPage(),requests=[];page.on('request',r=>requests.push(r.url()));
+ for(const width of [390,1440])for(const reduced of [false,true])for(const ar of [false,true]){
+  const context=await browser.newContext({viewport:{width,height:844},reducedMotion:reduced?'reduce':'no-preference',javaScriptEnabled:reduced}),page=await context.newPage(),requests=[];page.on('request',r=>requests.push(r.url()));
   await page.goto(origin+(ar?'/ar/':'/'));await page.evaluate(()=>document.fonts.ready);
   assert.equal(await page.locator('h1').count(),1);assert.equal(await page.locator('.chapter').count(),4);assert.equal(await page.locator('canvas').count(),0);assert(!requests.some(url=>url.endsWith('/assets/dee-scene.js')));
   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
+  if(width>750){
+   const overlaps=await page.locator('.chapter').evaluateAll(chapters=>chapters.filter(chapter=>{const copy=chapter.querySelector('.chapter-copy').getBoundingClientRect(),poster=chapter.querySelector('.journey-static-visual').getBoundingClientRect();return Math.min(copy.right,poster.right)-Math.max(copy.left,poster.left)>1;}).map(chapter=>chapter.className));
+   assert.deepEqual(overlaps,[],'Static DEE poster overlaps the copy');
+  }
   if(reduced){const violations=(await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa']).analyze()).violations;assert.deepEqual(violations.map(v=>({id:v.id,nodes:v.nodes.map(n=>n.target)})),[]);}
-  await page.locator('.impact-cta').click();await page.waitForFunction(()=>location.hash==='#contact');report.push({fallback:reduced?'reduced-motion':'no-javascript',language:ar?'ar':'en',passed:true});await context.close();
+  await page.locator('.impact-cta').click();await page.waitForFunction(()=>location.hash==='#contact');report.push({width,fallback:reduced?'reduced-motion':'no-javascript',language:ar?'ar':'en',passed:true});await context.close();
  }
  for(const failure of ['ui-bundle','renderer','webgl']){
   const context=await browser.newContext({viewport:{width:390,height:844}}),page=await context.newPage();

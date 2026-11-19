@@ -1,0 +1,211 @@
+/* Digits Studio — Complete Homepage Revamp Stylesheet
+ * Built on the preserved Brand Book palette:
+ * #FFDA46 Signal Yellow · #06070B Obsidian · #292A32 Graphite
+ * #FDFDFD Paper White · #EEEDF2 Quiet Grey · #B4A6ED Lilac
+ */
+
+body.revamp-home {
+  background: #06070B;
+  color: #0E1015;
+  font-family: EditorialInter, "Instrument Sans", system-ui, sans-serif;
+}
+
+/* 1. New Editorial Hero */
+.revamp-hero {
+  background: #06070B;
+  color: #FFFFFF;
+  padding: 152px clamp(20px, 5vw, 72px) 96px;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid #24262F;
+}
+
+.revamp-hero::before {
+  content: "";
+  position: absolute;
+  top: -140px;
+  right: -120px;
+  width: 560px;
+  height: 560px;
+  background: radial-gradient(circle, rgba(255, 218, 70, 0.16) 0%, rgba(255, 218, 70, 0) 70%);
+  pointer-events: none;
+}
+
+.revamp-hero__grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
+  gap: 48px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.revamp-hero__pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 7px 14px;
+  border-radius: 999px;
+  background: rgba(255, 218, 70, 0.12);
+  color: #FFDA46;
+  border: 1px solid rgba(255, 218, 70, 0.28);
+  margin-bottom: 24px;
+}
+
+.revamp-hero__title {
+  font-family: EditorialSerif, Georgia, serif;
+  font-size: clamp(48px, 7vw, 88px);
+  line-height: 0.96;
+  letter-spacing: -0.045em;
+  font-weight: 600;
+  margin: 0 0 24px;
+  color: #FFFFFF;
+}
+
+.revamp-hero__title em {
+  color: #FFDA46;
+  font-style: italic;
+}
+
+html[dir="rtl"] .revamp-hero__title {
+  font-family: Alexandria, "IBM Plex Sans Arabic", sans-serif;
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+}
+
+.revamp-hero__sub {
+  font-size: clamp(17px, 1.9vw, 21px);
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.78);
+  max-width: 580px;
+  margin: 0 0 36px;
+}
+
+.revamp-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+}
+
+.revamp-hero__card {
+  background: #101218;
+  border: 1px solid #24262F;
+  border-radius: 24px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  position: relative;
+  overflow: hidden;
+}
+
+.revamp-hero__card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.revamp-hero__card-badge {
+  background: #FFDA46;
+  color: #06070B;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.revamp-hero__card-visual {
+  background: radial-gradient(circle at 50% 60%, rgba(255, 218, 70, 0.14), rgba(6, 7, 11, 0.4));
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.revamp-hero__card-visual img {
+  max-width: 240px;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.revamp-hero__card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #24262F;
+  padding-top: 14px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* 2. Signal Yellow Brand Pillars Band */
+.revamp-pillars-band {
+  background: #FFDA46;
+  color: #06070B;
+  padding: 72px clamp(20px, 5vw, 72px);
+}
+
+.revamp-pillars-band .brand-pillars-strip__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 18px;
+}
+
+.revamp-pillars-band .brand-pillar-item {
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(6, 7, 11, 0.14);
+  color: #06070B;
+}
+
+.revamp-pillars-band .brand-pillar-item span {
+  color: #06070B;
+  opacity: 0.72;
+}
+
+.revamp-pillars-band .brand-pillar-item p {
+  color: #292A32;
+}
+
+/* 3. Services 3-Card Grid Override */
+.revamp-services-band {
+  background: #06070B;
+  color: #FFFFFF;
+  padding: 96px clamp(20px, 5vw, 72px);
+}
+
+.revamp-services-band .section-intro {
+  max-width: 1200px;
+  margin: 0 auto 48px;
+}
+
+.revamp-services-band .section-intro h2 {
+  color: #FFFFFF;
+}
+
+.revamp-services-band .section-intro p {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+@media (max-width: 900px) {
+  .revamp-hero__grid {
+    grid-template-columns: 1fr;
+  }
+  .revamp-hero {
+    padding-top: 124px;
+  }
+}

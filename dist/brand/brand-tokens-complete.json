@@ -1,0 +1,53 @@
+{
+  "brand": "Digits Studio",
+  "tagline": {
+    "en": "Make your mark.",
+    "ar": "اترك بصمتك."
+  },
+  "subheadline": {
+    "en": "Branding, websites and marketing. One connected idea, brought to life.",
+    "ar": "هوية بصرية، مواقع إلكترونية وتسويق. فكرة متكاملة، تنبض بالحياة."
+  },
+  "website": "https://digitsstudio.online",
+  "location": "Beirut, Lebanon & Worldwide",
+  "colors": {
+    "core": {
+      "yellow": { "hex": "#FFDA46", "name": "Signal Yellow", "role": "Primary Accent, CTAs, Studio Highlights" },
+      "graphite": { "hex": "#292A32", "name": "Graphite", "role": "Primary Brand Dark, Primary Logo" },
+      "white": { "hex": "#FFFFFF", "name": "Pure White", "role": "Inverse Ink, Clean Surfaces" },
+      "mist": { "hex": "#EEEDF2", "name": "Quiet Grey / Mist", "role": "Soft Neutral Surface" },
+      "lilac": { "hex": "#B4A6ED", "name": "Lilac", "role": "Secondary Accent, Creative Highlights" }
+    },
+    "editorial": {
+      "obsidian": { "hex": "#06070B", "name": "Obsidian", "role": "Hero, Services & Footer Canvas" },
+      "paper": { "hex": "#FDFDFD", "name": "Paper White", "role": "Light Editorial Canvas" },
+      "inkPrimary": { "hex": "#0E1015", "name": "Primary Ink", "role": "Headings & Body on Light" },
+      "inkSecondary": { "hex": "#6A6E79", "name": "Secondary Ink", "role": "Captions, Labels & Muted Copy" },
+      "surfaceDark": { "hex": "#101218", "name": "Dark Surface", "role": "Cards on Obsidian" },
+      "borderLight": { "hex": "#E6E7EC", "name": "Light Border", "role": "Hairline Dividers on Paper" },
+      "borderDark": { "hex": "#24262F", "name": "Dark Border", "role": "Hairline Dividers on Obsidian" }
+    }
+  },
+  "fonts": {
+    "display": "Archivo",
+    "editorialSerif": "Playfair Display",
+    "body": "Instrument Sans",
+    "editorialSans": "Inter",
+    "arabic": "IBM Plex Sans Arabic",
+    "arabicDisplay": "Alexandria",
+    "arabicSocial": "Noto Sans Arabic"
+  },
+  "contact": {
+    "name": "Ahmad Alawieh",
+    "role": "Founder & Creative Director",
+    "phone": "+961 70 332 361",
+    "email": "hello@digitsstudio.online",
+    "whatsapp": "https://wa.me/96170332361"
+  },
+  "logo": {
+    "minimumWidthPx": 150,
+    "minimumSymbolPx": 24,
+    "clearSpace": "one quarter of the symbol width",
+    "displayOutlineMinimumWidthPx": 400
+  }
+}

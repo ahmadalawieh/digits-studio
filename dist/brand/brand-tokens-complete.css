@@ -1,0 +1,52 @@
+/* Digits Studio — Complete Brand Design Tokens
+ * Preserves all core tokens from digitsstudio.online/brand/brand-tokens.css
+ * Extended with Editorial Canvas, Ink, Border, and Typography tokens.
+ */
+
+:root {
+  /* === Core Brand Colors (Preserved) === */
+  --digits-yellow: #FFDA46;
+  --digits-graphite: #292A32;
+  --digits-white: #FFFFFF;
+  --digits-mist: #EEEDF2;
+  --digits-lilac: #B4A6ED;
+
+  /* === Editorial Canvas & Surface Tokens === */
+  --digits-obsidian: #06070B;
+  --digits-paper: #FDFDFD;
+  --digits-structural: #111111;
+  --digits-surface-dark: #101218;
+  --digits-surface-dark-elevated: #171920;
+  --digits-surface-light: #F0F1F4;
+
+  /* === Ink & Text Tokens === */
+  --digits-ink-primary: #0E1015;
+  --digits-ink-secondary: #6A6E79;
+  --digits-ink-muted: #5D5D66;
+  --digits-ink-on-dark: #FFFFFF;
+  --digits-ink-on-dark-muted: rgba(255, 255, 255, 0.72);
+  --digits-ink-on-yellow: #06070B;
+
+  /* === Border & Divider Tokens === */
+  --digits-border-light: #E6E7EC;
+  --digits-border-dark: #24262F;
+
+  /* === Typography (Core + Editorial + Arabic) === */
+  --digits-display: "Archivo", sans-serif;
+  --digits-editorial-serif: "Playfair Display", Georgia, serif;
+  --digits-body: "Instrument Sans", sans-serif;
+  --digits-editorial-sans: "Inter", system-ui, sans-serif;
+  --digits-arabic: "IBM Plex Sans Arabic", sans-serif;
+  --digits-arabic-display: "Alexandria", "IBM Plex Sans Arabic", sans-serif;
+
+  /* === Radii & Spacing === */
+  --digits-radius-sm: 8px;
+  --digits-radius-md: 14px;
+  --digits-radius-lg: 24px;
+  --digits-radius-pill: 999px;
+
+  /* === Logo Constraints === */
+  --digits-logo-min-width: 150px;
+  --digits-symbol-min-width: 24px;
+  --digits-display-logo-min-width: 400px;
+}

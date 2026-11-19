@@ -13,53 +13,13 @@
   ],
   "redirects": [
     {
-      "source": "/work/:path*",
-      "destination": "/#work",
-      "permanent": true
-    },
-    {
-      "source": "/services",
-      "destination": "/#services",
-      "permanent": true
-    },
-    {
-      "source": "/about",
-      "destination": "/#studio",
-      "permanent": true
-    },
-    {
-      "source": "/contact",
-      "destination": "/#contact",
-      "permanent": true
-    },
-    {
       "source": "/hire",
-      "destination": "/#contact",
+      "destination": "/contact",
       "permanent": true
     },
     {
       "source": "/audit",
-      "destination": "/#contact",
-      "permanent": true
-    },
-    {
-      "source": "/ar/work/:path*",
-      "destination": "/ar/#work",
-      "permanent": true
-    },
-    {
-      "source": "/ar/services",
-      "destination": "/ar/#services",
-      "permanent": true
-    },
-    {
-      "source": "/ar/about",
-      "destination": "/ar/#studio",
-      "permanent": true
-    },
-    {
-      "source": "/ar/contact",
-      "destination": "/ar/#contact",
+      "destination": "/contact",
       "permanent": true
     }
   ],

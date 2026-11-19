@@ -22,6 +22,78 @@
   font-weight: 600;
 }
 
+/* Revamped Floating Pill Header */
+.editorial-navigation .navigation-inner {
+  background: rgba(17, 18, 23, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  padding: 10px 18px;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.32);
+}
+
+.editorial-navigation .header-actions .button.small {
+  background: var(--revamp-yellow);
+  color: var(--revamp-obsidian);
+  border-color: var(--revamp-yellow);
+  font-weight: 700;
+  border-radius: 999px;
+}
+
+/* Homepage Brand Pillars Strip */
+.brand-pillars-strip {
+  background: var(--revamp-obsidian);
+  color: #FFFFFF;
+  border-top: 1px solid var(--revamp-border-dark);
+  border-bottom: 1px solid var(--revamp-border-dark);
+  padding: 40px clamp(20px, 5vw, 72px);
+}
+
+.brand-pillars-strip__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.brand-pillar-item {
+  background: #101218;
+  border: 1px solid var(--revamp-border-dark);
+  border-radius: 14px;
+  padding: 20px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.brand-pillar-item span {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--revamp-yellow);
+}
+
+.brand-pillar-item strong {
+  font-family: EditorialSerif, Georgia, serif;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+html[dir="rtl"] .brand-pillar-item strong {
+  font-family: Alexandria, "IBM Plex Sans Arabic", sans-serif;
+}
+
+.brand-pillar-item p {
+  margin: 0;
+  font-size: 13.5px;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.5;
+}
+
 /* Sub-page Editorial Hero */
 .page-hero {
   background: var(--revamp-obsidian);

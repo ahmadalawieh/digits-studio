@@ -508,3 +508,21 @@ html[dir="rtl"] .audit-banner {
   border-left: 1px solid var(--revamp-border-dark);
   border-right: 5px solid var(--revamp-yellow);
 }
+
+/* Micro-interactions (respecting reduced motion) */
+@media (prefers-reduced-motion: no-preference) {
+  .pillar-card,
+  .service-pillar,
+  .tier-card,
+  .brand-pillar-item {
+    transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+  }
+
+  .pillar-card:hover,
+  .service-pillar:hover,
+  .tier-card:hover,
+  .brand-pillar-item:hover {
+    transform: translateY(-4px);
+    border-color: var(--revamp-yellow);
+  }
+}

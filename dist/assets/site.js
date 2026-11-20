@@ -70,4 +70,12 @@
     document.getElementById('inquiry-email').href='mailto:hello@digitsstudio.online?subject='+encodeURIComponent('Digits Studio / Project inquiry')+'&body='+encodeURIComponent(message);
     const result=document.getElementById('inquiry-result');result.hidden=false;result.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'nearest'});
   });
+  // Pre-select inquiry services from ?service= query parameter
+  const preServices = new URLSearchParams(location.search).get('service');
+  if (preServices && form) {
+    const wanted = preServices.split(',').map(s => s.trim().toLowerCase());
+    form.querySelectorAll('input[name="service"]').forEach(cb => {
+      if (wanted.includes(cb.value.toLowerCase())) cb.checked = true;
+    });
+  }
 })();

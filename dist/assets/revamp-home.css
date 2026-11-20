@@ -204,8 +204,19 @@ html[dir="rtl"] .revamp-hero__title {
 @media (max-width: 900px) {
   .revamp-hero__grid {
     grid-template-columns: 1fr;
+    gap: 28px;
   }
   .revamp-hero {
-    padding-top: 124px;
+    padding-top: 118px;
+    padding-bottom: 56px;
+  }
+  .revamp-hero__card {
+    padding: 18px 20px;
+  }
+  .revamp-hero__card-visual {
+    padding: 10px;
+  }
+  .revamp-hero__card-visual img {
+    max-width: 150px;
   }
 }

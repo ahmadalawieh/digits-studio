@@ -24,6 +24,7 @@
   <link rel="stylesheet" href="/assets/revamp.css" />
   <script src="/assets/site.js" defer=""></script>
   <script src="/assets/editorial-motion.js" defer=""></script>
+  <script src="/assets/estimator.js" defer=""></script>
 </head>
 <body class="editorial-page full-studio">
   <a class="skip" href="#main">Skip to content</a>
@@ -165,6 +166,32 @@
             </div>
             <a class="revamp-btn revamp-btn--dark" href="/contact?service=Branding,Website,Marketing">Scope Full Launch ↗</a>
           </article>
+        </div>
+
+        <div id="scope-estimator" class="estimator-box" style="margin-top: 40px;">
+          <div>
+            <span class="page-hero__eyebrow" style="margin-bottom:12px;">Interactive Scope Estimator</span>
+            <h3 style="font-family:EditorialSerif,Georgia,serif;font-size:28px;margin:0 0 8px;">Estimate your timeline &amp; investment</h3>
+            <p style="font-size:14px;color:rgba(255,255,255,0.75);margin:0;">Select what you're building to get an instant ballpark range.</p>
+            <div class="est-options">
+              <button type="button" class="est-opt" data-est-type="brand">Brand Sprint</button>
+              <button type="button" class="est-opt is-selected" data-est-type="website">Custom Website</button>
+              <button type="button" class="est-opt" data-est-type="ecommerce">Store / Booking</button>
+              <button type="button" class="est-opt" data-est-type="portal">SaaS / Web Portal</button>
+            </div>
+            <div class="est-checks">
+              <label><input type="checkbox" data-est-bilingual="" checked="" /> Bilingual (EN + AR)</label>
+              <label><input type="checkbox" data-est-addon="seo" /> Technical SEO &amp; Schema</label>
+              <label><input type="checkbox" data-est-addon="social" /> Launch Social Kit</label>
+            </div>
+          </div>
+          <div class="est-summary">
+            <div style="font-size:12px;color:rgba(255,255,255,0.65);">Recommended Scope</div>
+            <div data-est-title="" style="font-family:EditorialSerif,Georgia,serif;font-size:22px;margin-top:4px;">Custom Bilingual Website</div>
+            <div class="est-metric"><span>Estimated Timeline</span><strong data-est-time="">4–6 weeks</strong></div>
+            <div class="est-metric" style="border-bottom:none;padding-bottom:0;"><span>Estimated Range</span><strong data-est-cost="">$2,100–$4,100 USD</strong></div>
+            <a data-est-cta="" class="revamp-btn revamp-btn--yellow" href="/contact?service=Website" style="width:100%;justify-content:center;margin-top:16px;">Lock in this scope ↗</a>
+          </div>
         </div>
 
         <div class="audit-banner">

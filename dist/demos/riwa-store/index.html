@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Riwa Grove Shop — D2C E-Commerce Storefront Demo | Digits Studio</title>
+  <meta name="description" content="Interactive D2C e-commerce storefront demo with variant selection, slide-over cart, promo codes, and checkout flow by Digits Studio." />
+  <link rel="icon" href="/brand/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "Instrument Sans", sans-serif; background: #FDFDFD; color: #0E1015; }
+    .demo-bar { background: #FFDA46; color: #06070B; padding: 8px 20px; font-size: 12px; font-weight: 600; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+    .demo-bar a { color: #06070B; font-weight: 700; }
+    header { background: #06070B; color: #fff; padding: 18px 24px; }
+    .head-in { max-width: 1120px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+    .cart-trigger { background: #FFDA46; color: #06070B; border: none; padding: 9px 18px; border-radius: 999px; font-weight: 700; cursor: pointer; font-family: inherit; }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 48px 24px; }
+    .pdp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; margin-bottom: 56px; }
+    .pdp-img { width: 100%; border-radius: 22px; aspect-ratio: 4/3; object-fit: cover; border: 1px solid #E6E7EC; }
+    .variants { display: flex; gap: 10px; flex-wrap: wrap; margin: 18px 0; }
+    .var-btn { padding: 10px 18px; border-radius: 999px; border: 1px solid #D5D7E0; background: #fff; cursor: pointer; font-weight: 600; font-family: inherit; }
+    .var-btn.active { background: #06070B; color: #FFDA46; border-color: #06070B; }
+    .add-btn { width: 100%; padding: 14px; border-radius: 999px; border: none; background: #06070B; color: #FFDA46; font-weight: 700; font-size: 15px; cursor: pointer; font-family: inherit; }
+    .drawer { position: fixed; top: 0; right: 0; bottom: 0; width: min(400px, 100%); background: #06070B; color: #fff; padding: 28px; display: none; flex-direction: column; justify-content: space-between; z-index: 60; box-shadow: -20px 0 60px rgba(0,0,0,0.45); }
+    .drawer.open { display: flex; }
+    .cart-item { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #24262F; font-size: 14px; }
+    .qty-btn { background: #171A23; color: #fff; border: 1px solid #24262F; width: 26px; height: 26px; border-radius: 6px; cursor: pointer; }
+    .promo-row { display: flex; gap: 8px; margin: 14px 0; }
+    .promo-row input { flex: 1; padding: 9px 12px; border-radius: 10px; border: 1px solid #24262F; background: #101218; color: #fff; font-family: inherit; }
+    @media (max-width: 820px) { .pdp-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="demo-bar">
+    <span>Interactive D2C E-Commerce Demo — Built by <strong>Digits Studio</strong></span>
+    <div><a href="/work">← Back to Work</a> · <a href="/contact?service=Website">Build an online store ↗</a></div>
+  </div>
+  <header>
+    <div class="head-in">
+      <strong style="font-size:18px;letter-spacing:0.04em;">RIWA GROVE · HARVEST 2026</strong>
+      <button class="cart-trigger" onclick="toggleCart()">Cart (<span id="cart-count">1</span>)</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="pdp-grid">
+      <img class="pdp-img" src="/assets/concepts/riwa-grove/project-cover.webp" alt="Riwa Grove Cold-Pressed Olive Oil" />
+      <div>
+        <span style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;background:#EEEDF2;padding:5px 12px;border-radius:999px;">Single-Estate · South Lebanon</span>
+        <h1 style="font-family:'Playfair Display',serif;font-size:clamp(32px,4vw,46px);margin:14px 0 10px;line-height:1.05;">Early Harvest Extra Virgin Olive Oil</h1>
+        <div id="pdp-price" style="font-size:26px;font-weight:700;margin-bottom:12px;">$28.00</div>
+        <p style="font-size:15px;color:#5D6270;line-height:1.6;">Cold-pressed within 4 hours of picking. Peppery finish, bright green aroma, bottled in UV-protected glass and brushed tins.</p>
+        <div class="variants">
+          <button class="var-btn active" onclick="pickVar(0, this)">500ml Bottle · $28</button>
+          <button class="var-btn" onclick="pickVar(1, this)">1L Estate Tin · $48</button>
+          <button class="var-btn" onclick="pickVar(2, this)">Gift Duo Box · $64</button>
+        </div>
+        <button class="add-btn" onclick="addToCart()">Add to Cart +</button>
+        <p style="font-size:12.5px;color:#5D6270;margin-top:10px;">Tip: Try promo code <strong>DIGITS10</strong> in the cart drawer for 10% off.</p>
+      </div>
+    </div>
+  </main>
+
+  <aside class="drawer" id="cart-drawer">
+    <div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;">
+        <h2 style="font-family:'Playfair Display',serif;font-size:24px;">Your Cart</h2>
+        <button onclick="toggleCart()" style="background:transparent;border:1px solid #24262F;color:#fff;padding:6px 12px;border-radius:999px;cursor:pointer;">Close ×</button>
+      </div>
+      <div id="cart-items"></div>
+      <div class="promo-row">
+        <input id="promo-in" placeholder="Promo code (DIGITS10)" />
+        <button onclick="applyPromo()" style="background:#171A23;color:#FFDA46;border:1px solid #24262F;padding:0 14px;border-radius:10px;cursor:pointer;font-weight:700;">Apply</button>
+      </div>
+      <p id="promo-msg" style="font-size:12px;color:#FFDA46;"></p>
+    </div>
+    <div>
+      <div style="display:flex;justify-content:space-between;font-size:20px;font-weight:700;margin-bottom:14px;">
+        <span>Total</span><span id="cart-total" style="color:#FFDA46;">$28.00</span>
+      </div>
+      <button onclick="checkoutDemo()" style="width:100%;padding:13px;border-radius:999px;border:none;background:#FFDA46;color:#06070B;font-weight:700;font-size:14px;cursor:pointer;">Proceed to Demo Checkout ↗</button>
+      <p id="checkout-msg" style="font-size:12px;color:#22C55E;margin-top:10px;display:none;"></p>
+    </div>
+  </aside>
+
+  <script>
+    const variants = [
+      { id: "500ml", label: "500ml Bottle", price: 28 },
+      { id: "1l", label: "1L Estate Tin", price: 48 },
+      { id: "duo", label: "Gift Duo Box", price: 64 }
+    ];
+    let currentVar = 0, discount = 0;
+    let cart = [{ id: "500ml", label: "500ml Bottle", price: 28, qty: 1 }];
+    function pickVar(i, btn) {
+      currentVar = i;
+      document.querySelectorAll(".var-btn").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      document.getElementById("pdp-price").textContent = "$" + variants[i].price.toFixed(2);
+    }
+    function toggleCart() { document.getElementById("cart-drawer").classList.toggle("open"); renderCart(); }
+    function addToCart() {
+      const v = variants[currentVar];
+      const existing = cart.find(c => c.id === v.id);
+      if (existing) existing.qty++; else cart.push({ ...v, qty: 1 });
+      renderCart();
+      document.getElementById("cart-drawer").classList.add("open");
+    }
+    function chgQty(i, d) {
+      cart[i].qty += d;
+      if (cart[i].qty <= 0) cart.splice(i, 1);
+      renderCart();
+    }
+    function applyPromo() {
+      const code = document.getElementById("promo-in").value.trim().toUpperCase();
+      if (code === "DIGITS10") { discount = 0.1; document.getElementById("promo-msg").textContent = "10% discount applied!"; }
+      else { discount = 0; document.getElementById("promo-msg").textContent = "Try code DIGITS10"; }
+      renderCart();
+    }
+    function renderCart() {
+      const count = cart.reduce((s, c) => s + c.qty, 0);
+      document.getElementById("cart-count").textContent = count;
+      document.getElementById("cart-items").innerHTML = cart.length ? cart.map((c, i) => `
+        <div class="cart-item">
+          <div><strong>${c.label}</strong><div style="font-size:12px;color:#9499A6;">$${c.price} each</div></div>
+          <div style="display:flex;align-items:center;gap:8px;">
+            <button class="qty-btn" onclick="chgQty(${i}, -1)">-</button>
+            <span>${c.qty}</span>
+            <button class="qty-btn" onclick="chgQty(${i}, 1)">+</button>
+          </div>
+        </div>
+      `).join("") : "<p style='color:#9499A6;font-size:14px;'>Your cart is empty.</p>";
+      const sub = cart.reduce((s, c) => s + c.price * c.qty, 0);
+      document.getElementById("cart-total").textContent = "$" + (sub * (1 - discount)).toFixed(2);
+    }
+    function checkoutDemo() {
+      const m = document.getElementById("checkout-msg");
+      m.style.display = "block";
+      m.textContent = "Checkout flow verified! Ready to build a real store like this for your brand.";
+    }
+    renderCart();
+  </script>
+</body>
+</html>

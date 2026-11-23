@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dar Saha Live — Boutique Hospitality &amp; Booking Engine | Digits Studio</title>
+  <meta name="description" content="Interactive hospitality booking engine demo in English and Arabic built by Digits Studio." />
+  <link rel="icon" href="/brand/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@500;700&family=Instrument+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "Instrument Sans", sans-serif; background: #FDFDFD; color: #0E1015; }
+    .demo-bar { background: #FFDA46; color: #06070B; padding: 8px 20px; font-size: 12px; font-weight: 600; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+    .demo-bar a { color: #06070B; font-weight: 700; }
+    .hero { background: #06070B; color: #FFFFFF; padding: 56px 24px; }
+    .wrap { max-width: 1120px; margin: 0 auto; }
+    .hero-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 36px; }
+    .hero h1 { font-family: "Playfair Display", serif; font-size: clamp(36px, 5vw, 60px); line-height: 1.02; letter-spacing: -0.03em; max-width: 680px; }
+    .lang-btn { background: rgba(255,255,255,0.12); color: #fff; border: 1px solid rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 999px; cursor: pointer; font-weight: 600; font-family: inherit; }
+    .booking-grid { display: grid; grid-template-columns: 1.3fr 0.7fr; gap: 28px; padding: 48px 24px; max-width: 1120px; margin: 0 auto; }
+    .room-card { border: 2px solid #E6E7EC; border-radius: 18px; padding: 22px; margin-bottom: 16px; cursor: pointer; display: grid; grid-template-columns: 140px 1fr auto; gap: 18px; align-items: center; transition: border-color 0.15s; }
+    .room-card.selected { border-color: #06070B; background: #EEEDF2; }
+    .room-card img { width: 140px; height: 100px; object-fit: cover; border-radius: 12px; }
+    .summary-box { background: #06070B; color: #FFFFFF; border-radius: 20px; padding: 28px; position: sticky; top: 24px; height: fit-content; }
+    .field { margin-bottom: 14px; }
+    .field label { display: block; font-size: 12px; color: rgba(255,255,255,0.7); margin-bottom: 6px; }
+    .field input, .field select { width: 100%; padding: 10px 12px; border-radius: 10px; border: 1px solid #24262F; background: #101218; color: #fff; font-family: inherit; }
+    .addon-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; font-size: 13.5px; border-bottom: 1px solid #24262F; }
+    .total-row { display: flex; justify-content: space-between; align-items: center; font-size: 22px; font-weight: 700; margin: 18px 0; color: #FFDA46; }
+    .book-btn { width: 100%; padding: 13px; border-radius: 999px; border: none; background: #FFDA46; color: #06070B; font-weight: 700; font-size: 14px; cursor: pointer; font-family: inherit; }
+    @media (max-width: 820px) { .booking-grid { grid-template-columns: 1fr; } .room-card { grid-template-columns: 1fr; } .room-card img { width: 100%; height: 160px; } }
+  </style>
+</head>
+<body>
+  <div class="demo-bar">
+    <span>Interactive Booking Engine Demo — Built by <strong>Digits Studio</strong></span>
+    <div><a href="/work">← Back to Work</a> · <a href="/contact?service=Website">Build a booking site ↗</a></div>
+  </div>
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-top">
+        <strong style="font-size:18px;letter-spacing:0.04em;">DAR SAHA · دار ساحة</strong>
+        <button class="lang-btn" onclick="toggleLang()" id="lang-btn">عربي</button>
+      </div>
+      <h1 id="h-title">A quiet courtyard stay in the heart of Batroun.</h1>
+    </div>
+  </section>
+
+  <main class="booking-grid">
+    <div>
+      <h2 id="r-heading" style="font-family:'Playfair Display',serif;font-size:28px;margin-bottom:18px;">1. Select your suite</h2>
+      <div class="room-card selected" onclick="selectRoom(0, this)">
+        <img src="/assets/concepts/dar-saha/project-cover.webp" alt="Courtyard Suite" />
+        <div><h3 id="r0-name">Courtyard Stone Suite</h3><p id="r0-desc" style="font-size:13.5px;color:#5D6270;">King bed · Private terrace · Breakfast included</p></div>
+        <strong style="font-size:18px;">$185<span style="font-size:12px;font-weight:400;">/nt</span></strong>
+      </div>
+      <div class="room-card" onclick="selectRoom(1, this)">
+        <img src="/assets/concepts/dar-saha/website-desktop.webp" alt="Garden Loft" />
+        <div><h3 id="r1-name">Olive Garden Loft</h3><p id="r1-desc" style="font-size:13.5px;color:#5D6270;">2 Guests · Sea breeze balcony · Soaking tub</p></div>
+        <strong style="font-size:18px;">$240<span style="font-size:12px;font-weight:400;">/nt</span></strong>
+      </div>
+      <div class="room-card" onclick="selectRoom(2, this)">
+        <img src="/assets/concepts/dar-saha/brand-applications.webp" alt="Penthouse" />
+        <div><h3 id="r2-name">The Heritage Penthouse</h3><p id="r2-desc" style="font-size:13.5px;color:#5D6270;">4 Guests · Rooftop plunge · Private chef option</p></div>
+        <strong style="font-size:18px;">$360<span style="font-size:12px;font-weight:400;">/nt</span></strong>
+      </div>
+    </div>
+
+    <aside class="summary-box">
+      <h2 id="s-heading" style="font-family:'Playfair Display',serif;font-size:24px;margin-bottom:16px;">Your Stay</h2>
+      <div class="field"><label id="l-nights">Nights</label><input type="number" id="nights" value="2" min="1" max="14" oninput="calc()" /></div>
+      <div class="field"><label id="l-guests">Guests</label><select id="guests"><option>2 Guests</option><option>1 Guest</option><option>3 Guests</option><option>4 Guests</option></select></div>
+      <div class="addon-row"><label><input type="checkbox" id="a-transfer" onchange="calc()" /> <span id="t-transfer">Beirut Airport Transfer</span></label><span>+$55</span></div>
+      <div class="addon-row"><label><input type="checkbox" id="a-dinner" onchange="calc()" /> <span id="t-dinner">Lebanese Mezze Dinner</span></label><span>+$70</span></div>
+      <div class="total-row"><span id="t-total">Total</span><span id="total-val">$370</span></div>
+      <button class="book-btn" id="book-btn" onclick="confirmDemo()">Reserve Suite (Demo) ↗</button>
+      <p id="book-msg" style="font-size:12.5px;color:#FFDA46;margin-top:12px;display:none;"></p>
+    </aside>
+  </main>
+
+  <script>
+    const rooms = [
+      { price: 185, en: "Courtyard Stone Suite", ar: "جناح الفناء الحجري" },
+      { price: 240, en: "Olive Garden Loft", ar: "لوفت حديقة الزيتون" },
+      { price: 360, en: "The Heritage Penthouse", ar: "البنتهاوس التراثي" }
+    ];
+    let selected = 0, ar = false;
+    function selectRoom(i, el) {
+      selected = i;
+      document.querySelectorAll(".room-card").forEach(c => c.classList.remove("selected"));
+      el.classList.add("selected");
+      calc();
+    }
+    function calc() {
+      const n = Math.max(1, parseInt(document.getElementById("nights").value || "1", 10));
+      let total = rooms[selected].price * n;
+      if (document.getElementById("a-transfer").checked) total += 55;
+      if (document.getElementById("a-dinner").checked) total += 70;
+      document.getElementById("total-val").textContent = "$" + total;
+    }
+    function confirmDemo() {
+      const m = document.getElementById("book-msg");
+      m.style.display = "block";
+      m.textContent = ar
+        ? `تم تجهيز الحجز التجريبي: ${rooms[selected].ar} (${document.getElementById("total-val").textContent}).`
+        : `Demo reservation ready: ${rooms[selected].en} (${document.getElementById("total-val").textContent}).`;
+    }
+    function toggleLang() {
+      ar = !ar;
+      document.documentElement.dir = ar ? "rtl" : "ltr";
+      document.getElementById("lang-btn").textContent = ar ? "EN" : "عربي";
+      document.getElementById("h-title").textContent = ar ? "إقامة هادئة في قلب البترون." : "A quiet courtyard stay in the heart of Batroun.";
+      document.getElementById("r-heading").textContent = ar ? "١. اختر الجناح" : "1. Select your suite";
+      document.getElementById("s-heading").textContent = ar ? "ملخص إقامتك" : "Your Stay";
+      document.getElementById("l-nights").textContent = ar ? "عدد الليالي" : "Nights";
+      document.getElementById("l-guests").textContent = ar ? "عدد الضيوف" : "Guests";
+      document.getElementById("t-transfer").textContent = ar ? "توصيل من مطار بيروت" : "Beirut Airport Transfer";
+      document.getElementById("t-dinner").textContent = ar ? "عشاء لبناني خاص" : "Lebanese Mezze Dinner";
+      document.getElementById("t-total").textContent = ar ? "المجموع" : "Total";
+      document.getElementById("book-btn").textContent = ar ? "تأكيد الحجز التجريبي ↗" : "Reserve Suite (Demo) ↗";
+      document.getElementById("r0-name").textContent = rooms[0][ar ? "ar" : "en"];
+      document.getElementById("r1-name").textContent = rooms[1][ar ? "ar" : "en"];
+      document.getElementById("r2-name").textContent = rooms[2][ar ? "ar" : "en"];
+    }
+  </script>
+</body>
+</html>
